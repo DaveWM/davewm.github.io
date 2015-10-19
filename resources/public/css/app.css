@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+}
+
+.spacer {
+    margin: 6px;
+}
+
+.padded{
+    padding: 8px;
+}
+
+dt{
+    font-weight: 500;
+}
