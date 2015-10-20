@@ -6,17 +6,20 @@
 (export-material-ui-react-classes)
 
 (defn contact-info []
-  [Card
-   [CardMedia {:overlay (r/as-element [CardTitle {:title "Contact Info"}])}
-    [:img {:src "assets/me.jpg"}]
-    ]
-   [CardText
-    [:p {:class "row middle-xs around-xs"} [FontIcon {:class "col-xs-2" :className "material-icons"} "email"] [:a.col-xs-10 {:href "mailto:dwmartin41@gmail.com"} "dwmartin41@gmail.com"]] 
-    [:p {:class "row middle-xs around-xs"} [FontIcon {:class "col-xs-2" :className "material-icons"} "phone"] [:span.col-xs-10 "07588361916"]] 
-    [:p {:class "row middle-xs around-xs"} [FontIcon {:class "col-xs-2" :className "fa fa-github"}] [:a.col-xs-10 {:href "https://github.com/DaveWM"} "@DaveWM"]]
-    [:p {:class "row middle-xs around-xs"} [FontIcon {:class "col-xs-2" :className "fa fa-linkedin-square"}] [:a.col-xs-10 {:href "https://www.linkedin.com/in/davewm"} "David Martin"]]
-    ]
-   ])
+  (let [info-part (fn [icon-type icon-name value-elem]
+                    [:p {:class "row middle-xs around-xs"} [FontIcon {:className (str "col-xs-2 " icon-type)} icon-name] (if (map? (nth value-elem 1))
+                                                                                                                           (update-in value-elem [1 :class] #(str % " col-xs-10"))                                                             (let [[tag & content] value-elem] [tag {:class "col-xs-10"} content])
+                                                                                                                           )])]         
+    [Card
+     [CardMedia {:overlay (r/as-element [CardTitle {:title "Contact Info"}])}
+      [:img {:src "assets/me.jpg"}]
+      ]
+     [CardText
+      (info-part "material-icons" "email" [:a {:href "mailto:dwmartin41@gmail.com"} "dwmartin41@gmail.com"])
+      (info-part "material-icons" "phone" [:span "07588361916"])
+      (info-part "fa fa-github" nil [:a {:href "https://github.com/DaveWM"} "@DaveWM"])
+      (info-part "fa fa-linkedin-square" nil [:a {:href "https://www.linkedin.com/in/davewm"} "David Martin"])
+     ]]))
 
 (defn summary-card []
   [Card 
