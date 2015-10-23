@@ -11,7 +11,9 @@
     CardText
     CardTitle
     FlatButton
-    FontIcon])
+    FontIcon
+    GridList
+    GridTile])
 
 (defn material-ui-react-import [tname]
   `(def ~tname (reagent.core/adapt-react-class (aget js/MaterialUI ~(name tname)))))

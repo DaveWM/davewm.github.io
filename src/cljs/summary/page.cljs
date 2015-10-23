@@ -41,14 +41,34 @@
      ]
     ]])
 
+(defn education-card []
+  [Card
+   [CardMedia {:overlay (r/as-element [CardTitle {:title "Education"}])}
+    [:img {:src "assets/liv_uni_alt.jpg"}]]
+   [CardText
+    [:ul
+     [:li "First Class BSc in Physics from the University of Liverpool"]
+     [:li "3 A's at A-Level in Physics, Chemistry and Maths"]
+     ]
+    ]
+   ])
+
 (defn page []
   [:div {:class "row middle-xs"}
    [:div {:class "col-xs-2 padded"}
     [contact-info]
     ]
-   [:div {:class "col-xs-10 padded"}
-    [summary-card]
-    ]
-   ])
+   [:div {:class "col-xs-10"}
+    [:div.row.padded
+     [:div.col-xs-12
+      [summary-card]
+      ]
+     ]
+    [:div.row.padded
+     [:div.col-xs-4
+      [education-card]
+      ]
+     ]
+    ]])
 
 
