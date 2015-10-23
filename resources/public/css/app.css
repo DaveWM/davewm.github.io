@@ -18,3 +18,13 @@ body{
 dt{
     font-weight: 500;
 }
+
+.centred{
+    margin-left:50% !important;
+    transform: translateX(-50%);
+}
+
+.card-loading-icon{
+    margin-bottom: 25px !important;
+    margin-top: 25px !important;
+}

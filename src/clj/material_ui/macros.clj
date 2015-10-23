@@ -6,14 +6,18 @@
   '[AppBar
     Avatar
     Card
+    CardActions
     CardHeader
     CardMedia
     CardText
     CardTitle
+    CircularProgress
     FlatButton
     FontIcon
     GridList
-    GridTile])
+    GridTile
+    List
+    ListItem])
 
 (defn material-ui-react-import [tname]
   `(def ~tname (reagent.core/adapt-react-class (aget js/MaterialUI ~(name tname)))))

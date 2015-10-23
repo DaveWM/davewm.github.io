@@ -9,7 +9,9 @@
                  [org.clojure/tools.nrepl "0.2.10"]
                  [weasel "0.7.0" :exclusions [org.clojure/clojurescript]]
                  [org.clojure/clojurescript "1.7.145"]
-                 [reagent "0.5.1" :exclusions [cljsjs/react]]]
+                 [reagent "0.5.1" :exclusions [cljsjs/react]]
+                 [cljs-ajax "0.3.14"]
+                 ]
   :clean-targets ^{:protect false} ["resources/public/js" "target"]
   :plugins [[cider/cider-nrepl "0.9.1"] [lein-cljsbuild "1.1.0"]]
   :cljsbuild {:builds
