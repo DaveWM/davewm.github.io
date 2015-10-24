@@ -104,12 +104,15 @@
 
 (defn page []
   [:div {:class "row middle-xs"}
-   [:div {:class "col-xs-2"}
+   [:div {:class "col-xs-3"}
     [:div.row.padded
      [contact-info]
      ]
+     [:div.row.padded
+      [github-card]
+      ]
     ]
-   [:div {:class "col-xs-10"}
+   [:div {:class "col-xs-9"}
     [:div.row.padded
      [:div.col-xs-12
       [summary-card]
@@ -118,9 +121,6 @@
     [:div.row.padded
      [:div.col-xs-4
       [education-card]
-      ]
-     [:div.col-xs-4
-      [github-card]
       ]
      ]]])
 
