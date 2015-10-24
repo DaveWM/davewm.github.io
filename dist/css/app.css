@@ -1,10 +1,14 @@
 body{
     margin: 0;
     background-color: #F5F5F5;
+    padding-bottom:12px;
 }
 
 .app{
     background-color: #F5F5F5;
+}
+.content {
+    padding: 12px;
 }
 
 .spacer {
@@ -36,4 +40,8 @@ tile > div{
 dd{
     margin-top: 1px;
    margin-bottom: 8px;
+}
+
+.card-container > div{
+    margin-top: 8px;
 }

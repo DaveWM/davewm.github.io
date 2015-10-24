@@ -11,7 +11,7 @@
 (defn app-layout []
   [:div {:class "app"}
    [AppBar {:title "David Martin - CV" :showMenuIconButton false :style {:text-align "center"}}]
-   [:div {:class "container-fluid"}
+   [:div {:class "content"}
     [summary/page]
     ]])
 

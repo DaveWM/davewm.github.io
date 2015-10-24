@@ -104,7 +104,7 @@
   [Card
    [CardHeader {:title "My Hobbies" :padding 0
                 :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "fa fa-thumbs-o-up"}])}])}]
-   [GridList {:cols 2 :cellHeight 200}
+   [GridList {:cols 2 :cellHeight 180}
     [GridTile {:cols 2 :title "Motorsport" :subtitle "I Race in the Track Attack MR2 Series"
                :rootClass "tile"
                :actionIcon (r/as-element
@@ -138,7 +138,7 @@
    [CardHeader {:title "Codewars"
                 :subtitle (str
                            (get-in @codewars-user ["codeChallenges" "totalCompleted"])
-                           " Challenges Completed | Overall Score "
+                           " Challenges Completed | Score "
                            (get-in @codewars-user ["ranks" "overall" "score"]))
                 :avatar "dist/assets/codewars.png"}
     ]
@@ -169,38 +169,21 @@
 
 
 (defn page []
-  [:div.row
-   [:div.row.middle-xs
-    [:div.col-xs-12.col-md-2
-     [:div.row.padded.top-xs.center-xs
-      [contact-info]
-      ]
-     ]
-    [:div.col-xs-12.col-md-10
-     [summary-card]
-     ]
+  [:div.row.middle-xs
+   [:div.col-xs-12.col-md-2.card-container
+    [contact-info]
     ]
-   [:div.row.padded.middle-xs
-    [:div.col-xs-12.col-md-6
-     [:div.row.middle-xs
-      [:div.col-xs-12.padded
-       [education-card]
-       ]
-      [:div.col-xs-12.padded
-       [hobbies-card]
-       ]
-      ]
-     ]
-    [:div.col-xs-12.col-md-6
-     [:div.row.middle-xs
-      [:div.col-xs-12.padded
-       [github-card]
-       ]
-      [:div.col-xs-12.padded
-       [codewars-card]
-       ]
-      ]
-     ]
-    ]])
+   [:div.col-xs-12.col-md-10.card-container
+    [summary-card]
+    ]
+   [:div.col-xs-12.col-md-6.card-container
+    [github-card]
+    [hobbies-card]
+    ]
+   [:div.col-xs-12.col-md-6.card-container
+    [education-card]
+    [codewars-card]
+    ]
+   ])
 
 
