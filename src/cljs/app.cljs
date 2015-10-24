@@ -26,9 +26,6 @@
                                                       :accent3Color (aget Colors "blue500")
                                                       :textColor (aget Colors "indigo900")
                                                   }))
-(println new-theme)
-(println (aget Colors "pinkA200"))
-(println js/React.PropTypes.object)
 (def app
   (with-meta app-layout
     {

@@ -50945,12 +50945,12 @@ summary.page.LightRawTheme = MaterialUI["Styles"]["LightRawTheme"];
 summary.page.contact_info = function summary$page$contact_info() {
   var info_part = function(icon_type, icon_name, value_elem) {
     return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 151049309), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "row middle-xs around-xs"], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", -1983287057), [cljs.core.str("col-xs-2 "), 
-    cljs.core.str(icon_type)].join("")], null), icon_name], null), cljs.core.map_QMARK_.call(null, cljs.core.nth.call(null, value_elem, 1)) ? cljs.core.update_in.call(null, value_elem, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, new cljs.core.Keyword(null, "class", "class", -2030961996)], null), function(p1__12828_SHARP_) {
-      return [cljs.core.str(p1__12828_SHARP_), cljs.core.str(" col-xs-10")].join("");
+    cljs.core.str(icon_type)].join("")], null), icon_name], null), cljs.core.map_QMARK_.call(null, cljs.core.nth.call(null, value_elem, 1)) ? cljs.core.update_in.call(null, value_elem, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, new cljs.core.Keyword(null, "class", "class", -2030961996)], null), function(p1__13273_SHARP_) {
+      return [cljs.core.str(p1__13273_SHARP_), cljs.core.str(" col-xs-10")].join("");
     }) : function() {
-      var vec__12830 = value_elem;
-      var tag = cljs.core.nth.call(null, vec__12830, 0, null);
-      var content = cljs.core.nthnext.call(null, vec__12830, 1);
+      var vec__13275 = value_elem;
+      var tag = cljs.core.nth.call(null, vec__13275, 0, null);
+      var content = cljs.core.nthnext.call(null, vec__13275, 1);
       return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [tag, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "col-xs-10"], null), content], null);
     }()], null);
   };
@@ -50989,24 +50989,24 @@ summary.page.open_in_new_tab = function summary$page$open_in_new_tab(url) {
   return window.open(url);
 };
 summary.page.get_github_user_repos = function summary$page$get_github_user_repos(user) {
-  return ajax.core.GET.call(null, [cljs.core.str("https://api.github.com/users/"), cljs.core.str(user), cljs.core.str("/repos")].join(""), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "handler", "handler", -195596612), function(p1__12831_SHARP_) {
+  return ajax.core.GET.call(null, [cljs.core.str("https://api.github.com/users/"), cljs.core.str(user), cljs.core.str("/repos")].join(""), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "handler", "handler", -195596612), function(p1__13276_SHARP_) {
     cljs.core.swap_BANG_.call(null, summary.page.github_loading, cljs.core.dec);
     return cljs.core.reset_BANG_.call(null, summary.page.github_repos, cljs.core.take.call(null, 5, cljs.core.sort_by.call(null, function(r) {
       return new Date(cljs.core.get.call(null, r, "updated_at"));
     }, cljs.core._GT_, cljs.core.filter.call(null, function(r) {
       return cljs.core._EQ_.call(null, false, cljs.core.get.call(null, r, "fork"));
-    }, p1__12831_SHARP_))));
+    }, p1__13276_SHARP_))));
   }], null));
 };
 summary.page.github_card_layout = function summary$page$github_card_layout() {
   return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.Card, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardHeader, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "title", "title", 636505583), "GitHub", new cljs.core.Keyword(null, "subtitle", "subtitle", -1614524363), [cljs.core.str("@"), cljs.core.str(cljs.core.deref.call(null, summary.page.github_user).call(null, "login"))].join(""), 
   new cljs.core.Keyword(null, "avatar", "avatar", -1607499307), cljs.core.deref.call(null, summary.page.github_user).call(null, "avatar_url")], null)], null), cljs.core.deref.call(null, summary.page.github_loading) > 0 ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CircularProgress, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "class", "class", -2030961996), "centred card-loading-icon", new cljs.core.Keyword(null, "mode", 
-  "mode", 654403691), "indeterminate"], null)], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.List, cljs.core.map.call(null, function(p1__12832_SHARP_) {
-    return cljs.core.identity.call(null, cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.ListItem, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "primaryText", "primaryText", 229382014), cljs.core.get.call(null, p1__12832_SHARP_, "name"), new cljs.core.Keyword(null, "secondaryText", "secondaryText", 824460892), cljs.core.get.call(null, p1__12832_SHARP_, "description"), new cljs.core.Keyword(null, "leftAvatar", 
+  "mode", 654403691), "indeterminate"], null)], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.List, cljs.core.map.call(null, function(p1__13277_SHARP_) {
+    return cljs.core.identity.call(null, cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.ListItem, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "primaryText", "primaryText", 229382014), cljs.core.get.call(null, p1__13277_SHARP_, "name"), new cljs.core.Keyword(null, "secondaryText", "secondaryText", 824460892), cljs.core.get.call(null, p1__13277_SHARP_, "description"), new cljs.core.Keyword(null, "leftAvatar", 
     "leftAvatar", 431224504), reagent.core.as_element.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.Avatar, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "icon", "icon", 1679606541), reagent.core.as_element.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", 
     -1983287057), "octicon octicon-repo"], null)], null))], null)], null)), new cljs.core.Keyword(null, "onTouchTap", "onTouchTap", 1973229336), function() {
-      return summary.page.open_in_new_tab.call(null, cljs.core.get.call(null, p1__12832_SHARP_, "html_url"));
-    }], null)], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "key", "key", -1516042587), cljs.core.get.call(null, p1__12832_SHARP_, "id")], null)));
+      return summary.page.open_in_new_tab.call(null, cljs.core.get.call(null, p1__13277_SHARP_, "html_url"));
+    }], null)], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "key", "key", -1516042587), cljs.core.get.call(null, p1__13277_SHARP_, "id")], null)));
   }, cljs.core.deref.call(null, summary.page.github_repos))], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardActions, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FlatButton, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "label", "label", 1718410804), "View Profile", new cljs.core.Keyword(null, "onClick", "onClick", -1991238530), function() {
     return summary.page.open_in_new_tab.call(null, "https://github.com/DaveWM");
   }], null)], null)], null)], null);
@@ -51027,12 +51027,46 @@ summary.page.hobbies_card = function summary$page$hobbies_card() {
   1, [new cljs.core.Keyword(null, "src", "src", -1651076051), "assets/hyperion.jpg"], null)], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.GridTile, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "cols", "cols", -1914801295), 1, new cljs.core.Keyword(null, "title", "title", 636505583), "Snowboarding", new cljs.core.Keyword(null, "subtitle", "subtitle", -1614524363), "I enjoy snowboarding during the winter", 
   new cljs.core.Keyword(null, "rootClass", "rootClass", 845667327), "tile"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "img", "img", 1442687358), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "src", "src", -1651076051), "assets/snowboarding.jpg"], null)], null)], null)], null)], null);
 };
+summary.page.codewars_loading = reagent.core.atom.call(null, true);
+summary.page.codewars_user = reagent.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY);
+summary.page.get_codewars_user = function summary$page$get_codewars_user(user) {
+  return ajax.core.GET.call(null, [cljs.core.str("https://crossorigin.me/https://www.codewars.com/api/v1/users/"), cljs.core.str(user)].join(""), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "params", "params", 710516235), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "access_key", "access_key", -193476699), "3KgumscM_CC4TZWyFm6m"], null), new cljs.core.Keyword(null, "handler", "handler", -195596612), function(response) {
+    cljs.core.reset_BANG_.call(null, summary.page.codewars_user, response);
+    return cljs.core.swap_BANG_.call(null, summary.page.codewars_loading, cljs.core.not);
+  }], null));
+};
+summary.page.codewars_card_layout = function summary$page$codewars_card_layout() {
+  return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.Card, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardHeader, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "title", "title", 636505583), "Codewars", new cljs.core.Keyword(null, "subtitle", "subtitle", -1614524363), [cljs.core.str(cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.page.codewars_user), new cljs.core.PersistentVector(null, 
+  2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["codeChallenges", "totalCompleted"], null))), cljs.core.str(" Challenges Completed | Overall Score "), cljs.core.str(cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.page.codewars_user), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ranks", "overall", "score"], null)))].join(""), new cljs.core.Keyword(null, "avatar", "avatar", -1607499307), "assets/codewars.png"], null)], null), cljs.core.truth_(cljs.core.deref.call(null, 
+  summary.page.codewars_loading)) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CircularProgress, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "mode", "mode", 654403691), "indeterminate", new cljs.core.Keyword(null, "class", "class", -2030961996), "centred card-loading-icon"], null)], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.List, function() {
+    var languages = cljs.core.sort_by.call(null, function(p1__13278_SHARP_) {
+      return cljs.core.get_in.call(null, p1__13278_SHARP_, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "score"], null));
+    }, cljs.core._GT_, cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.page.codewars_user), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ranks", "languages"], null)));
+    return cljs.core.map.call(null, function(languages) {
+      return function(lang) {
+        var vec__13280 = lang;
+        var name = cljs.core.nth.call(null, vec__13280, 0, null);
+        var info = cljs.core.nth.call(null, vec__13280, 1, null);
+        cljs.core.println.call(null, lang);
+        return cljs.core.identity.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.ListItem, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "primaryText", "primaryText", 229382014), name, new cljs.core.Keyword(null, "secondaryText", "secondaryText", 824460892), [cljs.core.str("Score "), cljs.core.str(cljs.core.get.call(null, info, "score"))].join(""), new cljs.core.Keyword(null, "leftIcon", "leftIcon", 119379033), reagent.core.as_element.call(null, 
+        new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", -1983287057), [cljs.core.str("icon-"), cljs.core.str(name)].join("")], null)], null))], null)], null));
+      };
+    }(languages), languages);
+  }()], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardActions, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FlatButton, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "onClick", "onClick", -1991238530), function() {
+    return summary.page.open_in_new_tab.call(null, "http://www.codewars.com/users/DaveWM");
+  }, new cljs.core.Keyword(null, "label", "label", 1718410804), "View Account"], null)], null)], null)], null);
+};
+summary.page.codewars_card = cljs.core.with_meta.call(null, summary.page.codewars_card_layout, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "component-did-mount", "component-did-mount", -1126910518), function() {
+  return summary.page.get_codewars_user.call(null, "DaveWM");
+}], null));
 summary.page.page = function summary$page$page() {
   return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.row", "div.row", 133678515), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.row.middle-xs", "div.row.middle-xs", 132651383), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-2", "div.col-xs-2", 1114365381), new cljs.core.PersistentVector(null, 
   2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.row.padded.top-xs", "div.row.padded.top-xs", 513446352), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.contact_info], null)], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-10", "div.col-xs-10", 12861445), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-  [summary.page.summary_card], null)], null)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.row.padded.middle-xs", "div.row.padded.middle-xs", 1321931907), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-4", "div.col-xs-4", -990350100), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.education_card], 
-  null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-4", "div.col-xs-4", -990350100), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.github_card], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-4", "div.col-xs-4", -990350100), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-  [summary.page.hobbies_card], null)], null)], null)], null);
+  [summary.page.summary_card], null)], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.row.padded.middle-xs", "div.row.padded.middle-xs", 1321931907), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-6", "div.col-xs-6", 1179108318), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
+  "div.row.middle-xs", "div.row.middle-xs", 132651383), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.padded", "div.col-xs-12.padded", -1186583724), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.education_card], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.padded", "div.col-xs-12.padded", 
+  -1186583724), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.hobbies_card], null)], null)], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-6", "div.col-xs-6", 1179108318), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.row.middle-xs", "div.row.middle-xs", 132651383), new cljs.core.PersistentVector(null, 
+  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.padded", "div.col-xs-12.padded", -1186583724), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.github_card], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.padded", "div.col-xs-12.padded", -1186583724), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, 
+  [summary.page.codewars_card], null)], null)], null)], null)], null)], null);
 };
 goog.provide("goog.userAgent.product");
 goog.require("goog.labs.userAgent.browser");
@@ -52757,9 +52791,6 @@ app.app_layout = function app$app_layout() {
 };
 app.current_theme = app.ThemeManager.getMuiTheme(app.LightRawTheme);
 app.new_theme = app.ThemeManager.modifyRawThemePalette(app.current_theme, {"primary1Color":app.Colors["indigo500"], "primary2Color":app.Colors["indigo700"], "primary3Color":app.Colors["lightBlack"], "accent1Color":app.Colors["blueA200"], "accent2Color":app.Colors["indigo100"], "accent3Color":app.Colors["blue500"], "textColor":app.Colors["indigo900"]});
-cljs.core.println.call(null, app.new_theme);
-cljs.core.println.call(null, app.Colors["pinkA200"]);
-cljs.core.println.call(null, React.PropTypes.object);
 app.app = cljs.core.with_meta.call(null, app.app_layout, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "child-context-types", "child-context-types", 1863743773), {"muiTheme":React.PropTypes.object}, new cljs.core.Keyword(null, "get-child-context", "get-child-context", -867424947), function(this$) {
   return {"muiTheme":app.new_theme};
 }], null));

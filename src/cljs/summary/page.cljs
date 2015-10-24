@@ -83,16 +83,16 @@
      [List
       (map #(identity ^{:key (get % "id")}
                       [ListItem {
-                                  :primaryText (get % "name")
+                                 :primaryText (get % "name")
                                  :secondaryText (get % "description")
                                  :leftAvatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "octicon octicon-repo"}])}])
                                  :onTouchTap (fn [] (open-in-new-tab (get % "html_url")))
-                                  }])
+                                 }])
            @github-repos)
       ])
    [CardActions
     [FlatButton {:label "View Profile" :onClick #(open-in-new-tab "https://github.com/DaveWM")}]
-   ]])
+    ]])
 
 (def github-card
   (with-meta github-card-layout
@@ -124,6 +124,49 @@
   )
 
 
+(def codewars-loading (r/atom true))
+(def codewars-user (r/atom {}))
+(defn get-codewars-user [user]
+  "Gets the codewars user info. Have to go through a proxy because their api doesn't support CORS"
+  (GET (str "https://crossorigin.me/https://www.codewars.com/api/v1/users/" user)
+       {:params {:access_key "3KgumscM_CC4TZWyFm6m"}
+        :handler (fn [response] (do
+                                  (reset! codewars-user response)
+                                  (swap! codewars-loading not)))}))
+
+(defn codewars-card-layout []
+  [Card
+   [CardHeader {:title "Codewars"
+                :subtitle (str
+                           (get-in @codewars-user ["codeChallenges" "totalCompleted"])
+                           " Challenges Completed | Overall Score "
+                           (get-in @codewars-user ["ranks" "overall" "score"]))
+                :avatar "assets/codewars.png"}
+    ]
+   (if @codewars-loading
+     [CircularProgress {:mode "indeterminate" :class "centred card-loading-icon"}]
+     [List
+      (let [languages (sort-by #(get-in % [1 "score"]) > (get-in @codewars-user ["ranks" "languages"]))]
+        (map (fn [lang]
+               (let [[name info] lang]
+                 (println lang)
+                           (identity
+                            [ListItem {
+                                       :primaryText name
+                                       :secondaryText (str "Score " (get info "score"))
+                                       :leftIcon (r/as-element [FontIcon {:className (str "icon-" name)}])
+                                       }]
+                            )))
+             languages)
+        )])
+   [CardActions
+    [FlatButton {:onClick #(open-in-new-tab "http://www.codewars.com/users/DaveWM") :label "View Account"}]
+    ]
+   ])
+
+(def codewars-card
+  (with-meta codewars-card-layout
+    {:component-did-mount #(get-codewars-user "DaveWM")}))
 
 
 (defn page []
@@ -139,14 +182,25 @@
      ]
     ]
    [:div.row.padded.middle-xs
-    [:div.col-xs-4
-     [education-card]
+    [:div.col-xs-6
+     [:div.row.middle-xs
+      [:div.col-xs-12.padded
+       [education-card]
+       ]
+      [:div.col-xs-12.padded
+       [hobbies-card]
+       ]
+      ]
      ]
-    [:div.col-xs-4
-     [github-card]
-     ]
-    [:div.col-xs-4
-     [hobbies-card]
+    [:div.col-xs-6
+     [:div.row.middle-xs
+      [:div.col-xs-12.padded
+       [github-card]
+       ]
+      [:div.col-xs-12.padded
+       [codewars-card]
+       ]
+      ]
      ]
     ]])
 
