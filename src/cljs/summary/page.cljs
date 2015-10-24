@@ -171,17 +171,17 @@
 (defn page []
   [:div.row
    [:div.row.middle-xs
-    [:div.col-xs-2
-     [:div.row.padded.top-xs
+    [:div.col-xs-12.col-md-2
+     [:div.row.padded.top-xs.center-xs
       [contact-info]
       ]
      ]
-    [:div.col-xs-10
+    [:div.col-xs-12.col-md-10
      [summary-card]
      ]
     ]
    [:div.row.padded.middle-xs
-    [:div.col-xs-6
+    [:div.col-xs-12.col-md-6
      [:div.row.middle-xs
       [:div.col-xs-12.padded
        [education-card]
@@ -191,7 +191,7 @@
        ]
       ]
      ]
-    [:div.col-xs-6
+    [:div.col-xs-12.col-md-6
      [:div.row.middle-xs
       [:div.col-xs-12.padded
        [github-card]
