@@ -8,13 +8,38 @@
 (enable-console-print!)
 (export-material-ui-react-classes)
 
-(defn app []
+(defn app-layout []
   [:div {:class "app"}
    [AppBar {:title "David Martin - CV" :showMenuIconButton false}]
    [:div {:class "container-fluid"}
     [summary/page]
     ]])
 
+(def current-theme (.getMuiTheme ThemeManager LightRawTheme))
+(def ^:dynamic new-theme (.modifyRawThemePalette ThemeManager current-theme
+                                                 #js {
+                                                  :primary1Color (aget Colors "indigo500")
+                                                  :primary2Color (aget Colors "indigo700")
+                                                  :primary3Color (aget Colors "lightBlack")
+                                                  :accent1Color (aget Colors "blueA200")
+                                                  :accent2Color (aget Colors "indigo100")
+                                                      :accent3Color (aget Colors "blue500")
+                                                      :textColor (aget Colors "indigo900")
+                                                  }))
+(println new-theme)
+(println (aget Colors "pinkA200"))
+(println js/React.PropTypes.object)
+(def app
+  (with-meta app-layout
+    {
+     :child-context-types
+                     #js {:muiTheme js/React.PropTypes.object}
+
+       :get-child-context
+                     (fn [this]
+                       #js {:muiTheme new-theme})
+     }
+))
 
 (r/render-component 
  [app]

@@ -91,7 +91,7 @@
            @github-repos)
       ])
    [CardActions
-    [FlatButton {:label "View Profile" :onClick #(open-in-new-tab "https://github.com/DaveWM") :primary true}]
+    [FlatButton {:label "View Profile" :onClick #(open-in-new-tab "https://github.com/DaveWM")}]
    ]])
 
 (def github-card

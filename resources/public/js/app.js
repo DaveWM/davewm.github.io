@@ -50938,15 +50938,18 @@ summary.page.GridList = reagent.core.adapt_react_class.call(null, MaterialUI["Gr
 summary.page.GridTile = reagent.core.adapt_react_class.call(null, MaterialUI["GridTile"]);
 summary.page.List = reagent.core.adapt_react_class.call(null, MaterialUI["List"]);
 summary.page.ListItem = reagent.core.adapt_react_class.call(null, MaterialUI["ListItem"]);
+summary.page.ThemeManager = MaterialUI["Styles"]["ThemeManager"];
+summary.page.Colors = MaterialUI["Styles"]["Colors"];
+summary.page.LightRawTheme = MaterialUI["Styles"]["LightRawTheme"];
 summary.page.contact_info = function summary$page$contact_info() {
   var info_part = function(icon_type, icon_name, value_elem) {
     return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 151049309), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "row middle-xs around-xs"], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", -1983287057), [cljs.core.str("col-xs-2 "), 
-    cljs.core.str(icon_type)].join("")], null), icon_name], null), cljs.core.map_QMARK_.call(null, cljs.core.nth.call(null, value_elem, 1)) ? cljs.core.update_in.call(null, value_elem, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, new cljs.core.Keyword(null, "class", "class", -2030961996)], null), function(p1__12711_SHARP_) {
-      return [cljs.core.str(p1__12711_SHARP_), cljs.core.str(" col-xs-10")].join("");
+    cljs.core.str(icon_type)].join("")], null), icon_name], null), cljs.core.map_QMARK_.call(null, cljs.core.nth.call(null, value_elem, 1)) ? cljs.core.update_in.call(null, value_elem, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, new cljs.core.Keyword(null, "class", "class", -2030961996)], null), function(p1__7994_SHARP_) {
+      return [cljs.core.str(p1__7994_SHARP_), cljs.core.str(" col-xs-10")].join("");
     }) : function() {
-      var vec__12713 = value_elem;
-      var tag = cljs.core.nth.call(null, vec__12713, 0, null);
-      var content = cljs.core.nthnext.call(null, vec__12713, 1);
+      var vec__7996 = value_elem;
+      var tag = cljs.core.nth.call(null, vec__7996, 0, null);
+      var content = cljs.core.nthnext.call(null, vec__7996, 1);
       return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [tag, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "col-xs-10"], null), content], null);
     }()], null);
   };
@@ -50985,27 +50988,27 @@ summary.page.open_in_new_tab = function summary$page$open_in_new_tab(url) {
   return window.open(url);
 };
 summary.page.get_github_user_repos = function summary$page$get_github_user_repos(user) {
-  return ajax.core.GET.call(null, [cljs.core.str("https://api.github.com/users/"), cljs.core.str(user), cljs.core.str("/repos")].join(""), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "handler", "handler", -195596612), function(p1__12714_SHARP_) {
+  return ajax.core.GET.call(null, [cljs.core.str("https://api.github.com/users/"), cljs.core.str(user), cljs.core.str("/repos")].join(""), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "handler", "handler", -195596612), function(p1__7997_SHARP_) {
     cljs.core.swap_BANG_.call(null, summary.page.github_loading, cljs.core.dec);
     return cljs.core.reset_BANG_.call(null, summary.page.github_repos, cljs.core.take.call(null, 5, cljs.core.sort_by.call(null, function(r) {
       return new Date(cljs.core.get.call(null, r, "updated_at"));
     }, cljs.core._GT_, cljs.core.filter.call(null, function(r) {
       return cljs.core._EQ_.call(null, false, cljs.core.get.call(null, r, "fork"));
-    }, p1__12714_SHARP_))));
+    }, p1__7997_SHARP_))));
   }], null));
 };
 summary.page.github_card_layout = function summary$page$github_card_layout() {
   return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.Card, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardHeader, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "title", "title", 636505583), "GitHub", new cljs.core.Keyword(null, "subtitle", "subtitle", -1614524363), [cljs.core.str("@"), cljs.core.str(cljs.core.deref.call(null, summary.page.github_user).call(null, "login"))].join(""), 
   new cljs.core.Keyword(null, "avatar", "avatar", -1607499307), cljs.core.deref.call(null, summary.page.github_user).call(null, "avatar_url")], null)], null), cljs.core.deref.call(null, summary.page.github_loading) > 0 ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CircularProgress, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "class", "class", -2030961996), "centred card-loading-icon", new cljs.core.Keyword(null, "mode", 
-  "mode", 654403691), "indeterminate"], null)], null) : new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.List, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "subheader", "subheader", -1028810273), "My Recent Repos"], null), cljs.core.map.call(null, function(p1__12715_SHARP_) {
-    return cljs.core.identity.call(null, cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.ListItem, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "primaryText", "primaryText", 229382014), cljs.core.get.call(null, p1__12715_SHARP_, "name"), new cljs.core.Keyword(null, "secondaryText", "secondaryText", 824460892), cljs.core.get.call(null, p1__12715_SHARP_, "description"), new cljs.core.Keyword(null, "leftAvatar", 
+  "mode", 654403691), "indeterminate"], null)], null) : new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.List, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "subheader", "subheader", -1028810273), "My Recent Repos"], null), cljs.core.map.call(null, function(p1__7998_SHARP_) {
+    return cljs.core.identity.call(null, cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.ListItem, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "primaryText", "primaryText", 229382014), cljs.core.get.call(null, p1__7998_SHARP_, "name"), new cljs.core.Keyword(null, "secondaryText", "secondaryText", 824460892), cljs.core.get.call(null, p1__7998_SHARP_, "description"), new cljs.core.Keyword(null, "leftAvatar", 
     "leftAvatar", 431224504), reagent.core.as_element.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.Avatar, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "icon", "icon", 1679606541), reagent.core.as_element.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", 
     -1983287057), "octicon octicon-repo"], null)], null))], null)], null)), new cljs.core.Keyword(null, "onTouchTap", "onTouchTap", 1973229336), function() {
-      return summary.page.open_in_new_tab.call(null, cljs.core.get.call(null, p1__12715_SHARP_, "html_url"));
-    }], null)], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "key", "key", -1516042587), cljs.core.get.call(null, p1__12715_SHARP_, "id")], null)));
-  }, cljs.core.deref.call(null, summary.page.github_repos))], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardActions, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FlatButton, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "label", "label", 1718410804), "View Profile", new cljs.core.Keyword(null, "onClick", "onClick", -1991238530), function() {
+      return summary.page.open_in_new_tab.call(null, cljs.core.get.call(null, p1__7998_SHARP_, "html_url"));
+    }], null)], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "key", "key", -1516042587), cljs.core.get.call(null, p1__7998_SHARP_, "id")], null)));
+  }, cljs.core.deref.call(null, summary.page.github_repos))], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardActions, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FlatButton, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "label", "label", 1718410804), "View Profile", new cljs.core.Keyword(null, "onClick", "onClick", -1991238530), function() {
     return summary.page.open_in_new_tab.call(null, "https://github.com/DaveWM");
-  }, new cljs.core.Keyword(null, "primary", "primary", 817773892), true], null)], null)], null)], null);
+  }], null)], null)], null)], null);
 };
 summary.page.github_card = cljs.core.with_meta.call(null, summary.page.github_card_layout, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "component-did-mount", "component-did-mount", -1126910518), function() {
   summary.page.get_github_user.call(null, "DaveWM");
@@ -52730,8 +52733,19 @@ app.GridList = reagent.core.adapt_react_class.call(null, MaterialUI["GridList"])
 app.GridTile = reagent.core.adapt_react_class.call(null, MaterialUI["GridTile"]);
 app.List = reagent.core.adapt_react_class.call(null, MaterialUI["List"]);
 app.ListItem = reagent.core.adapt_react_class.call(null, MaterialUI["ListItem"]);
-app.app = function app$app() {
+app.ThemeManager = MaterialUI["Styles"]["ThemeManager"];
+app.Colors = MaterialUI["Styles"]["Colors"];
+app.LightRawTheme = MaterialUI["Styles"]["LightRawTheme"];
+app.app_layout = function app$app_layout() {
   return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "app"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [app.AppBar, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "title", "title", 636505583), "David Martin - CV", new cljs.core.Keyword(null, 
   "showMenuIconButton", "showMenuIconButton", -1404568682), false], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "container-fluid"], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.page], null)], null)], null);
 };
+app.current_theme = app.ThemeManager.getMuiTheme(app.LightRawTheme);
+app.new_theme = app.ThemeManager.modifyRawThemePalette(app.current_theme, {"primary1Color":app.Colors["indigo500"], "primary2Color":app.Colors["indigo700"], "primary3Color":app.Colors["lightBlack"], "accent1Color":app.Colors["blueA200"], "accent2Color":app.Colors["indigo100"], "accent3Color":app.Colors["blue500"], "textColor":app.Colors["indigo900"]});
+cljs.core.println.call(null, app.new_theme);
+cljs.core.println.call(null, app.Colors["pinkA200"]);
+cljs.core.println.call(null, React.PropTypes.object);
+app.app = cljs.core.with_meta.call(null, app.app_layout, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "child-context-types", "child-context-types", 1863743773), {"muiTheme":React.PropTypes.object}, new cljs.core.Keyword(null, "get-child-context", "get-child-context", -867424947), function(this$) {
+  return {"muiTheme":app.new_theme};
+}], null));
 reagent.core.render_component.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [app.app], null), document.body);
