@@ -69,7 +69,7 @@
                                         {:handler #(do
                                                      (swap! github-loading dec)
                                                      (->> %
-                                                          (filter (fn [r] (= false (get r "fork"))))
+                                                          (filter (fn [r] (not (get r "fork"))))
                                                           (sort-by (fn [r] (js/Date. (get r "updated_at"))) >)
                                                           (take 5)
                                                           (reset! github-repos)))}))
@@ -129,8 +129,7 @@
 (defn get-codewars-user [user]
   "Gets the codewars user info. Have to go through a proxy because their api doesn't support CORS"
   (GET (str "https://crossorigin.me/https://www.codewars.com/api/v1/users/" user)
-       {:params {:access_key "3KgumscM_CC4TZWyFm6m"}
-        :handler (fn [response] (do
+       {:handler (fn [response] (do
                                   (reset! codewars-user response)
                                   (swap! codewars-loading not)))}))
 
