@@ -102,9 +102,9 @@
 
 (defn hobbies-card []
   [Card
-   [CardHeader {:title "Hobbies" :padding 0
+   [CardHeader {:title "My Hobbies" :padding 0
                 :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "fa fa-thumbs-o-up"}])}])}]
-   [GridList {:cols 2 :cellHeight 180}
+   [GridList {:cols 2 :cellHeight 200}
     [GridTile {:cols 2 :title "Motorsport" :subtitle "I Race in the Track Attack MR2 Series"
                :rootClass "tile"
                :actionIcon (r/as-element
@@ -127,28 +127,27 @@
 
 
 (defn page []
-  [:div {:class "row top-xs"}
-   [:div {:class "col-xs-2"}
-    [:div.row.padded
-     [contact-info]
+  [:div.row
+   [:div.row.middle-xs
+    [:div.col-xs-2
+     [:div.row.padded.top-xs
+      [contact-info]
+      ]
+     ]
+    [:div.col-xs-10
+     [summary-card]
      ]
     ]
-   [:div {:class "col-xs-10"}
-    [:div.row.padded
-     [:div.col-xs-12
-      [summary-card]
-      ]
+   [:div.row.padded.middle-xs
+    [:div.col-xs-4
+     [education-card]
      ]
-    [:div.row.padded
-     [:div.col-xs-4
-      [education-card]
-      ]
-     [:div.col-xs-4
-      [github-card]
-      ]
-     [:div.col-xs-4
-      [hobbies-card]
-      ]
-     ]]])
+    [:div.col-xs-4
+     [github-card]
+     ]
+    [:div.col-xs-4
+     [hobbies-card]
+     ]
+    ]])
 
 

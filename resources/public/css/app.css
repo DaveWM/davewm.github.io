@@ -32,3 +32,8 @@ dt{
 tile > div{
     padding-left: 3px;
 }
+
+dd{
+    margin-top: 1px;
+   margin-bottom: 8px;
+}
