@@ -80,7 +80,7 @@
    [CardHeader {:title "GitHub" :subtitle (str "@" (@github-user "login")) :avatar (@github-user "avatar_url")}]
    (if (> @github-loading 0)
      [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}]
-     [List {:subheader "My Recent Repos"}
+     [List
       (map #(identity ^{:key (get % "id")}
                       [ListItem {
                                   :primaryText (get % "name")
@@ -100,19 +100,40 @@
                                (get-github-user-repos "DaveWM"))}))
 
 
+(defn hobbies-card []
+  [Card
+   [CardHeader {:title "Hobbies" :padding 0
+                :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "fa fa-thumbs-o-up"}])}])}]
+   [GridList {:cols 2 :cellHeight 180}
+    [GridTile {:cols 2 :title "Motorsport" :subtitle "I Race in the Track Attack MR2 Series"
+               :rootClass "tile"
+               :actionIcon (r/as-element
+                            [IconButton {:iconClassName "fa fa-youtube-play" :iconStyle {:color "#e62117"}
+                                         :onClick #(open-in-new-tab "https://www.youtube.com/user/dave12347589/videos")}])}
+     [:img {:src "assets/racing.jpg"}]
+     ]
+    [GridTile {:cols 1 :title "Reading" :subtitle "I'm a big fan of sci-fi books" :titlePosition "top"
+               :rootClass "tile"}
+     [:img {:src "assets/hyperion.jpg"}]
+     ]
+    [GridTile {:cols 1 :title "Snowboarding" :subtitle "I enjoy snowboarding during the winter" :rootClass "tile"}
+     [:img {:src "assets/snowboarding.jpg"}]
+     ]
+    ]
+   ]
+  )
+
+
 
 
 (defn page []
-  [:div {:class "row middle-xs"}
-   [:div {:class "col-xs-3"}
+  [:div {:class "row top-xs"}
+   [:div {:class "col-xs-2"}
     [:div.row.padded
      [contact-info]
      ]
-     [:div.row.padded
-      [github-card]
-      ]
     ]
-   [:div {:class "col-xs-9"}
+   [:div {:class "col-xs-10"}
     [:div.row.padded
      [:div.col-xs-12
       [summary-card]
@@ -121,6 +142,12 @@
     [:div.row.padded
      [:div.col-xs-4
       [education-card]
+      ]
+     [:div.col-xs-4
+      [github-card]
+      ]
+     [:div.col-xs-4
+      [hobbies-card]
       ]
      ]]])
 

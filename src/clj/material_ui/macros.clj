@@ -16,6 +16,7 @@
     FontIcon
     GridList
     GridTile
+    IconButton
     List
     ListItem])
 

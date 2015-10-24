@@ -28,3 +28,7 @@ dt{
     margin-bottom: 25px !important;
     margin-top: 25px !important;
 }
+
+tile > div{
+    padding-left: 3px;
+}
