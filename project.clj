@@ -12,7 +12,7 @@
                  [reagent "0.5.1" :exclusions [cljsjs/react]]
                  [cljs-ajax "0.3.14"]
                  ]
-  :clean-targets ^{:protect false} ["resources/public/js" "target"]
+  :clean-targets ^{:protect false} ["dist/js" "target"]
   :plugins [[cider/cider-nrepl "0.9.1"] [lein-cljsbuild "1.1.0"]]
   :cljsbuild {:builds
               [{
@@ -22,7 +22,7 @@
 
                 ;; Google Closure (CLS) options configuration
                 :compiler {;; CLS generated JS script filename
-                           :output-to "resources/public/js/app.js"
+                           :output-to "dist/js/app.js"
 
                            ;; minimal JS optimization directive
                            :optimizations :whitespace
