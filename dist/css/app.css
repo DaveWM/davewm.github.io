@@ -45,3 +45,12 @@ dd{
 .card-container > div{
     margin-top: 8px;
 }
+
+.appbar h2{
+    color: white;
+}
+
+.work-history-card{
+    margin-bottom: 12px;
+    padding: 0;
+}

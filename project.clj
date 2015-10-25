@@ -11,6 +11,7 @@
                  [org.clojure/clojurescript "1.7.145"]
                  [reagent "0.5.1" :exclusions [cljsjs/react]]
                  [cljs-ajax "0.3.14"]
+                 [cljsjs/react-router "0.13.2-0" :exclusions [cljsjs/react]]
                  ]
   :clean-targets ^{:protect false} ["dist/js" "target"]
   :plugins [[cider/cider-nrepl "0.9.1"] [lein-cljsbuild "1.1.0"]]
