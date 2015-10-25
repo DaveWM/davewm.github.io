@@ -58,6 +58,6 @@ dd{
     padding: 0;
 }
 
-.work-history-card li{
+.work-history-card li, .education-text > li{
     margin-top: 10px;
 }

@@ -47,9 +47,20 @@
    [CardMedia {:overlay (r/as-element [CardTitle {:title "Education"}])}
     [:img {:src "dist/assets/liv_uni_alt.jpg"}]]
    [CardText
-    [:ul
-     [:li "First Class BSc in Physics from the University of Liverpool"]
-     [:li "3 A's at A-Level in Physics, Chemistry and Maths"]
+    [:ul {:class "education-text"}
+     [:li "First Class BSc in Physics from the University of Liverpool"
+      [:ul
+       [:li "81% average in exams, lab work and coursework"]
+       [:li "3rd year project involves data mining/signal analysis using C++ and linux"]
+       [:li "Awarded Physics Department Attainment Scholarship, and Wynn Evans Memorial Prize (awarded to top sudent in BSc physics program)"]
+       ]
+      ]
+     [:li "3 A's at A-Level in Physics, Chemistry and Maths"
+      [:ul
+       [:li "Awarded Wynn Williams Memorial Prize for Astrophysics"]
+       ]
+      ]
+     [:li "11 GCSEs"]
      ]
     ]
    ])
@@ -91,7 +102,7 @@
            @github-repos)
       ])
    [CardActions
-    [FlatButton {:label "View Profile" :onClick #(open-in-new-tab "https://github.com/DaveWM")}]
+    [FlatButton {:label "View Profile" :linkButton true :href "https://github.com/DaveWM"}]
     ]])
 
 (def github-card
@@ -131,7 +142,7 @@
   (GET (str "https://crossorigin.me/https://www.codewars.com/api/v1/users/" user)
        {:handler (fn [response] (do
                                   (reset! codewars-user response)
-                                  (swap! codewars-loading not)))}))
+                                  (reset! codewars-loading false)))}))
 
 (defn codewars-card-layout []
   [Card
@@ -148,18 +159,17 @@
       (let [languages (sort-by #(get-in % [1 "score"]) > (get-in @codewars-user ["ranks" "languages"]))]
         (map (fn [lang]
                (let [[name info] lang]
-                 (println lang)
-                           (identity
-                            [ListItem {
-                                       :primaryText name
-                                       :secondaryText (str "Score " (get info "score"))
-                                       :leftIcon (r/as-element [FontIcon {:className (str "icon-" name)}])
-                                       }]
-                            )))
+                 (identity
+                  [ListItem {
+                             :primaryText name
+                             :secondaryText (str "Score " (get info "score"))
+                             :leftIcon (r/as-element [FontIcon {:className (str "icon-" name)}])
+                             }]
+                  )))
              languages)
         )])
    [CardActions
-    [FlatButton {:onClick #(open-in-new-tab "http://www.codewars.com/users/DaveWM") :label "View Account"}]
+    [FlatButton {:linkButton true :href "http://www.codewars.com/users/DaveWM" :label "View Account"}]
     ]
    ])
 
