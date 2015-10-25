@@ -19,7 +19,7 @@
     (identity [:div {:class "app"}
                [Paper {:zDepth 1 :class "appbar row padded middle-xs" :style {:background-color (aget Colors "indigo500")}}
                 [:h2.col-xs-8 "David Martin CV"]
-                [:div {:class "col-xs-4 end-xs"}
+                [:div {:class "col-xs-12 col-md-4 end-md center-xs"}
                  (map (fn [name]
                         (let [link (s/replace (s/lower-case name) #"\s" "-")
                               active (= route-url link)]

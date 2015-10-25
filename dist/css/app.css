@@ -49,6 +49,9 @@ dd{
 .appbar h2{
     color: white;
 }
+.appbar{
+    padding-left:25px;
+}
 
 .work-history-card{
     margin-bottom: 12px;
