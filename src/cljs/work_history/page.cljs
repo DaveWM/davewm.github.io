@@ -6,7 +6,7 @@
 (export-material-ui-react-classes)
 
 (defn history-card [name img-url date-from date-to website-url bullet-points]
-  [Card {:class "col-xs-6 col-xs-offset-3 work-history-card"}
+  [Card {:class "col-xs-12 col-md-6 col-md-offset-3 work-history-card"}
      [CardMedia
       {:overlay (r/as-element
                  [CardHeader {:title name :subtitle (str date-from " - " date-to)
@@ -35,7 +35,8 @@
                     "I was put in charge of re-writing a suite of acceptance tests written in specflow. I also set up a CI project to run these tests."
                     "I was involved with improving our teamcity build projects, with the aim of making them more consistent, and also faster."
                     "Was tasked with investigating docker and container management frameworks, with the aim of breaking our existing services down into microservices"
-                    "Created the " [:a {:href "https://github.com/sportingsolutions/ObjectDiffer"} "ObjectDiffer"] " and " [:a {:href "https://github.com/sportingsolutions/SS.GraylogApiHelpers"} "GraylogApiHelpers"] " open source projects."             ])
+                    [:p"Created the " [:a {:href "https://github.com/sportingsolutions/ObjectDiffer"} "ObjectDiffer"] " and " [:a {:href "https://github.com/sportingsolutions/SS.GraylogApiHelpers"} "GraylogApiHelpers"] " open source projects."]
+                    ])
      
      (history-card "Blinkbox" "/dist/assets/BB.png" "May 2014" "April 2015" "http://www.blinkbox.com/"
                    ["Working in the \"admin\" department, creating web apps for internal use - e.g. asset management, video file ingestion, user management, etc."
