@@ -17,14 +17,12 @@
                       (s/split #"/")
                       last)]
     (identity [:div {:class "app"}
-               [Paper {:zDepth 1 :class "appbar row padded middle-xs" :style {:background-color (aget Colors "indigo500")}}
-                [:h2.col-xs-8 "David Martin CV"]
-                [:div {:class "col-xs-12 col-md-4 end-md center-xs"}
+               [Paper {:zDepth 1 :class "appbar row middle-xs" :style {:background-color (aget Colors "indigo500")}}
+                [:h2.col-xs-12.col-md-8 "David Martin CV"]
+                [:div {:class "col-xs-12 col-md-4 end-md center-xs middle-xs padded"}
                  (map (fn [name]
                         (let [link (s/replace (s/lower-case name) #"\s" "-")
                               active (= route-url link)]
-                          (println name)
-                          (println link)
                           (identity
                            [Link {:to link :class "padded"}
                             [RaisedButton {:label name :primary active :secondary (not active)}]
@@ -35,7 +33,18 @@
                 ]
                [:div {:class "content"}
                 [RouteHandler child]
-                ]])))
+                ]
+               [Paper {:zDepth 1 :class "footer center-xs"
+                       :style {:background-color (aget Colors "indigo500")}}
+                [:p.col-xs-12 "I wrote this site with ClojureScript, Reagent, and Reagent-React-Router. It is hosted on github pages, all source code is on my github account"]
+                [:p.col-xs-12
+                [:a {:href "https://github.com/DaveWM/davewm.github.io"}
+                 [IconButton {:tooltip "Site Source Code" :iconClassName "fa fa-github"
+                              :iconStyle {:color "white"}}]
+                 ]
+                 ]
+                ]
+               ])))
 
 (def current-theme (.getMuiTheme ThemeManager LightRawTheme))
 (def new-theme (.modifyRawThemePalette ThemeManager current-theme

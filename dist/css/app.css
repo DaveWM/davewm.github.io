@@ -1,7 +1,6 @@
 body{
     margin: 0;
     background-color: #F5F5F5;
-    padding-bottom:12px;
 }
 
 .app{
@@ -51,6 +50,7 @@ dd{
 }
 .appbar{
     padding-left:25px;
+    margin-right: 0;
 }
 
 .work-history-card{
@@ -60,4 +60,13 @@ dd{
 
 .work-history-card li, .education-text > li{
     margin-top: 10px;
+}
+
+.footer{
+    padding-top:5px;
+    margin-top: 12px;
+    color: white;
+}
+.footer p{
+    margin: 0;
 }
