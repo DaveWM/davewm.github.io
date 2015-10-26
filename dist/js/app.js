@@ -54629,6 +54629,67 @@ work_history.page.page = function work_history$page$page() {
   cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "sup", "sup", -2039492346), "rd"], null), " line support"], null), "Writing SQL stored procedures, performing data migrations/fixes, and general database maintenance", "Frequent use of Entity Framework and LINQ, using LINQKit", "Maintaining and updating a web API written for WCF - this allowed consumers to perform the core functions of the winforms app.", "Worked on a web portal written in MVC 2 (involved use of jquery, ajax and css)", 
   "Worked on a prototype web app in MVC 4 (using technologies such as twitter bootstrap, angular js, and DevExpress MVC controls)"], null)), work_history.page.history_card.call(null, "Redwood Technologies", "/dist/assets/RW.png", "August 2011", "November 2011", "http://www.RedwoodTech.com", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["First and second line support", "Worked on the internal ticketing system (written in PHP/MySQL)"], null))], null);
 };
+goog.provide("summary.codewars");
+goog.require("cljs.core");
+goog.require("reagent.core");
+goog.require("ajax.core");
+summary.codewars.AppBar = reagent.core.adapt_react_class.call(null, MaterialUI["AppBar"]);
+summary.codewars.Avatar = reagent.core.adapt_react_class.call(null, MaterialUI["Avatar"]);
+summary.codewars.Card = reagent.core.adapt_react_class.call(null, MaterialUI["Card"]);
+summary.codewars.CardActions = reagent.core.adapt_react_class.call(null, MaterialUI["CardActions"]);
+summary.codewars.CardHeader = reagent.core.adapt_react_class.call(null, MaterialUI["CardHeader"]);
+summary.codewars.CardMedia = reagent.core.adapt_react_class.call(null, MaterialUI["CardMedia"]);
+summary.codewars.CardText = reagent.core.adapt_react_class.call(null, MaterialUI["CardText"]);
+summary.codewars.CardTitle = reagent.core.adapt_react_class.call(null, MaterialUI["CardTitle"]);
+summary.codewars.CircularProgress = reagent.core.adapt_react_class.call(null, MaterialUI["CircularProgress"]);
+summary.codewars.FlatButton = reagent.core.adapt_react_class.call(null, MaterialUI["FlatButton"]);
+summary.codewars.FontIcon = reagent.core.adapt_react_class.call(null, MaterialUI["FontIcon"]);
+summary.codewars.GridList = reagent.core.adapt_react_class.call(null, MaterialUI["GridList"]);
+summary.codewars.GridTile = reagent.core.adapt_react_class.call(null, MaterialUI["GridTile"]);
+summary.codewars.IconButton = reagent.core.adapt_react_class.call(null, MaterialUI["IconButton"]);
+summary.codewars.List = reagent.core.adapt_react_class.call(null, MaterialUI["List"]);
+summary.codewars.ListItem = reagent.core.adapt_react_class.call(null, MaterialUI["ListItem"]);
+summary.codewars.Paper = reagent.core.adapt_react_class.call(null, MaterialUI["Paper"]);
+summary.codewars.RaisedButton = reagent.core.adapt_react_class.call(null, MaterialUI["RaisedButton"]);
+summary.codewars.Tabs = reagent.core.adapt_react_class.call(null, MaterialUI["Tabs"]);
+summary.codewars.Tab = reagent.core.adapt_react_class.call(null, MaterialUI["Tab"]);
+summary.codewars.ThemeManager = MaterialUI["Styles"]["ThemeManager"];
+summary.codewars.Colors = MaterialUI["Styles"]["Colors"];
+summary.codewars.LightRawTheme = MaterialUI["Styles"]["LightRawTheme"];
+summary.codewars.open_in_new_tab = function summary$codewars$open_in_new_tab(url) {
+  return window.open(url);
+};
+summary.codewars.codewars_loading = reagent.core.atom.call(null, true);
+summary.codewars.codewars_user = reagent.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY);
+summary.codewars.get_codewars_user = function summary$codewars$get_codewars_user(user) {
+  return ajax.core.GET.call(null, [cljs.core.str("https://crossorigin.me/https://www.codewars.com/api/v1/users/"), cljs.core.str(user)].join(""), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "handler", "handler", -195596612), function(response) {
+    cljs.core.reset_BANG_.call(null, summary.codewars.codewars_user, response);
+    return cljs.core.reset_BANG_.call(null, summary.codewars.codewars_loading, false);
+  }], null));
+};
+summary.codewars.codewars_card_layout = function summary$codewars$codewars_card_layout() {
+  return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.Card, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.CardHeader, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "title", "title", 636505583), "Codewars", new cljs.core.Keyword(null, "subtitle", "subtitle", -1614524363), [cljs.core.str(cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.codewars.codewars_user), 
+  new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["codeChallenges", "totalCompleted"], null))), cljs.core.str(" Challenges Completed | Score "), cljs.core.str(cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.codewars.codewars_user), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ranks", "overall", "score"], null)))].join(""), new cljs.core.Keyword(null, "avatar", "avatar", -1607499307), "dist/assets/codewars.png"], 
+  null)], null), cljs.core.truth_(cljs.core.deref.call(null, summary.codewars.codewars_loading)) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.CircularProgress, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "mode", "mode", 654403691), "indeterminate", new cljs.core.Keyword(null, "class", "class", -2030961996), "centred card-loading-icon"], null)], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, 
+  [summary.codewars.List, function() {
+    var languages = cljs.core.sort_by.call(null, function(p1__8260_SHARP_) {
+      return cljs.core.get_in.call(null, p1__8260_SHARP_, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "score"], null));
+    }, cljs.core._GT_, cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.codewars.codewars_user), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ranks", "languages"], null)));
+    return cljs.core.map.call(null, function(languages) {
+      return function(lang) {
+        var vec__8262 = lang;
+        var name = cljs.core.nth.call(null, vec__8262, 0, null);
+        var info = cljs.core.nth.call(null, vec__8262, 1, null);
+        return cljs.core.identity.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.ListItem, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "primaryText", "primaryText", 229382014), name, new cljs.core.Keyword(null, "secondaryText", "secondaryText", 824460892), [cljs.core.str("Score "), cljs.core.str(cljs.core.get.call(null, info, "score"))].join(""), new cljs.core.Keyword(null, "leftIcon", "leftIcon", 119379033), 
+        reagent.core.as_element.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", -1983287057), [cljs.core.str("icon-"), cljs.core.str(name)].join("")], null)], null))], null)], null));
+      };
+    }(languages), languages);
+  }()], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.CardActions, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.FlatButton, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "linkButton", "linkButton", -999060964), true, new cljs.core.Keyword(null, "href", "href", -793805698), "http://www.codewars.com/users/DaveWM", new cljs.core.Keyword(null, "label", "label", 
+  1718410804), "View Account"], null)], null)], null)], null);
+};
+summary.codewars.card = cljs.core.with_meta.call(null, summary.codewars.codewars_card_layout, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "component-did-mount", "component-did-mount", -1126910518), function() {
+  return summary.codewars.get_codewars_user.call(null, "DaveWM");
+}], null));
 goog.provide("summary.github");
 goog.require("cljs.core");
 goog.require("reagent.core");
@@ -54700,6 +54761,7 @@ goog.require("reagent.core");
 goog.require("cljs.core");
 goog.require("ajax.core");
 goog.require("summary.github");
+goog.require("summary.codewars");
 summary.page.AppBar = reagent.core.adapt_react_class.call(null, MaterialUI["AppBar"]);
 summary.page.Avatar = reagent.core.adapt_react_class.call(null, MaterialUI["Avatar"]);
 summary.page.Card = reagent.core.adapt_react_class.call(null, MaterialUI["Card"]);
@@ -54726,12 +54788,12 @@ summary.page.LightRawTheme = MaterialUI["Styles"]["LightRawTheme"];
 summary.page.contact_info = function summary$page$contact_info() {
   var info_part = function(icon_type, icon_name, value_elem) {
     return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 151049309), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "row middle-xs around-xs"], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", -1983287057), [cljs.core.str("col-xs-2 "), 
-    cljs.core.str(icon_type)].join("")], null), icon_name], null), cljs.core.map_QMARK_.call(null, cljs.core.nth.call(null, value_elem, 1)) ? cljs.core.update_in.call(null, value_elem, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, new cljs.core.Keyword(null, "class", "class", -2030961996)], null), function(p1__8250_SHARP_) {
-      return [cljs.core.str(p1__8250_SHARP_), cljs.core.str(" col-xs-10")].join("");
+    cljs.core.str(icon_type)].join("")], null), icon_name], null), cljs.core.map_QMARK_.call(null, cljs.core.nth.call(null, value_elem, 1)) ? cljs.core.update_in.call(null, value_elem, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, new cljs.core.Keyword(null, "class", "class", -2030961996)], null), function(p1__8265_SHARP_) {
+      return [cljs.core.str(p1__8265_SHARP_), cljs.core.str(" col-xs-10")].join("");
     }) : function() {
-      var vec__8252 = value_elem;
-      var tag = cljs.core.nth.call(null, vec__8252, 0, null);
-      var content = cljs.core.nthnext.call(null, vec__8252, 1);
+      var vec__8267 = value_elem;
+      var tag = cljs.core.nth.call(null, vec__8267, 0, null);
+      var content = cljs.core.nthnext.call(null, vec__8267, 1);
       return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [tag, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "col-xs-10"], null), content], null);
     }()], null);
   };
@@ -54771,44 +54833,11 @@ summary.page.hobbies_card = function summary$page$hobbies_card() {
   1, [new cljs.core.Keyword(null, "src", "src", -1651076051), "dist/assets/hyperion.jpg"], null)], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.GridTile, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "cols", "cols", -1914801295), 1, new cljs.core.Keyword(null, "title", "title", 636505583), "Snowboarding", new cljs.core.Keyword(null, "subtitle", "subtitle", -1614524363), "I enjoy snowboarding during the winter", 
   new cljs.core.Keyword(null, "rootClass", "rootClass", 845667327), "tile"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "img", "img", 1442687358), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "src", "src", -1651076051), "dist/assets/snowboarding.jpg"], null)], null)], null)], null)], null);
 };
-summary.page.open_in_new_tab = function summary$page$open_in_new_tab(url) {
-  return window.open(url);
-};
-summary.page.codewars_loading = reagent.core.atom.call(null, true);
-summary.page.codewars_user = reagent.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY);
-summary.page.get_codewars_user = function summary$page$get_codewars_user(user) {
-  return ajax.core.GET.call(null, [cljs.core.str("https://crossorigin.me/https://www.codewars.com/api/v1/users/"), cljs.core.str(user)].join(""), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "handler", "handler", -195596612), function(response) {
-    cljs.core.reset_BANG_.call(null, summary.page.codewars_user, response);
-    return cljs.core.reset_BANG_.call(null, summary.page.codewars_loading, false);
-  }], null));
-};
-summary.page.codewars_card_layout = function summary$page$codewars_card_layout() {
-  return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.Card, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardHeader, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "title", "title", 636505583), "Codewars", new cljs.core.Keyword(null, "subtitle", "subtitle", -1614524363), [cljs.core.str(cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.page.codewars_user), new cljs.core.PersistentVector(null, 
-  2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["codeChallenges", "totalCompleted"], null))), cljs.core.str(" Challenges Completed | Score "), cljs.core.str(cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.page.codewars_user), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ranks", "overall", "score"], null)))].join(""), new cljs.core.Keyword(null, "avatar", "avatar", -1607499307), "dist/assets/codewars.png"], null)], null), cljs.core.truth_(cljs.core.deref.call(null, 
-  summary.page.codewars_loading)) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CircularProgress, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "mode", "mode", 654403691), "indeterminate", new cljs.core.Keyword(null, "class", "class", -2030961996), "centred card-loading-icon"], null)], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.List, function() {
-    var languages = cljs.core.sort_by.call(null, function(p1__8253_SHARP_) {
-      return cljs.core.get_in.call(null, p1__8253_SHARP_, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "score"], null));
-    }, cljs.core._GT_, cljs.core.get_in.call(null, cljs.core.deref.call(null, summary.page.codewars_user), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ranks", "languages"], null)));
-    return cljs.core.map.call(null, function(languages) {
-      return function(lang) {
-        var vec__8255 = lang;
-        var name = cljs.core.nth.call(null, vec__8255, 0, null);
-        var info = cljs.core.nth.call(null, vec__8255, 1, null);
-        return cljs.core.identity.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.ListItem, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "primaryText", "primaryText", 229382014), name, new cljs.core.Keyword(null, "secondaryText", "secondaryText", 824460892), [cljs.core.str("Score "), cljs.core.str(cljs.core.get.call(null, info, "score"))].join(""), new cljs.core.Keyword(null, "leftIcon", "leftIcon", 119379033), reagent.core.as_element.call(null, 
-        new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FontIcon, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "className", "className", -1983287057), [cljs.core.str("icon-"), cljs.core.str(name)].join("")], null)], null))], null)], null));
-      };
-    }(languages), languages);
-  }()], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.CardActions, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.FlatButton, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "linkButton", "linkButton", -999060964), true, new cljs.core.Keyword(null, "href", "href", -793805698), "http://www.codewars.com/users/DaveWM", new cljs.core.Keyword(null, "label", "label", 1718410804), 
-  "View Account"], null)], null)], null)], null);
-};
-summary.page.codewars_card = cljs.core.with_meta.call(null, summary.page.codewars_card_layout, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "component-did-mount", "component-did-mount", -1126910518), function() {
-  return summary.page.get_codewars_user.call(null, "DaveWM");
-}], null));
 summary.page.page = function summary$page$page() {
   return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.row.middle-xs", "div.row.middle-xs", 132651383), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.col-md-2.card-container", "div.col-xs-12.col-md-2.card-container", -1186005636), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.contact_info], null)], null), 
   new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.col-md-10.card-container", "div.col-xs-12.col-md-10.card-container", 1264150691), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.summary_card], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.col-md-6.card-container", "div.col-xs-12.col-md-6.card-container", 
   -1640067296), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.github.card], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.hobbies_card], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.col-xs-12.col-md-6.card-container", "div.col-xs-12.col-md-6.card-container", -1640067296), new cljs.core.PersistentVector(null, 1, 
-  5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.education_card], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.codewars_card], null)], null)], null);
+  5, cljs.core.PersistentVector.EMPTY_NODE, [summary.page.education_card], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [summary.codewars.card], null)], null)], null);
 };
 goog.provide("goog.userAgent.product");
 goog.require("goog.labs.userAgent.browser");
