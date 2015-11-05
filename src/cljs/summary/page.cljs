@@ -99,7 +99,7 @@
     [summary-card]
     ]
    [:div.col-xs-12.col-md-6.card-container
-    [github/card]
+    [github/card {:user "DaveWM"}]
     [hobbies-card]
     ]
    [:div.col-xs-12.col-md-6.card-container

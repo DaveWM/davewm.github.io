@@ -25,9 +25,9 @@
                                                           (reset! github-repos)))}))
 
 
-(defn github-card-layout []
+(defn github-card-layout [{:keys [user]}]
   [Card
-   [CardHeader {:title "GitHub" :subtitle (str "@" (@github-user "login")) :avatar (@github-user "avatar_url")}]
+   [CardHeader {:title "GitHub" :subtitle (str "@" user) :avatar (@github-user "avatar_url")}]
    (if (> @github-loading 0)
      [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}]
      [List
@@ -41,10 +41,11 @@
            @github-repos)
       ])
    [CardActions
-    [FlatButton {:label "View Profile" :linkButton true :href "https://github.com/DaveWM"}]
+    [FlatButton {:label "View Profile" :linkButton true :href (str "https://github.com/" user)}]
     ]])
 
 (def card
   (with-meta github-card-layout
-    {:component-did-mount #(do (get-github-user "DaveWM")
-                               (get-github-user-repos "DaveWM"))}))
+    {:component-did-mount #(let [user (-> % r/props :user)]
+                             (get-github-user user)
+                             (get-github-user-repos user))}))
