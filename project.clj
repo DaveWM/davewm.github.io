@@ -10,28 +10,42 @@
                  [cljs-ajax "0.3.14"]
                  [cljsjs/react-router "0.13.2-0" :exclusions [cljsjs/react]]
                  ]
-  :clean-targets ^{:protect false} ["dist/js" "target"]
+  :clean-targets ^{:protect false} ["dist/js" "target" "dist/app.js"]
   :plugins [[cider/cider-nrepl "0.9.1"]
             [lein-cljsbuild "1.1.0"]
             [lein-figwheel "0.4.1"]
             ]
   :cljsbuild {:builds
               [{
-                ;; CLJS source code path
+                :id "dev"
                 :source-paths ["src/cljs/"]
                 :source-map true
                 :figwheel true
                            
-                ;; Google Closure (CLS) options configuration
                 :compiler {;; CLS generated JS script filename
                            :output-to "dist/app.js"
 
                            :main "app"
 
-                           ;; minimal JS optimization directive
-                           ;:optimizations :none
-
-                           ;; generated JS code prettyfication
                            :pretty-print true
-                           }}]})
+                           }
+                }
+               {
+                :id "release"
+                :source-paths ["src/cljs/"]
+                :source-map true
+                           
+                :compiler {
+                           :output-to "dist/app.js"
+
+                           :main "app"
+
+                           :optimizations :advanced
+
+                           :pretty-print true
+
+                           :externs ["dist/material.js"]
+                           }
+                }
+               ]})
 
