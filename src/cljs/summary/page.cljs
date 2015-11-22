@@ -3,10 +3,8 @@
             [cljs.core :as core]
             [ajax.core :refer [GET POST]]
             [summary.github :as github]
-            [summary.codewars :as codewars])
-  (:require-macros [material-ui.macros :refer (export-material-ui-react-classes)]))
-
-(export-material-ui-react-classes)
+            [summary.codewars :as codewars]
+            [material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]))
 
 (defn contact-info []
   (let [info-part (fn [icon-type icon-name value-elem]

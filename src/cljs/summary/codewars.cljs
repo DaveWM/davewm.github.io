@@ -1,10 +1,9 @@
 (ns summary.codewars
   (:require [reagent.core :as r]
-            [ajax.core :refer [GET POST]])
-  (:require-macros [material-ui.macros :refer (export-material-ui-react-classes)]))
-
-(export-material-ui-react-classes)
-
+            [ajax.core :refer [GET POST]]
+            [material-ui.core :refer [Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]
+            ))
+  
 (defn open-in-new-tab [url]
   (.open js/window url))
 
