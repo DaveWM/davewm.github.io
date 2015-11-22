@@ -1,9 +1,8 @@
 (ns work-history.page
   (:require [reagent.core :as r]
-            [cljs.core :as core])
-  (:require-macros [material-ui.macros :refer (export-material-ui-react-classes)])
+            [cljs.core :as core]
+            [material-ui.core :refer [Card CardMedia CardHeader Avatar CardText CardActions FlatButton]])
   )
-(export-material-ui-react-classes)
 
 (defn history-card [name img-url date-from date-to website-url bullet-points]
   [Card {:class "col-xs-12 col-md-6 col-md-offset-3 work-history-card"}

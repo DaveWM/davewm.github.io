@@ -1,9 +1,7 @@
 (ns summary.github
-  (:require-macros [material-ui.macros :refer (export-material-ui-react-classes)])
   (:require [reagent.core :as r]
-            [ajax.core :refer [GET POST]]))
-
-(export-material-ui-react-classes)
+            [ajax.core :refer [GET POST]]
+            [material-ui.core :refer [Avatar Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]))
 
 (def github-loading (r/atom 2))
 (def github-user (r/atom {}))
