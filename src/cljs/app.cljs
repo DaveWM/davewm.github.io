@@ -5,12 +5,11 @@
             [goog.object]
             [summary.page :as summary]
             [work-history.page :as work-history]
-            [reagent-react-router.core :refer [Route DefaultRoute Link RouteHandler Redirect NotFound run-router defroutes]])
-  (:require-macros [material-ui.macros :refer (export-material-ui-react-classes)]
-                   [cljs.core :refer [this-as]])
+            [reagent-react-router.core :refer [Route DefaultRoute Link RouteHandler Redirect NotFound run-router defroutes]]
+             [material-ui.core :refer [RaisedButton Paper IconButton ThemeManager LightRawTheme Colors]])
+  (:require-macros [cljs.core :refer [this-as]])
   )
 (enable-console-print!)
-(export-material-ui-react-classes)
 
 (defn app-layout [child]
   (let [route-url (-> (.-URL js/document)
@@ -47,6 +46,7 @@
                ])))
 
 (def current-theme (.getMuiTheme ThemeManager LightRawTheme))
+
 (def new-theme (.modifyRawThemePalette ThemeManager current-theme
                                                  #js {
                                                       :primary1Color (aget Colors "indigo500")

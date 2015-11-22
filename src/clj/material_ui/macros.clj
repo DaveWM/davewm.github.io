@@ -30,13 +30,4 @@
 (defmacro export-material-ui-react-classes []
   `(do
      ~@(map material-ui-react-import material-tags)
-     (def ~'ThemeManager (-> js/MaterialUI
-                           (aget "Styles")
-                           (aget "ThemeManager")))
-     (def ~'Colors (-> js/MaterialUI
-                     (aget "Styles")
-                     (aget "Colors")))
-     (def ~'LightRawTheme (-> js/MaterialUI
-                     (aget "Styles")
-                     (aget "LightRawTheme")))
      ))
