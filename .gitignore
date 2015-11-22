@@ -59,3 +59,5 @@ tramp
 
 # cask packages
 .cask/
+
+/dist/out/figwheel
