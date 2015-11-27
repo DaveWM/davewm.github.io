@@ -78,7 +78,7 @@
               [:route "summary" summary/page]
               [:route "work-history" work-history/page]
               [:not-found not-found]
-              [:default-route summary/page]
+              [:redirect "/" "summary"]
               ])
   )
 
