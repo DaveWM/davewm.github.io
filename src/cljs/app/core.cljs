@@ -1,4 +1,4 @@
-(ns app
+(ns app.core
   (:require [reagent.core :as r]
             [clojure.string :as s]
             [cljs.core :as core]
@@ -82,5 +82,8 @@
               ])
   )
 
-(run-router js/document.body routes)
-
+(defn ^:export main []
+  (println "main")
+  (run-router js/document.body routes)
+)
+(main)
