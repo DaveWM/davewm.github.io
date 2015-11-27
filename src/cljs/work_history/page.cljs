@@ -25,7 +25,8 @@
    
   (defn page []
     [:div.row
-     (history-card "Sporting Solutions" "/dist/assets/SS.png" "April 2015" "Present" "http://www.sportingsolutions.com"
+     (history-card "Potato" "/dist/assets/P.png" "November 2015" "Present" "https://p.ota.to/" ["Front End Developer"])
+     (history-card "Sporting Solutions" "/dist/assets/SS.png" "April 2015" "November 2015" "http://www.sportingsolutions.com"
                    ["Working in a team responsible for receiving data from external feed providers, and passing it on to other teams via a message queue."
                     "The system was mainly composed of 2 large C# console apps, which communicated using rabbitMQ. There were also a number of smaller console apps, an internal MVC website used to manage the feed data, and an asp.net REST api for use by other teams."
                     "Used a variety of technologies to consume external feeds, such as TCP sockets, HTTP polling and IBM WebSphere"
