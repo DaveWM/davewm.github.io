@@ -17,7 +17,7 @@
                       last)]
     (identity [:div {:class "app"}
                [Paper {:zDepth 1 :class "appbar row middle-xs" :style {:background-color (aget Colors "indigo500")}}
-                [:h2.col-xs-12.col-md-8 "David Martin CV"]
+                [:h2.col-xs-12.col-md-8.center-xs.start-md "David Martin CV"]
                 [:div {:class "col-xs-12 col-md-4 end-md center-xs middle-xs padded"}
                  (map (fn [name]
                         (let [link (s/replace (s/lower-case name) #"\s" "-")
