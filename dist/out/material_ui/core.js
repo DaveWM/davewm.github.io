@@ -40,12 +40,6 @@ material_ui.core.RaisedButton = reagent.core.adapt_react_class.call(null,(Materi
 material_ui.core.Tabs = reagent.core.adapt_react_class.call(null,(MaterialUI["Tabs"]));
 
 material_ui.core.Tab = reagent.core.adapt_react_class.call(null,(MaterialUI["Tab"]));
-
-material_ui.core.ThemeManager = ((MaterialUI["Styles"])["ThemeManager"]);
-
-material_ui.core.Colors = ((MaterialUI["Styles"])["Colors"]);
-
-material_ui.core.LightRawTheme = ((MaterialUI["Styles"])["LightRawTheme"]);
 material_ui.core.Colors = ((MaterialUI["Styles"])["Colors"]);
 material_ui.core.LightRawTheme = ((MaterialUI["Styles"])["LightRawTheme"]);
 material_ui.core.ThemeManager = ((MaterialUI["Styles"])["ThemeManager"]);

@@ -3,6 +3,9 @@
             [ajax.core :refer [GET POST]]
             [material-ui.core :refer [Avatar Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]))
 
+(def css-transition-group
+  (r/adapt-react-class js/React.addons.CSSTransitionGroup))
+
 (def github-loading (r/atom 2))
 (def github-user (r/atom {}))
 (def github-repos (r/atom []))
@@ -29,6 +32,7 @@
    (if (> @github-loading 0)
      [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}]
      [List
+      [css-transition-group {:transition-name "grow" :transition-appear true}
       (map #(identity ^{:key (get % "id")}
                       [ListItem {
                                  :primaryText (get % "name")
@@ -37,7 +41,7 @@
                                  :onTouchTap (fn [] (open-in-new-tab (get % "html_url")))
                                  }])
            @github-repos)
-      ])
+      ]])
    [CardActions
     [FlatButton {:label "View Profile" :linkButton true :href (str "https://github.com/" user)}]
     ]])
@@ -45,5 +49,12 @@
 (def card
   (with-meta github-card-layout
     {:component-did-mount #(let [user (-> % r/props :user)]
-                             (get-github-user user)
-                             (get-github-user-repos user))}))
+                             (.setTimeout
+                              js/window
+                              (fn [x]
+                                (do
+                                 (get-github-user user)
+                                 (get-github-user-repos user)
+                                 )
+                                )
+                              1000))}))

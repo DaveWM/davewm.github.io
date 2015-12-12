@@ -6,6 +6,11 @@
             [summary.codewars :as codewars]
             [material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]))
 
+(def css-transition-group
+  (r/adapt-react-class js/React.addons.CSSTransitionGroup))
+(defn open-in-new-tab [url]
+  (.open js/window url))
+
 (defn contact-info []
   (let [info-part (fn [icon-type icon-name value-elem]
                     [:p {:class "row middle-xs around-xs"} [FontIcon {:className (str "col-xs-2 " icon-type)} icon-name] (if (map? (nth value-elem 1))
@@ -88,21 +93,42 @@
    ]
   )
 
+;each card has to be wrapped in a div, or the transitions don't work properly, don't know why
 (defn page []
   [:div.row.middle-xs
-   [:div.col-xs-12.col-md-2.card-container
-    [contact-info]
+   [css-transition-group {:transition-name "card"
+                          :transition-appear true
+                          :class "col-xs-12 col-md-2 card-container"}
+    [:div
+     [contact-info]
+     ]
     ]
-   [:div.col-xs-12.col-md-10.card-container
-    [summary-card]
+   [css-transition-group {:transition-name "card"
+                          :transition-appear true
+                          :class "col-xs-12 col-md-10 card-container"}
+    [:div
+     [summary-card]
+     ]
     ]
-   [:div.col-xs-12.col-md-6.card-container
-    [github/card {:user "DaveWM"}]
-    [hobbies-card]
+   [css-transition-group {:transition-name "card"
+                          :transition-appear true
+                          :class "col-xs-12 col-md-6"}
+    [:div.card-container
+     [github/card {:user "DaveWM"}]
+     ]
+    [:div.card-container
+     [hobbies-card]
+     ]
     ]
-   [:div.col-xs-12.col-md-6.card-container
-    [education-card]
-    [codewars/card]
+   [css-transition-group {:transition-name "card"
+                          :transition-appear true
+                          :class "col-xs-12 col-md-6"}
+    [:div.card-container
+     [education-card]
+     ]
+    [:div.card-container
+     [codewars/card]
+     ]
     ]
    ])
 

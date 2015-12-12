@@ -70,3 +70,39 @@ dd{
 .footer p{
     margin: 0;
 }
+
+.card-enter{
+    opacity: 0.2;
+    transform: translateX(-100%);    
+}
+.card-enter.card-enter-active{
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.4s ease;
+}
+.card-appear{
+    opacity: 0.2;
+    transform: translateX(-100%);    
+}
+.card-appear.card-appear-active{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s ease;
+}
+
+.grow-enter {
+    max-height: 0;
+    overflow: hidden;
+}
+.grow-enter.grow-enter-active {
+  max-height: 100px;
+  transition: max-height 800ms ease;
+}
+.grow-appear {
+    max-height: 0;
+    overflow: hidden;
+}
+.grow-appear.grow-appear-active {
+  max-height: 100px;
+  transition: max-height 800ms ease;
+}
