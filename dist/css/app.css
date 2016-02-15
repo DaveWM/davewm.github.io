@@ -106,3 +106,16 @@ dd{
   max-height: 100px;
   transition: max-height 800ms ease;
 }
+
+.fade-enter, .fade-appear {
+    opacity: 0;
+}
+.fade-enter.fade-enter-active, .fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: all 1500ms ease;
+}
+
+.repo-list, .lang-list {
+    height: 380px;
+    overflow-y: auto;
+}

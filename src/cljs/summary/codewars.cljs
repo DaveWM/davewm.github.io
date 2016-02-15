@@ -27,29 +27,29 @@
                            (get-in @codewars-user ["ranks" "overall" "score"]))
                 :avatar "dist/assets/codewars.png"}
     ]
-   (if @codewars-loading
-     [CircularProgress {:mode "indeterminate" :class "centred card-loading-icon"}]
-     [List
-      [css-transition-group {:transition-name "grow" :transition-appear true}
-       (let [languages (sort-by #(get-in % [1 "score"]) > (get-in @codewars-user ["ranks" "languages"]))]
-         (map (fn [lang]
-                (let [[name info] lang]
-                  (identity
-                   [ListItem {
-                              :primaryText name
-                              :secondaryText (str "Score " (get info "score"))
-                              :leftIcon (r/as-element [FontIcon {:className (str "icon-" name)}])
-                              }]
-                   )))
-              languages)
-         )]])
-   [CardActions
-    [FlatButton {:linkButton true :href "http://www.codewars.com/users/DaveWM" :label "View Account"}]
-    ]
-   ])
+   [:div {:class "lang-list"}
+    (if @codewars-loading
+      [CircularProgress {:mode "indeterminate" :class "centred card-loading-icon"}]
+      [List
+       [css-transition-group {:transition-name "fade" :transition-appear true}
+        (let [languages (sort-by #(get-in % [1 "score"]) > (get-in @codewars-user ["ranks" "languages"]))]
+          (map (fn [lang]
+                 (let [[name info] lang]
+                   (identity
+                    [ListItem {
+                               :key name
+                               :primaryText name
+                               :secondaryText (str "Score " (get info "score"))
+                               :leftIcon (r/as-element [FontIcon {:className (str "icon-" name)}])
+                               }]
+                    )))
+               languages)
+          )]])]
+    [CardActions
+     [FlatButton {:linkButton true :href "http://www.codewars.com/users/DaveWM" :label "View Account"}]
+     ]
+    ])
 
 (def card
   (with-meta codewars-card-layout
-    {:component-did-mount #(.setTimeout js/window
-                                        (fn [] (get-codewars-user "DaveWM"))
-                                        1000)}))
+    {:component-did-mount #(get-codewars-user "DaveWM")}))
