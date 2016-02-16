@@ -18,7 +18,7 @@
                                                                                                                            )])]         
     [Card
      [CardMedia {:overlay (r/as-element [CardTitle {:title "Contact Info"}])}
-      [:img {:src "dist/assets/me.jpg"}]
+      [:img {:src "assets/me.jpg"}]
       ]
      [CardText
       (info-part "material-icons" "email" [:a {:href "mailto:dwmartin41@gmail.com"} "dwmartin41@gmail.com"])
@@ -50,7 +50,7 @@
 (defn education-card []
   [Card
    [CardMedia {:overlay (r/as-element [CardTitle {:title "Education"}])}
-    [:img {:src "dist/assets/liv_uni_alt.jpg"}]]
+    [:img {:src "assets/liv_uni_alt.jpg"}]]
    [CardText
     [:ul {:class "education-text"}
      [:li "First Class BSc in Physics from the University of Liverpool"
@@ -80,14 +80,14 @@
                :actionIcon (r/as-element
                             [IconButton {:iconClassName "fa fa-youtube-play" :iconStyle {:color "#e62117"}
                                          :onClick #(open-in-new-tab "https://www.youtube.com/user/dave12347589/videos")}])}
-     [:img {:src "dist/assets/racing.jpg"}]
+     [:img {:src "assets/racing.jpg"}]
      ]
     [GridTile {:cols 1 :title "Reading" :subtitle "I'm a big fan of sci-fi books" :titlePosition "top"
                :rootClass "tile"}
-     [:img {:src "dist/assets/hyperion.jpg"}]
+     [:img {:src "assets/hyperion.jpg"}]
      ]
     [GridTile {:cols 1 :title "Snowboarding" :subtitle "I enjoy snowboarding during the winter" :rootClass "tile"}
-     [:img {:src "dist/assets/snowboarding.jpg"}]
+     [:img {:src "assets/snowboarding.jpg"}]
      ]
     ]
    ]

@@ -25,7 +25,7 @@
                            (get-in @codewars-user ["codeChallenges" "totalCompleted"])
                            " Challenges Completed | Score "
                            (get-in @codewars-user ["ranks" "overall" "score"]))
-                :avatar "dist/assets/codewars.png"}
+                :avatar "assets/codewars.png"}
     ]
    [:div {:class "lang-list"}
     (if @codewars-loading
