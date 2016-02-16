@@ -152,3 +152,11 @@ notifying browser that file changed:  /work_history/page.js
 [0mCompiling "dist/app.js" from ["src/cljs/"]...
 [32mSuccessfully compiled "dist/app.js" in 0.154 seconds.[0m
 notifying browser that file changed:  /work_history/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.176 seconds.[0m
+notifying browser that file changed:  /summary/github.js
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.15 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js

@@ -40,7 +40,7 @@
                           :primaryText (get % "name")
                           :secondaryText (get % "description")
                           :leftAvatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "octicon octicon-repo"}])}])
-                          :onTouchTap (fn [] (open-in-new-tab (get % "html_url")))
+                          :onClick (fn [] (open-in-new-tab (get % "html_url")))
                           }])
              @github-repos)
         ]])]
