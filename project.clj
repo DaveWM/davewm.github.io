@@ -29,6 +29,10 @@
                            :main "app.core"
 
                            :pretty-print true
+
+                           :foreign-libs [{:file "dist/material.js"
+                                           :file-min "dist/material.min.js"
+                                           :provides ["mui"]}]
                            }
                 }
                {
@@ -46,6 +50,9 @@
                            :pretty-print true
 
                            :externs ["dist/material.js"]
+                           :foreign-libs [{:file "dist/material.js"
+                                           :file-min "dist/material.min.js"
+                                           :provides ["mui"]}]
                            }
                 }
                ]})
