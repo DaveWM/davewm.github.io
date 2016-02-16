@@ -29,32 +29,29 @@
 (defn github-card-layout [{:keys [user]}]
   [Card
    [CardHeader {:title "GitHub" :subtitle (str "@" user) :avatar (@github-user "avatar_url")}]
-   (if (> @github-loading 0)
-     [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}]
-     [List
-      [css-transition-group {:transition-name "grow" :transition-appear true}
-      (map #(identity ^{:key (get % "id")}
-                      [ListItem {
-                                 :primaryText (get % "name")
-                                 :secondaryText (get % "description")
-                                 :leftAvatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "octicon octicon-repo"}])}])
-                                 :onTouchTap (fn [] (open-in-new-tab (get % "html_url")))
-                                 }])
-           @github-repos)
-      ]])
-   [CardActions
-    [FlatButton {:label "View Profile" :linkButton true :href (str "https://github.com/" user)}]
-    ]])
+   [:div {:class "repo-list"}
+    (if (> @github-loading 0)
+      [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}]
+      [List
+       [css-transition-group {:transition-name "fade" :transition-appear true}
+        (map #(identity
+               [ListItem {
+                          :key (get % "id")
+                          :primaryText (get % "name")
+                          :secondaryText (get % "description")
+                          :leftAvatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "octicon octicon-repo"}])}])
+                          :onTouchTap (fn [] (open-in-new-tab (get % "html_url")))
+                          }])
+             @github-repos)
+        ]])]
+    [CardActions
+     [FlatButton {:label "View Profile" :linkButton true :href (str "https://github.com/" user)}]
+     ]])
 
 (def card
   (with-meta github-card-layout
     {:component-did-mount #(let [user (-> % r/props :user)]
-                             (.setTimeout
-                              js/window
-                              (fn [x]
-                                (do
-                                 (get-github-user user)
-                                 (get-github-user-repos user)
-                                 )
-                                )
-                              1000))}))
+                             (do
+                               (get-github-user user)
+                               (get-github-user-repos user)
+                               ))}))

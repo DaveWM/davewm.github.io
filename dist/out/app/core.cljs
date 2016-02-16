@@ -23,7 +23,7 @@
                         (let [link (s/replace (s/lower-case name) #"\s" "-")
                               active (= route-url link)]
                           (identity
-                           [Link {:to link :class "padded"}
+                           [Link {:to link :class "padded" :key link}
                             [RaisedButton {:label name :primary active :secondary (not active)}]
                             ])))
                       ["Summary" "Work History"]

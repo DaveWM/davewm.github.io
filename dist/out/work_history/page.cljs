@@ -8,7 +8,7 @@
   (r/adapt-react-class js/React.addons.CSSTransitionGroup))
 
 (defn history-card [name img-url date-from date-to website-url bullet-points]
-  [:div
+  [:div {:key name}
    [Card {:class "col-xs-12 col-md-6 col-md-offset-3 work-history-card"}
     [CardMedia
      {:overlay (r/as-element
@@ -19,7 +19,7 @@
      ]
     [CardText
      [:ul
-      (map #(identity [:li %]) bullet-points)
+      (map-indexed #(identity [:li {:key %1} %2]) bullet-points)
       ]
      ]
     [CardActions

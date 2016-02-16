@@ -1,0 +1,154 @@
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.181 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /reagent_react_router/core.js
+notifying browser that file changed:  /cljsjs/react.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /material_ui/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.199 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.186 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.19 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.184 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.211 seconds.[0m
+notifying browser that file changed:  /summary/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.2 seconds.[0m
+notifying browser that file changed:  /summary/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/RouteHandlers at line 34 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.228 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.179 seconds.[0m
+notifying browser that file changed:  /app/core.js
+Figwheel: focusing on build-ids (build_needs_id_6929)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.167 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /reagent_react_router/core.js
+notifying browser that file changed:  /cljsjs/react.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /material_ui/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.196 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /reagent_react_router/core.js
+notifying browser that file changed:  /cljsjs/react.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /material_ui/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.173 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /reagent_react_router/core.js
+notifying browser that file changed:  /cljsjs/react.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /material_ui/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.184 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.191 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.177 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.164 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /summary/github.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.163 seconds.[0m
+notifying browser that file changed:  /summary/github.js
+sending changed CSS file: dist/css/app.css
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.153 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.152 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.14 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.164 seconds.[0m
+notifying browser that file changed:  /summary/github.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.145 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.163 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.147 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.148 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.152 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+ERROR: EOF while reading, starting at line 55 and column 5 on file /home/david/Documents/GitHub/davewm.github.io/src/cljs/summary/codewars.cljs, line 56, column 1
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.148 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.136 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+sending changed CSS file: dist/css/app.css
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.155 seconds.[0m
+notifying browser that file changed:  /summary/github.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.167 seconds.[0m
+notifying browser that file changed:  /summary/github.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.163 seconds.[0m
+notifying browser that file changed:  /summary/github.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.169 seconds.[0m
+notifying browser that file changed:  /work_history/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.154 seconds.[0m
+notifying browser that file changed:  /work_history/page.js
