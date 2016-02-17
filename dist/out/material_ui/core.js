@@ -1,6 +1,7 @@
 // Compiled by ClojureScript 1.7.145 {}
 goog.provide('material_ui.core');
 goog.require('cljs.core');
+goog.require('mui');
 material_ui.core.AppBar = reagent.core.adapt_react_class.call(null,(MaterialUI["AppBar"]));
 
 material_ui.core.Avatar = reagent.core.adapt_react_class.call(null,(MaterialUI["Avatar"]));
