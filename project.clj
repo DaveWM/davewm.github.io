@@ -50,8 +50,7 @@
                            :pretty-print true
 
                            :externs ["third-party/js/material.js"]
-                           :foreign-libs [{:file "third-party/js/material.js"
-                                           :file-min "third-party/js/material.min.js"
+                           :foreign-libs [{:file "third-party/js/material.min.js"
                                            :provides ["mui"]}]
                            }
                 }
