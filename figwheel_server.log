@@ -160,3 +160,292 @@ sending changed CSS file: dist/css/app.css
 [0mCompiling "dist/app.js" from ["src/cljs/"]...
 [32mSuccessfully compiled "dist/app.js" in 0.15 seconds.[0m
 notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/cljs/material_ui/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3144.invoke (compiler.cljc:1347)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1309)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1384)
+    cljs.closure$compile_dir.invoke (closure.clj:446)
+    cljs.closure$eval3588$fn__3589.invoke (closure.clj:486)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    cljs.closure$eval3601$fn__3602.invoke (closure.clj:500)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1683)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15799.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15845.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15796.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15599.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15608.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15602.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15620.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707$fn__15712.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707.invoke (auto.clj:178)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/cljs/material_ui/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3144.invoke (compiler.cljc:1347)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1309)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1384)
+    cljs.closure$compile_dir.invoke (closure.clj:446)
+    cljs.closure$eval3588$fn__3589.invoke (closure.clj:486)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    cljs.closure$eval3601$fn__3602.invoke (closure.clj:500)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1683)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15799.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15845.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15796.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15599.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15608.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15602.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15620.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707$fn__15712.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707.invoke (auto.clj:178)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/cljs/material_ui/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3144.invoke (compiler.cljc:1347)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1309)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1384)
+    cljs.closure$compile_dir.invoke (closure.clj:446)
+    cljs.closure$eval3588$fn__3589.invoke (closure.clj:486)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    cljs.closure$eval3601$fn__3602.invoke (closure.clj:500)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1683)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15799.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15845.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15796.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15599.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15608.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15602.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15620.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707$fn__15712.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707.invoke (auto.clj:178)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/cljs/material_ui/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3144.invoke (compiler.cljc:1347)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1309)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1384)
+    cljs.closure$compile_dir.invoke (closure.clj:446)
+    cljs.closure$eval3588$fn__3589.invoke (closure.clj:486)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    cljs.closure$eval3601$fn__3602.invoke (closure.clj:500)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1683)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15799.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15845.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15796.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15599.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15608.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15602.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15620.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707$fn__15712.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707.invoke (auto.clj:178)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Required namespace not provided for mui
+[32mSuccessfully compiled "dist/app.js" in 0.134 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Required namespace not provided for mui
+[32mSuccessfully compiled "dist/app.js" in 0.138 seconds.[0m
+[31mCompiling "dist/app.js" failed.[0m
+java.io.FileNotFoundException: /home/david/Documents/GitHub/davewm.github.io/src/cljs/material.min.js (No such file or directory)
+ at java.io.FileInputStream.open (FileInputStream.java:-2)
+    java.io.FileInputStream.<init> (FileInputStream.java:146)
+    clojure.java.io/fn (io.clj:229)
+    clojure.java.io$fn__9102$G__9095__9109.invoke (io.clj:69)
+    clojure.java.io/fn (io.clj:258)
+    clojure.java.io$fn__9102$G__9095__9109.invoke (io.clj:69)
+    clojure.java.io/fn (io.clj:165)
+    clojure.java.io$fn__9115$G__9091__9122.invoke (io.clj:69)
+    clojure.java.io$reader.doInvoke (io.clj:102)
+    clojure.lang.RestFn.invoke (RestFn.java:410)
+    cljs.closure$parse_js_ns.invoke (closure.clj:1844)
+    cljs.build.api$parse_js_ns.invoke (api.clj:92)
+    figwheel_sidecar.core$js_file__GT_namespaces.invoke (core.clj:304)
+    figwheel_sidecar.core$get_js_copies$fn__15270.invoke (core.clj:319)
+    clojure.core$keep$fn__6835.invoke (core.clj:7044)
+    clojure.lang.LazySeq.sval (LazySeq.java:40)
+    clojure.lang.LazySeq.seq (LazySeq.java:49)
+    clojure.lang.RT.seq (RT.java:507)
+    clojure.core/seq (core.clj:137)
+    figwheel_sidecar.core$make_copies.invoke (core.clj:325)
+    figwheel_sidecar.core$copy_changed_js.invoke (core.clj:333)
+    figwheel_sidecar.core$check_for_changes.invoke (core.clj:351)
+    figwheel_sidecar.auto_builder$check_changes.invoke (auto_builder.clj:26)
+    clojure.core$partial$fn__4527.invoke (core.clj:2493)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:66)
+    clojurescript_build.auto$error$fn__15608.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15602.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15620.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.188 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /reagent_react_router/core.js
+notifying browser that file changed:  /mui.js
+notifying browser that file changed:  /cljsjs/react.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /material_ui/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+clojure.lang.ExceptionInfo: Only :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/cljs/material_ui/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.analyzer$error.invoke (analyzer.cljc:562)
+    cljs.analyzer$error.invoke (analyzer.cljc:560)
+    cljs.analyzer$eval1845$fn__1847$fn__1852.invoke (analyzer.cljc:1924)
+    clojure.core.protocols/fn (protocols.clj:167)
+    clojure.core.protocols$fn__6478$G__6473__6487.invoke (protocols.clj:19)
+    clojure.core.protocols$seq_reduce.invoke (protocols.clj:31)
+    clojure.core.protocols/fn (protocols.clj:101)
+    clojure.core.protocols$fn__6452$G__6447__6465.invoke (protocols.clj:13)
+    clojure.core$reduce.invoke (core.clj:6519)
+    cljs.analyzer$eval1845$fn__1847.invoke (analyzer.cljc:1921)
+    clojure.lang.MultiFn.invoke (MultiFn.java:251)
+    cljs.analyzer$analyze_seq_STAR_.invoke (analyzer.cljc:2402)
+    cljs.analyzer$analyze_seq_STAR__wrap.invoke (analyzer.cljc:2407)
+    cljs.analyzer$analyze_seq.invoke (analyzer.cljc:2428)
+    cljs.analyzer$analyze_form.invoke (analyzer.cljc:2537)
+    cljs.analyzer$analyze_STAR_.invoke (analyzer.cljc:2584)
+    cljs.analyzer$analyze.invoke (analyzer.cljc:2600)
+    cljs.analyzer$parse_ns$fn__2118$fn__2119.invoke (analyzer.cljc:2713)
+    cljs.analyzer$parse_ns$fn__2118.invoke (analyzer.cljc:2713)
+    cljs.analyzer$parse_ns.invoke (analyzer.cljc:2694)
+    cljs.analyzer$parse_ns.invoke (analyzer.cljc:2685)
+    cljs.compiler$compile_root$fn__3168.invoke (compiler.cljc:1377)
+    clojure.core$map$fn__4553.invoke (core.clj:2624)
+    clojure.lang.LazySeq.sval (LazySeq.java:40)
+    clojure.lang.LazySeq.seq (LazySeq.java:49)
+    clojure.lang.RT.seq (RT.java:507)
+    clojure.core/seq (core.clj:137)
+    clojure.core$map$fn__4553.invoke (core.clj:2616)
+    clojure.lang.LazySeq.sval (LazySeq.java:40)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: List already refers to: cljs.core/List being replaced by: material-ui.core/List at line 6 src/cljs/material_ui/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.212 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /material_ui/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: List already refers to: cljs.core/List being replaced by: material-ui.core/List at line 6 src/cljs/material_ui/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.19 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /material_ui/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.172 seconds.[0m
+notifying browser that file changed:  /summary/github.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.16 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /summary/github.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.182 seconds.[0m
+[31mCompiling "dist/app.js" failed.[0m
+java.io.FileNotFoundException: /home/david/Documents/GitHub/davewm.github.io/dist/material.js (No such file or directory)
+ at java.io.FileInputStream.open (FileInputStream.java:-2)
+    java.io.FileInputStream.<init> (FileInputStream.java:146)
+    clojure.java.io/fn (io.clj:229)
+    clojure.java.io$fn__9102$G__9095__9109.invoke (io.clj:69)
+    clojure.java.io/fn (io.clj:258)
+    clojure.java.io$fn__9102$G__9095__9109.invoke (io.clj:69)
+    clojure.java.io/fn (io.clj:165)
+    clojure.java.io$fn__9115$G__9091__9122.invoke (io.clj:69)
+    clojure.java.io$reader.doInvoke (io.clj:102)
+    clojure.lang.RestFn.invoke (RestFn.java:410)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.core$apply.invoke (core.clj:632)
+    clojure.core$slurp.doInvoke (core.clj:6653)
+    clojure.lang.RestFn.invoke (RestFn.java:410)
+    figwheel_sidecar.core$make_copies.invoke (core.clj:326)
+    figwheel_sidecar.core$copy_changed_js.invoke (core.clj:333)
+    figwheel_sidecar.core$check_for_changes.invoke (core.clj:351)
+    figwheel_sidecar.auto_builder$check_changes.invoke (auto_builder.clj:26)
+    clojure.core$partial$fn__4527.invoke (core.clj:2493)
+    clojurescript_build.auto$after$fn__15605.invoke (auto.clj:66)
+    clojurescript_build.auto$error$fn__15608.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15602.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15620.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707$fn__15712.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15706$state_machine__9543__auto____15707.invoke (auto.clj:178)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.185 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.175 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.176 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.149 seconds.[0m
+notifying browser that file changed:  /summary/codewars.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.143 seconds.[0m
+notifying browser that file changed:  /work_history/page.js
