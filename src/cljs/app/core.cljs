@@ -84,6 +84,6 @@
 
 (defn ^:export main []
   (println "main")
-  (run-router js/document.body routes)
+  (run-router (.getElementById js/document "react-container") routes)
 )
 (main)
