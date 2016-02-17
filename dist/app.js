@@ -14263,7 +14263,7 @@ function Fs() {
   var a = G(["main"], 0), b = U.l($a(), db, !1), a = wh(a, b);
   Ua.j ? Ua.j(a) : Ua.call(null, a);
   r(Wa) && (a = $a(), Ua.j ? Ua.j("\n") : Ua.call(null, "\n"), F.h(a, ab));
-  return ReactRouter.run(Es, Ze.h(Bm, document.body));
+  return ReactRouter.run(Es, Ze.h(Bm, document.getElementById("react-container")));
 }
 da("app.core.main", Fs);
 Fs();
