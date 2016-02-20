@@ -133,3 +133,15 @@ dd{
     height: 380px;
     overflow-y: auto;
 }
+
+.technologies{
+   text-align: center;
+   svg {
+     g{
+       cursor:pointer;
+     }
+     image {
+       transform: translate(25%,25%) scale(0.5);
+     }
+   }
+}

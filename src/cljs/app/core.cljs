@@ -5,6 +5,7 @@
             [goog.object]
             [summary.page :as summary]
             [work-history.page :as work-history]
+            [technologies.page :as technologies]
             [reagent-react-router.core :refer [Route DefaultRoute Link RouteHandler Redirect NotFound run-router defroutes]]
              [material-ui.core :refer [RaisedButton Paper IconButton ThemeManager LightRawTheme Colors]])
   (:require-macros [cljs.core :refer [this-as]])
@@ -26,7 +27,7 @@
                            [Link {:to link :class "padded" :key link}
                             [RaisedButton {:label name :primary active :secondary (not active)}]
                             ])))
-                      ["Summary" "Work History"]
+                      ["Summary" "Work History" "Technologies"]
                       )
                  ]
                 ]
@@ -77,6 +78,7 @@
   (defroutes [:route "/" app
               [:route "summary" summary/page]
               [:route "work-history" work-history/page]
+              [:route "technologies" technologies/page]
               [:not-found not-found]
               [:redirect "/" "summary"]
               ])
