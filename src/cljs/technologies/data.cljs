@@ -22,7 +22,7 @@
    {:name "Redux" :experience 0.5 :type :FE :img "https://react-redux.herokuapp.com/logo.jpg"}
    {:name "D3" :experience 0.5 :type :FE :img "https://portalvhds06sf0zbnycwtg.blob.core.windows.net/uploads/D3.js_product_img_789405957_d4.png"}
    {:name "RxJS" :experience 0.5 :type :FE :img "https://avatars3.githubusercontent.com/u/984368?v=3&s=400"}
-   {:name "Backbone" :experience 0.5 :type :FE :img "http://adrianmejia.com/images/bakbonejs.png"}
+   {:name "Backbone" :experience 0.5 :type :FE :img "http://www.codeforest.net/wp-content/uploads/2013/05/backbone.png"}
 
    {:name "ASP.NET MVC" :experience 3 :type :BE :img "http://www.asphostdirectory.com/Images/lg_aspmvc5.png"}
    {:name "ASP.NET Web API" :experience 2 :type :BE :img "http://eduardopires.net.br/wp-content/uploads/2013/07/ASP.Net-Web-API.png"}
@@ -49,7 +49,7 @@
    {:name "Firebase" :experience 0.5 :type :DataStore :img "https://mimming.com/presos/internet-of-nodebots/img/firebase-icon.png"}
 
    {:name "Karma" :experience 2 :type :Testing :img "https://avatars1.githubusercontent.com/u/3284117?v=3&s=400"}
-   {:name "Protractor" :experience 1.5 :type :Testing :img "http://coreboarder.com/blog /wp-content/uploads/2015/07/protractor-logo.png"}
+   {:name "Protractor" :experience 1.5 :type :Testing :img "http://coreboarder.com/blog/wp-content/uploads/2015/07/protractor-logo.png"}
    {:name "NUnit" :experience 1.5 :type :Testing :img "https://www.jetbrains.com/teamcity/whatsnew/screenshots/91/logo-nunit.png"}
    {:name "Specflow" :experience 1 :type :Testing :img "http://techtalk.github.io/SpecFlow/specflow.png"}
    {:name "NSubstitute" :experience 1 :type :Testing :img "http://nsubstitute.github.io/images/nsubstitute-100x100.png"}

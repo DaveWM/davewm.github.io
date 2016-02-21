@@ -6,17 +6,12 @@
 (enable-console-print!)
 
 (def chart-size 100)
-(def type-colour-map {"language" "green"
-                      "FE" "blue"
-                      "BE" "gray"
-                      "tool" "red"
-                      "DataStore" "purple"
-                      "Testing" "pink"
-                      "Cloud" "cyan"
-                      "Misc" "orange"})
 
 (defn render-chart [el]
   (let [d3 (.-d3 js/window)
+        colours (-> d3
+                    (.-scale)
+                    (.category20))
         chart-data (->> data/data
                         (map #(assoc % :value (or (:experience %) 0.1)))
                         (assoc {} :children)
@@ -41,7 +36,7 @@
       (-> node
           (.append "circle")
           (.attr "r" #(.-r %))
-          (.attr "fill" #(get type-colour-map (.-type %))))
+          (.attr "fill" #(colours (.-type %))))
       (-> node
           (.append "image")
           (.attr "width" #(* 2 (.-r %)))
@@ -49,11 +44,10 @@
           (.attr "x" #(* -2 (.-r %)))
           (.attr "y" #(* -2 (.-r %)))
           (.attr "xlink:href" #(.-img %))))))
-       
+
 
 (defn page-layout []
-  [:div.technologies
-   ])
+  [:div.technologies])
 
 (def page
   (with-meta page-layout
