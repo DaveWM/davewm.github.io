@@ -9,6 +9,7 @@
                  [reagent "0.5.1" :exclusions [cljsjs/react]]
                  [cljs-ajax "0.3.14"]
                  [cljsjs/react-router "0.13.2-0" :exclusions [cljsjs/react]]
+                 [cljsjs/d3 "3.5.7-1"]
                  ]
   :clean-targets ^{:protect false} ["dist/js" "target" "dist/app.js"]
   :plugins [[cider/cider-nrepl "0.9.1"]
