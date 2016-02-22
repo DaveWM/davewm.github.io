@@ -1,6 +1,5 @@
 (ns technologies.chart
-  (:require [cljsjs.d3]
-            [material-ui.core :refer [Paper]]
+  (:require [cljsjs.d3]            
             [reagent.core :as r]))
 
 
@@ -36,10 +35,10 @@
           (.attr "fill" #(colours (.-type %))))
       (-> node
           (.append "image")
-          (.attr "width" #(* 2 (.-r %)))
-          (.attr "height" #(* 2 (.-r %)))
-          (.attr "x" #(* -2 (.-r %)))
-          (.attr "y" #(* -2 (.-r %)))
+          (.attr "width" #(.-r %))
+          (.attr "height" #(.-r %))
+          (.attr "x" #(* -1 (/ (.-r %) 2)))
+          (.attr "y" #(* -1 (/ (.-r %) 2)))
           (.attr "xlink:href" #(.-img %)))
       (-> node
           (.append "title")
@@ -47,7 +46,7 @@
 
 
 (defn page-layout []
-  [:div.technologies])
+  [:div.chart])
 
 (def chart
   (with-meta page-layout
