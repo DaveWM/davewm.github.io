@@ -43,7 +43,10 @@
           (.attr "height" #(* 2 (.-r %)))
           (.attr "x" #(* -2 (.-r %)))
           (.attr "y" #(* -2 (.-r %)))
-          (.attr "xlink:href" #(.-img %))))))
+          (.attr "xlink:href" #(.-img %)))
+      (-> node
+          (.append "title")
+          (.text #(.-name %))))))
 
 
 (defn page-layout []
