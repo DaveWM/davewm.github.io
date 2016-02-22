@@ -134,14 +134,14 @@ dd{
     overflow-y: auto;
 }
 
-.technologies{
-   text-align: center;
-   svg {
-     g{
-       cursor:pointer;
-     }
-     image {
-       transform: translate(25%,25%) scale(0.5);
-     }
-   }
+.tech-chart{
+    padding: 15px 20px;
+    p {
+	margin: 0;
+    }
+    svg{
+	g{
+	    cursor:pointer;
+	}
+    }
 }
