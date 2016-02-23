@@ -2,7 +2,7 @@
   (:require [reagent.core :as r]
             [technologies.data :as data]
             [technologies.chart :refer [chart]]
-            [material-ui.core :refer [Avatar Card CardHeader CardText Checkbox FontIcon ListDivider  Paper Slider]])
+            [material-ui.core :refer [Avatar Card CardHeader CardText Checkbox FontIcon ListDivider  Paper Slider TextField]])
   (:require-macros [cljs.core :refer [this-as]]))
 (enable-console-print!)
 
@@ -17,13 +17,18 @@
                                                  (map #(identity {% true}))
                                                  (apply merge)
                                                  ))
-                              (assoc :experience 0))))
+                              (assoc :experience 0)
+                              (assoc :name nil))))
 
 (defn filter-data [filters data]
   (print filters)
   (->> data
        (filter #((:type %) (:types filters)))
-       (filter #(apply > (map :experience [% filters])))))
+       (filter #(apply > (map :experience [% filters])))
+       (remove #(some->> (:name filters)
+                         (.toLowerCase)
+                         (.indexOf (.toLowerCase (:name %)))
+                         (> 0)))))
 
 (defn type-checkbox [type]
   [Checkbox {:key type
@@ -55,6 +60,12 @@
                 :min 0
                 :max (apply max (map :experience data/data))
                 :onChange (fn [event value] (print value) (swap! filters-atom #(assoc % :experience value)))}]
+       [ListDivider {:style {:margin-top 20
+                             :margin-bottom 20}}]
+       [TextField {:floatingLabelText "Name"
+                   :onChange (fn [event] (swap! filters-atom #(assoc % :name (-> event
+                                                                                 (.-target)
+                                                                                 (.-value)))))}]
        ]
       ]]]
    [css-transition-group {:transition-name "card"
@@ -63,4 +74,9 @@
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
       [:p "The size of each bubble represents the experience I have with that technology."]
-      [chart {:chart-size chart-size :technologies (filter-data @filters-atom data/data)}]]]]])
+      (let [filtered-data (filter-data @filters-atom data/data)]
+        (if ((comp not zero? count) filtered-data)
+          [chart {:chart-size chart-size :technologies filtered-data}]
+          [:div {:style {:text-align "center"}}
+           [:h3 "No Technologies match the filters :("]
+           ]))]]]])
