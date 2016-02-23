@@ -11,6 +11,7 @@
     CardMedia
     CardText
     CardTitle
+    Checkbox
     CircularProgress
     FlatButton
     FontIcon
