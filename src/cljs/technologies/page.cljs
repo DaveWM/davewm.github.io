@@ -10,6 +10,9 @@
   (r/adapt-react-class js/React.addons.CSSTransitionGroup))
 (def chart-size 100)
 
+(def technologies (r/atom data/data))
+(js/setTimeout #(reset! technologies (take 10 data/data))
+               2000)
 (defn page []
   [:div.row.middle-xs
    [css-transition-group {:transition-name "card"
@@ -18,4 +21,4 @@
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
       [:p "The size of each bubble represents the experience I have with that technology."]
-      [chart {:chart-size chart-size :technologies data/data}]]]]])
+      [chart {:chart-size chart-size :technologies @technologies}]]]]])

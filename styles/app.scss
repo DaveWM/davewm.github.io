@@ -142,6 +142,10 @@ dd{
     svg{
 	g{
 	    cursor:pointer;
+	    transition: 10s ease all;
+	    & image, & circle {
+		transition: 1.5s ease all;
+	    }
 	}
     }
 }

@@ -2,13 +2,14 @@
   (:require [cljsjs.d3]            
             [reagent.core :as r]))
 
+(def d3 (.-d3 js/window))
+(def colours (-> d3
+                    (.-scale)
+                    (.category20)))
 
 (defn render-chart [chart-size el data]
-  (let [d3 (.-d3 js/window)
-        colours (-> d3
-                    (.-scale)
-                    (.category20))
-        chart-data (->> data
+  (print "rendering" (count data))
+  (let [chart-data (->> data
                         (map #(assoc % :value (or (:experience %) 0.1)))
                         (assoc {} :children)
                         (clj->js))
@@ -20,36 +21,55 @@
                     (.padding 1.5))
         node     (-> d3
                      (.select el)
-                     (.append "svg")
                      (.attr "viewBox" (str "0 0 " chart-size " " chart-size))
                      (.selectAll "g")
                      (.data (-> (.nodes layout chart-data)
-                                (.filter #(not (.-children %)))))
+                                (.filter #(not (.-children %))))
+                            #(.-name %)))
+        newGroup (-> node
                      (.enter)
                      (.append "g")
-                     (.attr "transform" #(str "translate(" (.-x %) "," (.-y %) ")")))]
+                     (.attr "transform" (str "translate(" (/ chart-size 2) "," (/ chart-size 2) ")")))]
     (do
+      (-> newGroup
+          (.append "circle"))
+      (-> newGroup
+          (.append "title"))
+      (-> newGroup
+          (.append "image"))
       (-> node
-          (.append "circle")
+          (.exit)
+          (.remove))
+      (-> node
+          (.transition)
+          (.duration 1000)
+          (.attr "transform" #(str "translate(" (.-x %) "," (.-y %) ")")))
+      (-> node
+          (.select "circle")
+          (.transition)
           (.attr "r" #(.-r %))
           (.attr "fill" #(colours (.-type %))))
       (-> node
-          (.append "image")
+          (.select "image")
           (.attr "width" #(.-r %))
           (.attr "height" #(.-r %))
           (.attr "x" #(* -1 (/ (.-r %) 2)))
           (.attr "y" #(* -1 (/ (.-r %) 2)))
           (.attr "xlink:href" #(.-img %)))
       (-> node
-          (.append "title")
+          (.select "title")
           (.text #(.-name %))))))
 
 
 (defn page-layout []
-  [:div.chart])
+  [:svg])
+
+(def component-update-func
+  #(let [chart-size (-> % r/props :chart-size)
+          technologies (-> % r/props :technologies)]
+      (render-chart chart-size (r/dom-node %) technologies)))
 
 (def chart
-  (with-meta page-layout
-    {:component-did-mount #(let [chart-size (-> % r/props :chart-size)
-                                 technologies (-> % r/props :technologies)]
-                             (render-chart chart-size (r/dom-node %) technologies))}))
+    (with-meta page-layout
+      {:component-did-mount component-update-func
+       :component-did-update component-update-func}))
