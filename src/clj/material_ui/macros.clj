@@ -13,6 +13,7 @@
     CardTitle
     Checkbox
     CircularProgress
+    ListDivider
     FlatButton
     FontIcon
     GridList
@@ -22,6 +23,7 @@
     ListItem
     Paper
     RaisedButton
+    Slider
     Tabs
     Tab])
 

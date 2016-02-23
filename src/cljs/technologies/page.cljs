@@ -2,7 +2,7 @@
   (:require [reagent.core :as r]
             [technologies.data :as data]
             [technologies.chart :refer [chart]]
-            [material-ui.core :refer [Avatar Card CardHeader CardText Checkbox FontIcon Paper]])
+            [material-ui.core :refer [Avatar Card CardHeader CardText Checkbox FontIcon ListDivider  Paper Slider]])
   (:require-macros [cljs.core :refer [this-as]]))
 (enable-console-print!)
 
@@ -16,12 +16,14 @@
                               (assoc :types (->> types
                                                  (map #(identity {% true}))
                                                  (apply merge)
-                                                 )))))
+                                                 ))
+                              (assoc :experience 0))))
 
 (defn filter-data [filters data]
   (print filters)
   (->> data
-       (filter #((:type %) (:types filters)))))
+       (filter #((:type %) (:types filters)))
+       (filter #(apply > (map :experience [% filters])))))
 
 (defn type-checkbox [type]
   [Checkbox {:key type
@@ -41,7 +43,15 @@
      [Card
       [CardHeader {:title "Filters" :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "material-icons"} "filter_list"])}])}]
       [CardText
+       [:p "Types"]
        (map type-checkbox types)
+       [ListDivider {:style {:margin-top 20
+                             :margin-bottom 20}}]
+       [:p "Experience"]
+       [Slider {:defaultValue 0
+                :min 0
+                :max (apply max (map :experience data/data))
+                :onChange (fn [event value] (print value) (swap! filters-atom #(assoc % :experience value)))}]
        ]
       ]]]
    [css-transition-group {:transition-name "card"
