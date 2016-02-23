@@ -41,8 +41,11 @@
                           :class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
      [Card
-      [CardHeader {:title "Filters" :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "material-icons"} "filter_list"])}])}]
-      [CardText
+      [CardHeader {:title "Filters"
+                   :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "material-icons"} "filter_list"])}])
+                   :actAsExpander true
+                   :showExpandableButton true}]
+      [CardText {:expandable true}
        [:p "Types"]
        (map type-checkbox types)
        [ListDivider {:style {:margin-top 20
