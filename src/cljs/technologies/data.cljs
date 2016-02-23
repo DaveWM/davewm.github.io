@@ -28,8 +28,8 @@
    {:name "ASP.NET Web API" :experience 2 :type :BE :img "http://eduardopires.net.br/wp-content/uploads/2013/07/ASP.Net-Web-API.png"}
    {:name "WCF" :experience 3 :type :BE :img "http://gallery.binarybits.net/Images/Blog/Programming/Mixed%20WCF%20Service/WCF_logo.png"}
    {:name "Entity Framework" :experience 2.5 :type :BE :img "http://blog.falafel.com/wp-content/uploads/2014/07/entity_image.png"}
-   {:name "Django" :experience 0.5 :type :BE :img "http://www.unixstickers.com/image/cache/data/stickers/django/django_badge.sh-600x600.png"}
-   {:name "Express" :experience 0.75 :type :BE :img "https://www.djangoproject.com/s/img/logos/django-logo-negative.png"}
+   {:name "Express" :experience 0.75 :type :BE :img "http://mean.io/system/assets/img/logos/express.png"}
+   {:name "Django" :experience 0.5 :type :BE :img "https://www.djangoproject.com/s/img/logos/django-logo-negative.png"}
    {:name "Socket.io" :experience 0.3 :type :BE :img "https://www.pubnub.com/blog/wp-content/uploads/2014/07/SOCKETIOICON.gif"}
    {:name "SignalR" :experience 0.75 :type :BE :img "https://avatars3.githubusercontent.com/u/931666?v=3&s=200"}
 
