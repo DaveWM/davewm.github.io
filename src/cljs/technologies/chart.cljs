@@ -8,7 +8,6 @@
                     (.category20)))
 
 (defn render-chart [chart-size el data]
-  (print "rendering" (count data))
   (let [chart-data (->> data
                         (map #(assoc % :value (or (:experience %) 0.1)))
                         (assoc {} :children)
@@ -46,7 +45,6 @@
           (.attr "transform" #(str "translate(" (.-x %) "," (.-y %) ")")))
       (-> node
           (.select "circle")
-          (.transition)
           (.attr "r" #(.-r %))
           (.attr "fill" #(colours (.-type %))))
       (-> node
