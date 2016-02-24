@@ -18,7 +18,11 @@ material_ui.core.CardText = reagent.core.adapt_react_class.call(null,(MaterialUI
 
 material_ui.core.CardTitle = reagent.core.adapt_react_class.call(null,(MaterialUI["CardTitle"]));
 
+material_ui.core.Checkbox = reagent.core.adapt_react_class.call(null,(MaterialUI["Checkbox"]));
+
 material_ui.core.CircularProgress = reagent.core.adapt_react_class.call(null,(MaterialUI["CircularProgress"]));
+
+material_ui.core.ListDivider = reagent.core.adapt_react_class.call(null,(MaterialUI["ListDivider"]));
 
 material_ui.core.FlatButton = reagent.core.adapt_react_class.call(null,(MaterialUI["FlatButton"]));
 
@@ -38,9 +42,13 @@ material_ui.core.Paper = reagent.core.adapt_react_class.call(null,(MaterialUI["P
 
 material_ui.core.RaisedButton = reagent.core.adapt_react_class.call(null,(MaterialUI["RaisedButton"]));
 
+material_ui.core.Slider = reagent.core.adapt_react_class.call(null,(MaterialUI["Slider"]));
+
 material_ui.core.Tabs = reagent.core.adapt_react_class.call(null,(MaterialUI["Tabs"]));
 
 material_ui.core.Tab = reagent.core.adapt_react_class.call(null,(MaterialUI["Tab"]));
+
+material_ui.core.TextField = reagent.core.adapt_react_class.call(null,(MaterialUI["TextField"]));
 material_ui.core.Colors = ((MaterialUI["Styles"])["Colors"]);
 material_ui.core.LightRawTheme = ((MaterialUI["Styles"])["LightRawTheme"]);
 material_ui.core.ThemeManager = ((MaterialUI["Styles"])["ThemeManager"]);

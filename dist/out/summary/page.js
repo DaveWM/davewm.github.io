@@ -13,11 +13,11 @@ return window.open(url);
 });
 summary.page.contact_info = (function summary$page$contact_info(){
 var info_part = (function (icon_type,icon_name,value_elem){
-return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),"row middle-xs around-xs"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [material_ui.core.FontIcon,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),[cljs.core.str("col-xs-2 "),cljs.core.str(icon_type)].join('')], null),icon_name], null),((cljs.core.map_QMARK_.call(null,cljs.core.nth.call(null,value_elem,(1))))?cljs.core.update_in.call(null,value_elem,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(1),new cljs.core.Keyword(null,"class","class",-2030961996)], null),(function (p1__20255_SHARP_){
-return [cljs.core.str(p1__20255_SHARP_),cljs.core.str(" col-xs-10")].join('');
-})):(function (){var vec__20257 = value_elem;
-var tag = cljs.core.nth.call(null,vec__20257,(0),null);
-var content = cljs.core.nthnext.call(null,vec__20257,(1));
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),"row middle-xs around-xs"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [material_ui.core.FontIcon,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),[cljs.core.str("col-xs-2 "),cljs.core.str(icon_type)].join('')], null),icon_name], null),((cljs.core.map_QMARK_.call(null,cljs.core.nth.call(null,value_elem,(1))))?cljs.core.update_in.call(null,value_elem,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(1),new cljs.core.Keyword(null,"class","class",-2030961996)], null),(function (p1__22591_SHARP_){
+return [cljs.core.str(p1__22591_SHARP_),cljs.core.str(" col-xs-10")].join('');
+})):(function (){var vec__22593 = value_elem;
+var tag = cljs.core.nth.call(null,vec__22593,(0),null);
+var content = cljs.core.nthnext.call(null,vec__22593,(1));
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [tag,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),"col-xs-10"], null),content], null);
 })())], null);
 });

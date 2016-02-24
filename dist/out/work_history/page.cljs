@@ -8,8 +8,8 @@
   (r/adapt-react-class js/React.addons.CSSTransitionGroup))
 
 (defn history-card [name img-url date-from date-to website-url bullet-points]
-  [:div {:key name}
-   [Card {:class "col-xs-12 col-md-6 col-md-offset-3 work-history-card"}
+  [:div.col-xs-12.col-md-6.col-md-offset-3  {:key name}
+   [Card {:class "work-history-card"}
     [CardMedia
      {:overlay (r/as-element
                 [CardHeader {:title name :subtitle (str date-from " - " date-to)
@@ -28,7 +28,7 @@
     ]])
    
 (defn page []
-  [:div.row
+  [:div.row.middle-xs
    [css-transition-group {:transition-name "card" :transition-appear true}
     (history-card "Potato" "assets/P.png" "November 2015" "Present" "https://p.ota.to/" ["Front End Developer"])
     (history-card "Sporting Solutions" "/assets/SS.png" "April 2015" "November 2015" "http://www.sportingsolutions.com"

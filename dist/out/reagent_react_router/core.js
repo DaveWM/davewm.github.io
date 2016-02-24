@@ -8,14 +8,14 @@ reagent_react_router.core.Link = reagent.core.adapt_react_class.call(null,ReactR
 reagent_react_router.core.RouteHandler = reagent.core.adapt_react_class.call(null,ReactRouter.RouteHandler);
 reagent_react_router.core.Route = (function reagent_react_router$core$Route(var_args){
 var args__17409__auto__ = [];
-var len__17402__auto___26606 = arguments.length;
-var i__17403__auto___26607 = (0);
+var len__17402__auto___22521 = arguments.length;
+var i__17403__auto___22522 = (0);
 while(true){
-if((i__17403__auto___26607 < len__17402__auto___26606)){
-args__17409__auto__.push((arguments[i__17403__auto___26607]));
+if((i__17403__auto___22522 < len__17402__auto___22521)){
+args__17409__auto__.push((arguments[i__17403__auto___22522]));
 
-var G__26608 = (i__17403__auto___26607 + (1));
-i__17403__auto___26607 = G__26608;
+var G__22523 = (i__17403__auto___22522 + (1));
+i__17403__auto___22522 = G__22523;
 continue;
 } else {
 }
@@ -28,28 +28,28 @@ return reagent_react_router.core.Route.cljs$core$IFn$_invoke$arity$variadic((arg
 
 reagent_react_router.core.Route.cljs$core$IFn$_invoke$arity$variadic = (function (params,args){
 var route = React.createFactory(ReactRouter.Route);
-return cljs.core.apply.call(null,route,(function (){var obj26605 = {"name":new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(params),"path":new cljs.core.Keyword(null,"path","path",-188191168).cljs$core$IFn$_invoke$arity$1(params),"handler":reagent.core.reactify_component.call(null,new cljs.core.Keyword(null,"handler","handler",-195596612).cljs$core$IFn$_invoke$arity$1(params))};
-return obj26605;
+return cljs.core.apply.call(null,route,(function (){var obj22520 = {"name":new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(params),"path":new cljs.core.Keyword(null,"path","path",-188191168).cljs$core$IFn$_invoke$arity$1(params),"handler":reagent.core.reactify_component.call(null,new cljs.core.Keyword(null,"handler","handler",-195596612).cljs$core$IFn$_invoke$arity$1(params))};
+return obj22520;
 })(),args);
 });
 
 reagent_react_router.core.Route.cljs$lang$maxFixedArity = (1);
 
-reagent_react_router.core.Route.cljs$lang$applyTo = (function (seq26602){
-var G__26603 = cljs.core.first.call(null,seq26602);
-var seq26602__$1 = cljs.core.next.call(null,seq26602);
-return reagent_react_router.core.Route.cljs$core$IFn$_invoke$arity$variadic(G__26603,seq26602__$1);
+reagent_react_router.core.Route.cljs$lang$applyTo = (function (seq22517){
+var G__22518 = cljs.core.first.call(null,seq22517);
+var seq22517__$1 = cljs.core.next.call(null,seq22517);
+return reagent_react_router.core.Route.cljs$core$IFn$_invoke$arity$variadic(G__22518,seq22517__$1);
 });
 reagent_react_router.core.DefaultRoute = (function reagent_react_router$core$DefaultRoute(var_args){
 var args__17409__auto__ = [];
-var len__17402__auto___26613 = arguments.length;
-var i__17403__auto___26614 = (0);
+var len__17402__auto___22528 = arguments.length;
+var i__17403__auto___22529 = (0);
 while(true){
-if((i__17403__auto___26614 < len__17402__auto___26613)){
-args__17409__auto__.push((arguments[i__17403__auto___26614]));
+if((i__17403__auto___22529 < len__17402__auto___22528)){
+args__17409__auto__.push((arguments[i__17403__auto___22529]));
 
-var G__26615 = (i__17403__auto___26614 + (1));
-i__17403__auto___26614 = G__26615;
+var G__22530 = (i__17403__auto___22529 + (1));
+i__17403__auto___22529 = G__22530;
 continue;
 } else {
 }
@@ -62,28 +62,28 @@ return reagent_react_router.core.DefaultRoute.cljs$core$IFn$_invoke$arity$variad
 
 reagent_react_router.core.DefaultRoute.cljs$core$IFn$_invoke$arity$variadic = (function (params,args){
 var default$ = React.createFactory(ReactRouter.DefaultRoute);
-return cljs.core.apply.call(null,default$,(function (){var obj26612 = {"handler":reagent.core.reactify_component.call(null,new cljs.core.Keyword(null,"handler","handler",-195596612).cljs$core$IFn$_invoke$arity$1(params))};
-return obj26612;
+return cljs.core.apply.call(null,default$,(function (){var obj22527 = {"handler":reagent.core.reactify_component.call(null,new cljs.core.Keyword(null,"handler","handler",-195596612).cljs$core$IFn$_invoke$arity$1(params))};
+return obj22527;
 })(),args);
 });
 
 reagent_react_router.core.DefaultRoute.cljs$lang$maxFixedArity = (1);
 
-reagent_react_router.core.DefaultRoute.cljs$lang$applyTo = (function (seq26609){
-var G__26610 = cljs.core.first.call(null,seq26609);
-var seq26609__$1 = cljs.core.next.call(null,seq26609);
-return reagent_react_router.core.DefaultRoute.cljs$core$IFn$_invoke$arity$variadic(G__26610,seq26609__$1);
+reagent_react_router.core.DefaultRoute.cljs$lang$applyTo = (function (seq22524){
+var G__22525 = cljs.core.first.call(null,seq22524);
+var seq22524__$1 = cljs.core.next.call(null,seq22524);
+return reagent_react_router.core.DefaultRoute.cljs$core$IFn$_invoke$arity$variadic(G__22525,seq22524__$1);
 });
 reagent_react_router.core.NotFound = (function reagent_react_router$core$NotFound(var_args){
 var args__17409__auto__ = [];
-var len__17402__auto___26620 = arguments.length;
-var i__17403__auto___26621 = (0);
+var len__17402__auto___22535 = arguments.length;
+var i__17403__auto___22536 = (0);
 while(true){
-if((i__17403__auto___26621 < len__17402__auto___26620)){
-args__17409__auto__.push((arguments[i__17403__auto___26621]));
+if((i__17403__auto___22536 < len__17402__auto___22535)){
+args__17409__auto__.push((arguments[i__17403__auto___22536]));
 
-var G__26622 = (i__17403__auto___26621 + (1));
-i__17403__auto___26621 = G__26622;
+var G__22537 = (i__17403__auto___22536 + (1));
+i__17403__auto___22536 = G__22537;
 continue;
 } else {
 }
@@ -96,28 +96,28 @@ return reagent_react_router.core.NotFound.cljs$core$IFn$_invoke$arity$variadic((
 
 reagent_react_router.core.NotFound.cljs$core$IFn$_invoke$arity$variadic = (function (params,args){
 var default$ = React.createFactory(ReactRouter.NotFoundRoute);
-return cljs.core.apply.call(null,default$,(function (){var obj26619 = {"handler":reagent.core.reactify_component.call(null,new cljs.core.Keyword(null,"handler","handler",-195596612).cljs$core$IFn$_invoke$arity$1(params))};
-return obj26619;
+return cljs.core.apply.call(null,default$,(function (){var obj22534 = {"handler":reagent.core.reactify_component.call(null,new cljs.core.Keyword(null,"handler","handler",-195596612).cljs$core$IFn$_invoke$arity$1(params))};
+return obj22534;
 })(),args);
 });
 
 reagent_react_router.core.NotFound.cljs$lang$maxFixedArity = (1);
 
-reagent_react_router.core.NotFound.cljs$lang$applyTo = (function (seq26616){
-var G__26617 = cljs.core.first.call(null,seq26616);
-var seq26616__$1 = cljs.core.next.call(null,seq26616);
-return reagent_react_router.core.NotFound.cljs$core$IFn$_invoke$arity$variadic(G__26617,seq26616__$1);
+reagent_react_router.core.NotFound.cljs$lang$applyTo = (function (seq22531){
+var G__22532 = cljs.core.first.call(null,seq22531);
+var seq22531__$1 = cljs.core.next.call(null,seq22531);
+return reagent_react_router.core.NotFound.cljs$core$IFn$_invoke$arity$variadic(G__22532,seq22531__$1);
 });
 reagent_react_router.core.Redirect = (function reagent_react_router$core$Redirect(var_args){
 var args__17409__auto__ = [];
-var len__17402__auto___26627 = arguments.length;
-var i__17403__auto___26628 = (0);
+var len__17402__auto___22542 = arguments.length;
+var i__17403__auto___22543 = (0);
 while(true){
-if((i__17403__auto___26628 < len__17402__auto___26627)){
-args__17409__auto__.push((arguments[i__17403__auto___26628]));
+if((i__17403__auto___22543 < len__17402__auto___22542)){
+args__17409__auto__.push((arguments[i__17403__auto___22543]));
 
-var G__26629 = (i__17403__auto___26628 + (1));
-i__17403__auto___26628 = G__26629;
+var G__22544 = (i__17403__auto___22543 + (1));
+i__17403__auto___22543 = G__22544;
 continue;
 } else {
 }
@@ -130,26 +130,26 @@ return reagent_react_router.core.Redirect.cljs$core$IFn$_invoke$arity$variadic((
 
 reagent_react_router.core.Redirect.cljs$core$IFn$_invoke$arity$variadic = (function (params,args){
 var default$ = React.createFactory(ReactRouter.Redirect);
-return cljs.core.apply.call(null,default$,(function (){var obj26626 = {"from":new cljs.core.Keyword(null,"from","from",1815293044).cljs$core$IFn$_invoke$arity$1(params),"to":new cljs.core.Keyword(null,"to","to",192099007).cljs$core$IFn$_invoke$arity$1(params)};
-return obj26626;
+return cljs.core.apply.call(null,default$,(function (){var obj22541 = {"from":new cljs.core.Keyword(null,"from","from",1815293044).cljs$core$IFn$_invoke$arity$1(params),"to":new cljs.core.Keyword(null,"to","to",192099007).cljs$core$IFn$_invoke$arity$1(params)};
+return obj22541;
 })(),args);
 });
 
 reagent_react_router.core.Redirect.cljs$lang$maxFixedArity = (1);
 
-reagent_react_router.core.Redirect.cljs$lang$applyTo = (function (seq26623){
-var G__26624 = cljs.core.first.call(null,seq26623);
-var seq26623__$1 = cljs.core.next.call(null,seq26623);
-return reagent_react_router.core.Redirect.cljs$core$IFn$_invoke$arity$variadic(G__26624,seq26623__$1);
+reagent_react_router.core.Redirect.cljs$lang$applyTo = (function (seq22538){
+var G__22539 = cljs.core.first.call(null,seq22538);
+var seq22538__$1 = cljs.core.next.call(null,seq22538);
+return reagent_react_router.core.Redirect.cljs$core$IFn$_invoke$arity$variadic(G__22539,seq22538__$1);
 });
 reagent_react_router.core.defroutes = (function reagent_react_router$core$defroutes(r){
 return clojure.walk.postwalk.call(null,(function (node){
 if(cljs.core.vector_QMARK_.call(null,node)){
-var vec__26631 = node;
-var t = cljs.core.nth.call(null,vec__26631,(0),null);
-var p = cljs.core.nth.call(null,vec__26631,(1),null);
-var h = cljs.core.nth.call(null,vec__26631,(2),null);
-var f = cljs.core.nthnext.call(null,vec__26631,(3));
+var vec__22546 = node;
+var t = cljs.core.nth.call(null,vec__22546,(0),null);
+var p = cljs.core.nth.call(null,vec__22546,(1),null);
+var h = cljs.core.nth.call(null,vec__22546,(2),null);
+var f = cljs.core.nthnext.call(null,vec__22546,(3));
 var route_name = ((cljs.core._EQ_.call(null,p,"/"))?"app":p);
 if(cljs.core._EQ_.call(null,t,new cljs.core.Keyword(null,"route","route",329891309))){
 return cljs.core.apply.call(null,reagent_react_router.core.Route,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"name","name",1843675177),route_name,new cljs.core.Keyword(null,"path","path",-188191168),p,new cljs.core.Keyword(null,"handler","handler",-195596612),h], null),f);
@@ -174,8 +174,8 @@ return node;
 }),r);
 });
 reagent_react_router.core.router_cbk = (function reagent_react_router$core$router_cbk(elem,handler,state){
-return React.render(React.createElement(handler,(function (){var obj26635 = {"params":state.params};
-return obj26635;
+return React.render(React.createElement(handler,(function (){var obj22550 = {"params":state.params};
+return obj22550;
 })()),elem);
 });
 reagent_react_router.core.run_router = (function reagent_react_router$core$run_router(elem,routes){
