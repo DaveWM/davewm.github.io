@@ -3,11 +3,8 @@
             [reagent.core :as r]))
 
 (def d3 (.-d3 js/window))
-(def colours (-> d3
-                    (.-scale)
-                    (.category20)))
 
-(defn render-chart [chart-size el data]
+(defn render-chart [chart-size el data colours]
   (let [chart-data (->> data
                         (map #(assoc % :value (or (:experience %) 0.1)))
                         (assoc {} :children)
@@ -46,7 +43,7 @@
       (-> node
           (.select "circle")
           (.attr "r" #(.-r %))
-          (.attr "fill" #(colours (.-type %))))
+          (.attr "fill" #((keyword (.-type %)) colours)))
       (-> node
           (.select "image")
           (.attr "width" #(.-r %))
@@ -64,8 +61,9 @@
 
 (def component-update-func
   #(let [chart-size (-> % r/props :chart-size)
-          technologies (-> % r/props :technologies)]
-      (render-chart chart-size (r/dom-node %) technologies)))
+         technologies (-> % r/props :technologies)
+         colours (-> % r/props :colours)]
+      (render-chart chart-size (r/dom-node %) technologies colours)))
 
 (def chart
     (with-meta page-layout

@@ -19,6 +19,13 @@
                                                  ))
                               (assoc :experience 0)
                               (assoc :name nil))))
+(def type-data {:language {:colour "#1f77b4" :name "Language"}
+                :FE {:colour "#aec7e8" :name "Front End"}
+                :BE {:colour "#ff7f0e" :name "Back End"}
+                :tool {:colour "#ffbb78" :name "Tool"}
+                :DataStore {:colour "#2ca02c" :name "Data Store"}
+                :Testing {:colour "#98df8a" :name "Testing Tool"}
+                :Cloud {:colour "#ff9896" :name "Cloud Platform"}})
 
 (defn filter-data [filters data]
   (print filters)
@@ -75,9 +82,14 @@
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
       [:p "The size of each bubble represents the experience I have with that technology."]
-      (let [filtered-data (filter-data @filters-atom data/data)]
+      (let [filtered-data (filter-data @filters-atom data/data)
+            colours-map (reduce
+                         (fn [result [type val]] (assoc result type (:colour val)))
+                         {}
+                         type-data)]
+        (print colours-map)
         (if ((comp not zero? count) filtered-data)
-          [chart {:chart-size chart-size :technologies filtered-data}]
+          [chart {:chart-size chart-size :technologies filtered-data :colours colours-map}]
           [:div {:style {:text-align "center"}}
            [:h3 "No Technologies match the filters :("]
            ]))]]]])
