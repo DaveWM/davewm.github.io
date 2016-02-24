@@ -44,7 +44,7 @@
 
    {:name "SQL Server" :experience 3.5 :type :DataStore :img "http://cdn.warer.com/media/Microsoft-SQL-Server-2008-Express-logo.png"}
    {:name "MongoDB" :experience 0.75 :type :DataStore :img "http://www.theodo.fr/uploads/blog//2015/11/mongodb.png"}
-   {:name "Google Cloud Datastore" :experience 0.5 :type :DataStore :img "http://insidebigdata.com/wp-content/uploads/2013/09/datastore-blue-512-rgb.png"}
+   {:name "Google Cloud Datastore" :experience 0.5 :type :DataStore :img "http://www.dotmodus.com/assets/images/clouddatastore.jpeg"}
    {:name "Elastic" :experience 0.5 :type :DataStore :img "https://www.elastic.co/static/img/elastic-logo-200.png"}
    {:name "Firebase" :experience 0.5 :type :DataStore :img "https://mimming.com/presos/internet-of-nodebots/img/firebase-icon.png"}
 

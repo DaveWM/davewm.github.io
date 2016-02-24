@@ -19,13 +19,14 @@
                                                  ))
                               (assoc :experience 0)
                               (assoc :name nil))))
-(def type-data {:language {:colour "#1f77b4" :name "Language"}
-                :FE {:colour "#aec7e8" :name "Front End"}
+(def type-data {:language {:colour "blueviolet" :name "Language"}
+                :FE {:colour "lightpink" :name "Front End"}
                 :BE {:colour "#ff7f0e" :name "Back End"}
                 :tool {:colour "#ffbb78" :name "Tool"}
                 :DataStore {:colour "#2ca02c" :name "Data Store"}
                 :Testing {:colour "#98df8a" :name "Testing Tool"}
-                :Cloud {:colour "#ff9896" :name "Cloud Platform"}})
+                :Cloud {:colour "lightslategray" :name "Cloud Platform"}
+                :Misc {:colour "lightblue" :name "Miscellaneous"}})
 
 (defn filter-data [filters data]
   (print filters)
@@ -39,9 +40,12 @@
 
 (defn type-checkbox [type]
   [Checkbox {:key type
-             :label type
+             :label (get-in type-data [type :name])
              :defaultChecked (get-in @filters-atom [:types type])
-             :style {:max-width 300 :display "inline-block"}
+             :style {:max-width 300
+                     :display "inline-block"}
+             :iconStyle {:fill (get-in type-data [type :colour])}
+             :labelStyle {:color (get-in type-data [type :colour])}
              :onCheck (fn [event] (swap! filters-atom #(assoc-in % [:types type] (-> event
                                                                                      (.-target)
                                                                                      (.-checked)))))}])
@@ -81,7 +85,7 @@
                           :class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
-      [:p "The size of each bubble represents the experience I have with that technology."]
+      [:p "The size of each bubble represents the experience I have with that technology. The colour is the type of the technology."]
       (let [filtered-data (filter-data @filters-atom data/data)
             colours-map (reduce
                          (fn [result [type val]] (assoc result type (:colour val)))
