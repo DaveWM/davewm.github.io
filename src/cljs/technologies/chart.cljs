@@ -56,14 +56,14 @@
           (.text #(.-name %))))))
 
 
-(defn page-layout []
+(defn page-layout [props]
   [:svg])
 
 (def component-update-func
   #(let [chart-size (-> % r/props :chart-size)
          technologies (-> % r/props :technologies)
          colours (-> % r/props :colours)]
-      (render-chart chart-size (r/dom-node %) technologies colours)))
+     (render-chart chart-size (r/dom-node %) technologies colours)))
 
 (def chart
     (with-meta page-layout

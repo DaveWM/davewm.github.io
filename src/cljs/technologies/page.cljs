@@ -63,7 +63,7 @@
                    :showExpandableButton true}]
       [CardText {:expandable true}
        [:p "Types"]
-       (map type-checkbox types)
+       (doall (map type-checkbox types))
        [ListDivider {:style {:margin-top 20
                              :margin-bottom 20}}]
        [:p "Experience"]
@@ -85,15 +85,25 @@
                           :class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
-      [:p "The size of each bubble represents the experience I have with that technology. The colour is the type of the technology."]
+      [:p "The size of each bubble represents the experience I have with that technology."]
       (let [filtered-data (filter-data @filters-atom data/data)
             colours-map (reduce
                          (fn [result [type val]] (assoc result type (:colour val)))
                          {}
-                         type-data)]
-        (print colours-map)
+                         type-data)
+            chart-colour-key (reduce (fn [result [type props]]
+                                       (conj result [:span {:className "chart-key"
+                                                            :style {:color (:colour props)}}
+                                                     [:span (:name props)]
+                                                     [:span {:className "key-colour"
+                                                             :style {:background-color (:colour props)}}]
+                                                     ]))
+                                     [Paper {:class "chart-keys"}]
+                                     type-data)]
         (if ((comp not zero? count) filtered-data)
-          [chart {:chart-size chart-size :technologies filtered-data :colours colours-map}]
+          [:div
+           chart-colour-key
+           [chart {:chart-size chart-size :technologies filtered-data :colours colours-map}]]
           [:div {:style {:text-align "center"}}
            [:h3 "No Technologies match the filters :("]
            ]))]]]])
