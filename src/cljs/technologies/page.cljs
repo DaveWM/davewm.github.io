@@ -33,7 +33,7 @@
 (defn type-checkbox [type]
   [Checkbox {:key type
              :label type
-             :defaultChecked true
+             :defaultChecked (get-in @filters-atom [:types type])
              :style {:max-width 300 :display "inline-block"}
              :onCheck (fn [event] (swap! filters-atom #(assoc-in % [:types type] (-> event
                                                                                      (.-target)
@@ -56,13 +56,14 @@
        [ListDivider {:style {:margin-top 20
                              :margin-bottom 20}}]
        [:p "Experience"]
-       [Slider {:defaultValue 0
+       [Slider {:defaultValue (:experience @filters-atom)
                 :min 0
                 :max (apply max (map :experience data/data))
                 :onChange (fn [event value] (print value) (swap! filters-atom #(assoc % :experience value)))}]
        [ListDivider {:style {:margin-top 20
                              :margin-bottom 20}}]
        [TextField {:floatingLabelText "Name"
+                   :defaultValue (:name @filters-atom)
                    :onChange (fn [event] (swap! filters-atom #(assoc % :name (-> event
                                                                                  (.-target)
                                                                                  (.-value)))))}]
