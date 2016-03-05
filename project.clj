@@ -6,11 +6,12 @@
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.145"]
-                 [reagent "0.5.1" :exclusions [cljsjs/react]]
+                 [reagent "0.5.1"]
                  [cljs-ajax "0.3.14"]
-                 [cljsjs/react-router "0.13.2-0" :exclusions [cljsjs/react]]
+                 [cljsjs/react-router "0.13.2-0"]
                  [cljsjs/d3 "3.5.7-1"]
-                 ]
+                 [reagent-material-ui "0.1.0-SNAPSHOT"]]
+  :exclusions [cljsjs/react]
   :clean-targets ^{:protect false} ["dist/js" "target" "dist/app.js"]
   :plugins [[cider/cider-nrepl "0.9.1"]
             [lein-cljsbuild "1.1.0"]
@@ -30,10 +31,6 @@
                            :main "app.core"
 
                            :pretty-print true
-
-                           :foreign-libs [{:file "third-party/js/material.js"
-                                           :file-min "third-party/js/material.min.js"
-                                           :provides ["mui"]}]
                            }
                 }
                {
@@ -49,10 +46,6 @@
                            :optimizations :advanced
 
                            :pretty-print true
-
-                           :externs ["third-party/js/material.js"]
-                           :foreign-libs [{:file "third-party/js/material.min.js"
-                                           :provides ["mui"]}]
                            }
                 }
                ]})

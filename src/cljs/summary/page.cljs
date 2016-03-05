@@ -4,7 +4,7 @@
             [ajax.core :refer [GET POST]]
             [summary.github :as github]
             [summary.codewars :as codewars]
-            [material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]))
+            [reagent-material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]))
 
 (def css-transition-group
   (r/adapt-react-class js/React.addons.CSSTransitionGroup))

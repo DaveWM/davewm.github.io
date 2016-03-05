@@ -1,7 +1,7 @@
 (ns summary.codewars
   (:require [reagent.core :as r]
             [ajax.core :refer [GET POST]]
-            [material-ui.core :refer [Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]
+            [reagent-material-ui.core :refer [Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]
             ))
   
 (defn open-in-new-tab [url]

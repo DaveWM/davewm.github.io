@@ -2,7 +2,7 @@
   (:require [reagent.core :as r]
             [technologies.data :as data]
             [technologies.chart :refer [chart]]
-            [material-ui.core :refer [Avatar Card CardHeader CardText Checkbox FontIcon ListDivider  Paper Slider TextField]])
+            [reagent-material-ui.core :refer [Avatar Card CardHeader CardText Checkbox FontIcon ListDivider  Paper Slider TextField]])
   (:require-macros [cljs.core :refer [this-as]]))
 (enable-console-print!)
 
