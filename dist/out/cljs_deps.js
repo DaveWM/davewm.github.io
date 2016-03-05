@@ -13,8 +13,8 @@ goog.addDependency("../reagent/core.js", ['reagent.core'], ['reagent.impl.util',
 goog.addDependency("../d3.inc.js", ['cljsjs.d3'], []);
 goog.addDependency("../technologies/chart.js", ['technologies.chart'], ['reagent.core', 'cljs.core', 'cljsjs.d3']);
 goog.addDependency("../material.js", ['mui'], []);
-goog.addDependency("../material_ui/core.js", ['material_ui.core'], ['mui', 'cljs.core']);
-goog.addDependency("../work_history/page.js", ['work_history.page'], ['reagent.core', 'cljs.core', 'material_ui.core']);
+goog.addDependency("../reagent_material_ui/core.js", ['reagent_material_ui.core'], ['mui', 'reagent.core', 'cljs.core']);
+goog.addDependency("../work_history/page.js", ['work_history.page'], ['reagent_material_ui.core', 'reagent.core', 'cljs.core']);
 goog.addDependency("../react-router.inc.js", ['cljsjs.react_router'], ['cljsjs.react']);
 goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
 goog.addDependency("../reagent_react_router/core.js", ['reagent_react_router.core'], ['reagent.core', 'cljs.core', 'cljsjs.react_router', 'clojure.walk']);
@@ -31,12 +31,12 @@ goog.addDependency("../com/cognitect/transit.js", ['com.cognitect.transit'], ['c
 goog.addDependency("../cognitect/transit.js", ['cognitect.transit'], ['com.cognitect.transit.eq', 'cljs.core', 'com.cognitect.transit.types', 'com.cognitect.transit', 'goog.math.Long']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core', 'goog.string.StringBuffer']);
 goog.addDependency("../ajax/core.js", ['ajax.core'], ['goog.net.XhrManager', 'goog.net.XhrIo', 'goog.json', 'goog.Uri.QueryData', 'goog.Uri', 'cljs.core', 'cognitect.transit', 'goog.net.EventType', 'goog.structs', 'goog.json.Serializer', 'clojure.string', 'cljs.reader', 'goog.events', 'goog.net.ErrorCode']);
-goog.addDependency("../summary/codewars.js", ['summary.codewars'], ['ajax.core', 'reagent.core', 'cljs.core', 'material_ui.core']);
-goog.addDependency("../summary/github.js", ['summary.github'], ['ajax.core', 'reagent.core', 'cljs.core', 'material_ui.core']);
-goog.addDependency("../summary/page.js", ['summary.page'], ['ajax.core', 'reagent.core', 'cljs.core', 'summary.codewars', 'summary.github', 'material_ui.core']);
+goog.addDependency("../summary/codewars.js", ['summary.codewars'], ['ajax.core', 'reagent_material_ui.core', 'reagent.core', 'cljs.core']);
+goog.addDependency("../summary/github.js", ['summary.github'], ['ajax.core', 'reagent_material_ui.core', 'reagent.core', 'cljs.core']);
+goog.addDependency("../summary/page.js", ['summary.page'], ['ajax.core', 'reagent_material_ui.core', 'reagent.core', 'cljs.core', 'summary.codewars', 'summary.github']);
 goog.addDependency("../technologies/data.js", ['technologies.data'], ['cljs.core']);
-goog.addDependency("../technologies/page.js", ['technologies.page'], ['reagent.core', 'technologies.chart', 'cljs.core', 'technologies.data', 'material_ui.core']);
-goog.addDependency("../app/core.js", ['app.core'], ['work_history.page', 'reagent.core', 'reagent_react_router.core', 'cljs.core', 'goog.object', 'summary.page', 'clojure.string', 'technologies.page', 'material_ui.core']);
+goog.addDependency("../technologies/page.js", ['technologies.page'], ['reagent_material_ui.core', 'reagent.core', 'technologies.chart', 'cljs.core', 'technologies.data']);
+goog.addDependency("../app/core.js", ['app.core'], ['work_history.page', 'reagent_material_ui.core', 'reagent.core', 'reagent_react_router.core', 'cljs.core', 'goog.object', 'summary.page', 'clojure.string', 'technologies.page']);
 goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
 goog.addDependency("../cljs/core/async/impl/ioc_helpers.js", ['cljs.core.async.impl.ioc_helpers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
@@ -52,3 +52,4 @@ goog.addDependency("../figwheel/client/heads_up.js", ['figwheel.client.heads_up'
 goog.addDependency("../cljs/repl.js", ['cljs.repl'], ['cljs.core']);
 goog.addDependency("../figwheel/client.js", ['figwheel.client'], ['goog.userAgent.product', 'goog.Uri', 'cljs.core', 'cljs.core.async', 'figwheel.client.file_reloading', 'figwheel.client.utils', 'cljs.repl', 'figwheel.client.heads_up', 'figwheel.client.socket', 'clojure.string']);
 goog.addDependency("../figwheel/connect.js", ['figwheel.connect'], ['cljs.core', 'figwheel.client', 'figwheel.client.utils', 'app.core']);
+goog.addDependency("../react-with-addons.inc.js", ['cljsjs.react'], []);

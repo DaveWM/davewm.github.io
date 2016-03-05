@@ -1,6 +1,7 @@
-(ns material-ui.core
-  (:require-macros [material-ui.macros :refer [export-material-ui-react-classes]])
-  (:require [mui])
+(ns reagent-material-ui.core
+  (:require-macros [reagent-material-ui.macros :refer [export-material-ui-react-classes]])
+  (:require [mui]
+            [reagent.core])
   )
 
 (export-material-ui-react-classes)

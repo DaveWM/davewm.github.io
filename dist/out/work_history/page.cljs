@@ -1,7 +1,7 @@
 (ns work-history.page
   (:require [reagent.core :as r]
             [cljs.core :as core]
-            [material-ui.core :refer [Card CardMedia CardHeader Avatar CardText CardActions FlatButton]])
+            [reagent-material-ui.core :refer [Card CardMedia CardHeader Avatar CardText CardActions FlatButton]])
   )
 
 (def css-transition-group

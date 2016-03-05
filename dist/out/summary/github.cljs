@@ -1,7 +1,7 @@
 (ns summary.github
   (:require [reagent.core :as r]
             [ajax.core :refer [GET POST]]
-            [material-ui.core :refer [Avatar Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]))
+            [reagent-material-ui.core :refer [Avatar Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]))
 
 (def css-transition-group
   (r/adapt-react-class js/React.addons.CSSTransitionGroup))

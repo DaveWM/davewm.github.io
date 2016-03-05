@@ -7,7 +7,7 @@
             [work-history.page :as work-history]
             [technologies.page :as technologies]
             [reagent-react-router.core :refer [Route DefaultRoute Link RouteHandler Redirect NotFound run-router defroutes]]
-             [material-ui.core :refer [RaisedButton Paper IconButton ThemeManager LightRawTheme Colors]])
+             [reagent-material-ui.core :refer [RaisedButton Paper IconButton ThemeManager LightRawTheme Colors]])
   (:require-macros [cljs.core :refer [this-as]])
   )
 (enable-console-print!)
