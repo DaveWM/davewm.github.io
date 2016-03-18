@@ -6,8 +6,6 @@
             [summary.codewars :as codewars]
             [reagent-material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]))
 
-(def css-transition-group
-  (r/adapt-react-class js/React.addons.CSSTransitionGroup))
 (defn open-in-new-tab [url]
   (.open js/window url))
 
@@ -96,21 +94,21 @@
 ;each card has to be wrapped in a div, or the transitions don't work properly, don't know why
 (defn page []
   [:div.row.middle-xs
-   [css-transition-group {:transition-name "card"
+   [:div {:transition-name "card"
                           :transition-appear true
                           :class "col-xs-12 col-md-2 card-container"}
     [:div
      [contact-info]
      ]
     ]
-   [css-transition-group {:transition-name "card"
+   [:div {:transition-name "card"
                           :transition-appear true
                           :class "col-xs-12 col-md-10 card-container"}
     [:div
      [summary-card]
      ]
     ]
-   [css-transition-group {:transition-name "card"
+   [:div {:transition-name "card"
                           :transition-appear true
                           :class "col-xs-12 col-md-6"}
     [:div.card-container
@@ -120,7 +118,7 @@
      [hobbies-card]
      ]
     ]
-   [css-transition-group {:transition-name "card"
+   [:div {:transition-name "card"
                           :transition-appear true
                           :class "col-xs-12 col-md-6"}
     [:div.card-container

@@ -3,9 +3,6 @@
             [ajax.core :refer [GET POST]]
             [reagent-material-ui.core :refer [Avatar Card CardHeader CircularProgress List ListItem CardActions FlatButton FontIcon]]))
 
-(def css-transition-group
-  (r/adapt-react-class js/React.addons.CSSTransitionGroup))
-
 (def github-loading (r/atom 2))
 (def github-user (r/atom {}))
 (def github-repos (r/atom []))
@@ -33,7 +30,7 @@
     (if (> @github-loading 0)
       [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}]
       [List
-       [css-transition-group {:transition-name "fade" :transition-appear true}
+       [:div {:transition-name "fade" :transition-appear true}
         (map #(identity
                [ListItem {
                           :key (get % "id")

@@ -6,8 +6,6 @@
   
 (defn open-in-new-tab [url]
   (.open js/window url))
-(def css-transition-group
-  (r/adapt-react-class js/React.addons.CSSTransitionGroup))
 
 (def codewars-loading (r/atom true))
 (def codewars-user (r/atom {}))
@@ -31,7 +29,7 @@
     (if @codewars-loading
       [CircularProgress {:mode "indeterminate" :class "centred card-loading-icon"}]
       [List
-       [css-transition-group {:transition-name "fade" :transition-appear true}
+       [:div {:transition-name "fade" :transition-appear true}
         (let [languages (sort-by #(get-in % [1 "score"]) > (get-in @codewars-user ["ranks" "languages"]))]
           (map (fn [lang]
                  (let [[name info] lang]
