@@ -10,7 +10,7 @@
                  [cljs-ajax "0.3.14"]
                  [cljsjs/react-router "0.13.2-0"]
                  [cljsjs/d3 "3.5.7-1"]
-                 [reagent-material-ui "0.2.1-SNAPSHOT"]]
+                 [reagent-material-ui "0.2.1"]]
   :exclusions [cljsjs/react]
   :clean-targets ^{:protect false} ["dist/js" "target" "dist/app.js"]
   :plugins [[cider/cider-nrepl "0.9.1"]

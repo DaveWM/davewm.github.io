@@ -5,16 +5,20 @@
             [summary.github :as github]
             [summary.codewars :as codewars]
             [reagent-material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]))
+(enable-console-print!)
 
 (defn open-in-new-tab [url]
   (.open js/window url))
 
 (defn contact-info []
   (let [info-part (fn [icon-type icon-name value-elem]
-                    [:p {:class "row middle-xs around-xs"} [FontIcon {:className (str "col-xs-2 " icon-type)} icon-name] (if (map? (nth value-elem 1))
-                                                                                                                           (update-in value-elem [1 :class] #(str % " col-xs-10"))                                                             (let [[tag & content] value-elem] [tag {:class "col-xs-10"} content])
-                                                                                                                           )])]         
-    [Card
+                    [:p {:class "row middle-xs around-xs"}
+                     [FontIcon {:className (str "col-xs-2 " icon-type)} icon-name]
+                     (if (map? (nth value-elem 1))
+                       (update-in value-elem [1 :class] #(str % " col-xs-10"))
+                       (let [[tag & content] value-elem] [tag {:class "col-xs-10"} content])
+                       )])]
+    [Card 
      [CardMedia {:overlay (r/as-element [CardTitle {:title "Contact Info"}])}
       [:img {:src "assets/me.jpg"}]
       ]
@@ -91,26 +95,15 @@
    ]
   )
 
-;each card has to be wrapped in a div, or the transitions don't work properly, don't know why
 (defn page []
   [:div.row.middle-xs
-   [:div {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 col-md-2 card-container"}
-    [:div
-     [contact-info]
-     ]
+   [:div {:class "col-xs-12 col-md-2 card-container"}
+    [contact-info {:style {:color "red"}}]     
     ]
-   [:div {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 col-md-10 card-container"}
-    [:div
-     [summary-card]
-     ]
+   [:div {:class "col-xs-12 col-md-10 card-container"}
+    [summary-card]
     ]
-   [:div {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 col-md-6"}
+   [:div {:class "col-xs-12 col-md-6"}
     [:div.card-container
      [github/card {:user "DaveWM"}]
      ]
@@ -118,9 +111,7 @@
      [hobbies-card]
      ]
     ]
-   [:div {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 col-md-6"}
+   [:div {:class "col-xs-12 col-md-6"}
     [:div.card-container
      [education-card]
      ]

@@ -50,9 +50,7 @@
 
 (defn page []
   [:div.row.middle-xs
-   [:div {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 card-container"}
+   [:div {:class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
      [Card
       [CardHeader {:title "Filters"
@@ -78,9 +76,7 @@
                                                                                  (.-value)))))}]
        ]
       ]]]
-   [:div {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 card-container"}
+   [:div {:class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
       [:p "The size of each bubble represents the experience I have with that technology."]

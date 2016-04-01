@@ -29,7 +29,7 @@
     (if @codewars-loading
       [CircularProgress {:mode "indeterminate" :class "centred card-loading-icon"}]
       [List
-       [:div {:transition-name "fade" :transition-appear true}
+       [:div
         (let [languages (sort-by #(get-in % [1 "score"]) > (get-in @codewars-user ["ranks" "languages"]))]
           (map (fn [lang]
                  (let [[name info] lang]

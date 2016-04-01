@@ -30,7 +30,7 @@
     (if (> @github-loading 0)
       [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}]
       [List
-       [:div {:transition-name "fade" :transition-appear true}
+       [:div
         (map #(identity
                [ListItem {
                           :key (get % "id")

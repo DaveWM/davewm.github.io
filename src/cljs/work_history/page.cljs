@@ -26,7 +26,7 @@
    
 (defn page []
   [:div.row.middle-xs
-   [:div {:transition-name "card" :transition-appear true}
+   [:div
     (history-card "Potato" "assets/P.png" "November 2015" "Present" "https://p.ota.to/" ["Front End Developer"])
     (history-card "Sporting Solutions" "/assets/SS.png" "April 2015" "November 2015" "http://www.sportingsolutions.com"
                   ["Working in a team responsible for receiving data from external feed providers, and passing it on to other teams via a message queue."
