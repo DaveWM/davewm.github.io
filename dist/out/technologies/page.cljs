@@ -2,12 +2,10 @@
   (:require [reagent.core :as r]
             [technologies.data :as data]
             [technologies.chart :refer [chart]]
-            [reagent-material-ui.core :refer [Avatar Card CardHeader CardText Checkbox FontIcon ListDivider  Paper Slider TextField]])
+            [reagent-material-ui.core :refer [Avatar Card CardHeader CardText Checkbox Divider FontIcon Paper Slider TextField]])
   (:require-macros [cljs.core :refer [this-as]]))
 (enable-console-print!)
 
-(def css-transition-group
-  (r/adapt-react-class js/React.addons.CSSTransitionGroup))
 (def chart-size 100)
 (def types (->> data/data
                 (map :type)
@@ -52,9 +50,7 @@
 
 (defn page []
   [:div.row.middle-xs
-   [css-transition-group {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 card-container"}
+   [:div {:class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
      [Card
       [CardHeader {:title "Filters"
@@ -64,14 +60,14 @@
       [CardText {:expandable true}
        [:p "Types"]
        (doall (map type-checkbox types))
-       [ListDivider {:style {:margin-top 20
+       [Divider {:style {:margin-top 20
                              :margin-bottom 20}}]
        [:p "Experience"]
        [Slider {:defaultValue (:experience @filters-atom)
                 :min 0
                 :max (apply max (map :experience data/data))
                 :onChange (fn [event value] (print value) (swap! filters-atom #(assoc % :experience value)))}]
-       [ListDivider {:style {:margin-top 20
+       [Divider {:style {:margin-top 20
                              :margin-bottom 20}}]
        [TextField {:floatingLabelText "Name"
                    :defaultValue (:name @filters-atom)
@@ -80,9 +76,7 @@
                                                                                  (.-value)))))}]
        ]
       ]]]
-   [css-transition-group {:transition-name "card"
-                          :transition-appear true
-                          :class "col-xs-12 card-container"}
+   [:div {:class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
       [:p "The size of each bubble represents the experience I have with that technology."]

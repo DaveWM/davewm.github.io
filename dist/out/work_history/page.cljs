@@ -4,9 +4,6 @@
             [reagent-material-ui.core :refer [Card CardMedia CardHeader Avatar CardText CardActions FlatButton]])
   )
 
-(def css-transition-group
-  (r/adapt-react-class js/React.addons.CSSTransitionGroup))
-
 (defn history-card [name img-url date-from date-to website-url bullet-points]
   [:div.col-xs-12.col-md-6.col-md-offset-3  {:key name}
    [Card {:class "work-history-card"}
@@ -29,7 +26,7 @@
    
 (defn page []
   [:div.row.middle-xs
-   [css-transition-group {:transition-name "card" :transition-appear true}
+   [:div
     (history-card "Potato" "assets/P.png" "November 2015" "Present" "https://p.ota.to/" ["Front End Developer"])
     (history-card "Sporting Solutions" "/assets/SS.png" "April 2015" "November 2015" "http://www.sportingsolutions.com"
                   ["Working in a team responsible for receiving data from external feed providers, and passing it on to other teams via a message queue."

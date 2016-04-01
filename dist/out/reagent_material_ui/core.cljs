@@ -1,4 +1,5 @@
 (ns reagent-material-ui.core
+  (:refer-clojure :exclude [List])
   (:require-macros [reagent-material-ui.macros :refer [export-material-ui-react-classes]])
   (:require [mui]
             [reagent.core])
@@ -17,3 +18,4 @@
 (def ThemeManager (-> js/MaterialUI
                       (aget "Styles")
                       (aget "ThemeManager")))
+

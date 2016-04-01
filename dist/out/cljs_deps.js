@@ -52,4 +52,3 @@ goog.addDependency("../figwheel/client/heads_up.js", ['figwheel.client.heads_up'
 goog.addDependency("../cljs/repl.js", ['cljs.repl'], ['cljs.core']);
 goog.addDependency("../figwheel/client.js", ['figwheel.client'], ['goog.userAgent.product', 'goog.Uri', 'cljs.core', 'cljs.core.async', 'figwheel.client.file_reloading', 'figwheel.client.utils', 'cljs.repl', 'figwheel.client.heads_up', 'figwheel.client.socket', 'clojure.string']);
 goog.addDependency("../figwheel/connect.js", ['figwheel.connect'], ['cljs.core', 'figwheel.client', 'figwheel.client.utils', 'app.core']);
-goog.addDependency("../react-with-addons.inc.js", ['cljsjs.react'], []);
