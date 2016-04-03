@@ -15,9 +15,12 @@ goog.addDependency("../technologies/chart.js", ['technologies.chart'], ['reagent
 goog.addDependency("../material.js", ['mui'], []);
 goog.addDependency("../reagent_material_ui/core.js", ['reagent_material_ui.core'], ['mui', 'reagent.core', 'cljs.core']);
 goog.addDependency("../work_history/page.js", ['work_history.page'], ['reagent_material_ui.core', 'reagent.core', 'cljs.core']);
-goog.addDependency("../react-router.inc.js", ['cljsjs.react_router'], ['cljsjs.react']);
+goog.addDependency("../schema/utils.js", ['schema.utils'], ['goog.string', 'cljs.core', 'goog.string.format']);
+goog.addDependency("../schema/core.js", ['schema.core'], ['cljs.core', 'clojure.string', 'schema.utils']);
+goog.addDependency("../pathetic/core.js", ['pathetic.core'], ['goog.string', 'goog.Uri', 'cljs.core', 'clojure.string']);
+goog.addDependency("../cemerick/url.js", ['cemerick.url'], ['pathetic.core', 'goog.Uri', 'cljs.core', 'clojure.string']);
 goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
-goog.addDependency("../reagent_react_router/core.js", ['reagent_react_router.core'], ['reagent.core', 'cljs.core', 'cljsjs.react_router', 'clojure.walk']);
+goog.addDependency("../bidi/bidi.js", ['bidi.bidi'], ['schema.core', 'cljs.core', 'cemerick.url', 'clojure.walk']);
 goog.addDependency("../com/cognitect/transit/util.js", ['com.cognitect.transit.util'], ['goog.object']);
 goog.addDependency("../com/cognitect/transit/eq.js", ['com.cognitect.transit.eq'], ['com.cognitect.transit.util']);
 goog.addDependency("../com/cognitect/transit/types.js", ['com.cognitect.transit.types'], ['com.cognitect.transit.util', 'com.cognitect.transit.eq', 'goog.math.Long']);
@@ -36,7 +39,8 @@ goog.addDependency("../summary/github.js", ['summary.github'], ['ajax.core', 're
 goog.addDependency("../summary/page.js", ['summary.page'], ['ajax.core', 'reagent_material_ui.core', 'reagent.core', 'cljs.core', 'summary.codewars', 'summary.github']);
 goog.addDependency("../technologies/data.js", ['technologies.data'], ['cljs.core']);
 goog.addDependency("../technologies/page.js", ['technologies.page'], ['reagent_material_ui.core', 'reagent.core', 'technologies.chart', 'cljs.core', 'technologies.data']);
-goog.addDependency("../app/core.js", ['app.core'], ['work_history.page', 'reagent_material_ui.core', 'reagent.core', 'reagent_react_router.core', 'cljs.core', 'goog.object', 'summary.page', 'clojure.string', 'technologies.page']);
+goog.addDependency("../pushy/core.js", ['pushy.core'], ['goog.history.Html5History.TokenTransformer', 'goog.Uri', 'cljs.core', 'goog.history.EventType', 'goog.History', 'goog.history.Html5History', 'goog.events']);
+goog.addDependency("../app/core.js", ['app.core'], ['work_history.page', 'reagent_material_ui.core', 'bidi.bidi', 'reagent.core', 'cljs.core', 'goog.object', 'summary.page', 'clojure.string', 'technologies.page', 'pushy.core']);
 goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
 goog.addDependency("../cljs/core/async/impl/ioc_helpers.js", ['cljs.core.async.impl.ioc_helpers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
