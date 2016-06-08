@@ -5281,3 +5281,374 @@ notifying browser that file changed:  /technologies/page.js
 [0mCompiling "dist/app.js" from ["src/cljs/"]...
 [32mSuccessfully compiled "dist/app.js" in 0.222 seconds.[0m
 notifying browser that file changed:  /technologies/page.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.187 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /technologies/data.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.166 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /technologies/data.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.164 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /technologies/data.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.174 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /technologies/data.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/Colors at line 36 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 58 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/ThemeManager at line 69 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/LightRawTheme at line 69 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 73 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 74 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 75 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 76 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 77 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 78 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 79 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/app at line 84 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.195 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/Colors at line 36 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 58 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/ThemeManager at line 69 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/LightRawTheme at line 69 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 72 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 73 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 74 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 75 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 76 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 77 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 78 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/app at line 83 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.185 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/Colors at line 36 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 58 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/ThemeManager at line 69 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/LightRawTheme at line 69 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 72 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 73 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 74 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 75 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 76 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 77 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 78 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/app at line 83 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.333 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/Colors at line 36 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 58 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 70 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 71 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 72 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 73 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 74 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 75 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/Colors at line 76 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/app at line 81 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.31 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/Colors at line 36 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/app at line 81 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.215 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.167 seconds.[0m
+notifying browser that file changed:  /app/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.179 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /technologies/data.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.186 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/theme at line 36 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.229 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/theme at line 36 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.219 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/theme at line 46 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.203 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/theme at line 46 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.233 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/theme at line 46 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.21 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.175 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.173 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.174 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.179 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.179 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.173 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.176 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Wrong number of args (3) passed to cljs.core/vec at line 36 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/muiTheme at line 37 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.221 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Wrong number of args (2) passed to cljs.core/vec at line 36 src/cljs/app/core.cljs
+WARNING: Use of undeclared Var app.core/muiTheme at line 37 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.218 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/muiTheme at line 37 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.206 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/muiTheme at line 37 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.21 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/muiTheme at line 37 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.199 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/muiTheme at line 46 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.211 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/muiTheme at line 46 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.2 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.178 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+ERROR: JavaScript literal must use map or vector notation on file /home/david/Documents/github/davewm.github.io/src/cljs/app/core.cljs, line 46, column 47
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+ERROR: JavaScript literal must use map or vector notation on file /home/david/Documents/github/davewm.github.io/src/cljs/app/core.cljs, line 46, column 48
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.208 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/pritn at line 34 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.203 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/pritn at line 34 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.204 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.185 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.172 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.192 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.18 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.21 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.195 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.175 seconds.[0m
+notifying browser that file changed:  /app/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.185 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /technologies/data.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.206 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.245 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.185 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.187 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.18 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.187 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.207 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.179 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.181 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.185 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.199 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.179 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[31mCompiling "dist/app.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/cljs/app/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3144.invoke (compiler.cljc:1347)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1309)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1384)
+    cljs.closure$compile_dir.invoke (closure.clj:446)
+    cljs.closure$eval3588$fn__3589.invoke (closure.clj:486)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    cljs.closure$eval3601$fn__3602.invoke (closure.clj:500)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1683)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15813.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15859.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15810.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15613.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15619.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15619.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15622.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15616.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15634.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15720$state_machine__9543__auto____15721$fn__15726.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15720$state_machine__9543__auto____15721.invoke (auto.clj:178)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.181 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.181 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.198 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.175 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.183 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.174 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.186 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.18 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Use of undeclared Var app.core/AppBar at line 53 src/cljs/app/core.cljs
+[32mSuccessfully compiled "dist/app.js" in 0.212 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.187 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.18 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.185 seconds.[0m
+notifying browser that file changed:  /app/core.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.182 seconds.[0m
+notifying browser that file changed:  /app/core.js

@@ -1,16 +1,19 @@
-
 (ns reagent.core
+  (:require-macros [reagent.core])
   (:refer-clojure :exclude [partial atom flush])
-  (:require [cljsjs.react]
-            [reagent.impl.template :as tmpl]
+  (:require [reagent.impl.template :as tmpl]
             [reagent.impl.component :as comp]
             [reagent.impl.util :as util]
             [reagent.impl.batching :as batch]
             [reagent.ratom :as ratom]
             [reagent.debug :as deb :refer-macros [dbg prn]]
-            [reagent.interop :refer-macros [.' .!]]))
+            [reagent.interop :refer-macros [$ $!]]
+            [reagent.dom :as dom]
+            [reagent.dom.server :as server]))
 
 (def is-client util/is-client)
+
+(def react util/react)
 
 (defn create-element
   "Create a native React element, by calling React.createElement directly.
@@ -30,13 +33,13 @@ which is equivalent to
    (create-element type nil))
   ([type props]
    (assert (not (map? props)))
-   (js/React.createElement type props))
+   ($ react createElement type props))
   ([type props child]
    (assert (not (map? props)))
-   (js/React.createElement type props child))
+   ($ react createElement type props child))
   ([type props child & children]
    (assert (not (map? props)))
-   (apply js/React.createElement type props child children)))
+   (apply ($ react :createElement) type props child children)))
 
 (defn as-element
   "Turns a vector of Hiccup syntax into a React element. Returns form unchanged if it is not a vector."
@@ -66,22 +69,19 @@ Optionally takes a callback that is called when the component is in place.
 
 Returns the mounted component instance."
   ([comp container]
-   (render comp container nil))
+   (dom/render comp container))
   ([comp container callback]
-   (let [f (fn []
-             (as-element (if (fn? comp) (comp) comp)))]
-     (util/render-component f container callback))))
+   (dom/render comp container callback)))
 
 (defn unmount-component-at-node
   "Remove a component from the given DOM node."
   [container]
-  (util/unmount-component-at-node container))
+  (dom/unmount-component-at-node container))
 
 (defn render-to-string
   "Turns a component into an HTML string."
-  ([component]
-     (binding [comp/*non-reactive* true]
-       (.' js/React renderToString (as-element component)))))
+  [component]
+  (server/render-to-string component))
 
 ;; For backward compatibility
 (def as-component as-element)
@@ -90,9 +90,8 @@ Returns the mounted component instance."
 
 (defn render-to-static-markup
   "Turns a component into an HTML string, without data-react-id attributes, etc."
-  ([component]
-     (binding [comp/*non-reactive* true]
-       (.' js/React renderToStaticMarkup (as-element component)))))
+  [component]
+  (server/render-to-static-markup component))
 
 (defn ^:export force-update-all
   "Force re-rendering of all mounted Reagent components. This is
@@ -105,7 +104,7 @@ Returns the mounted component instance."
   ClojureScript). To get around this you'll have to introduce a layer
   of indirection, for example by using `(render [#'foo])` instead."
   []
-  (util/force-update-all))
+  (dom/force-update-all))
 
 (defn create-class
   "Create a component, React style. Should be called with a map,
@@ -136,21 +135,21 @@ Everything is optional, except either :reagent-render or :render.
 (defn state-atom
   "Returns an atom containing a components state."
   [this]
-  (assert (util/reagent-component? this))
+  (assert (comp/reagent-component? this))
   (comp/state-atom this))
 
 (defn state
   "Returns the state of a component, as set with replace-state or set-state.
 Equivalent to (deref (r/state-atom this))"
   [this]
-  (assert (util/reagent-component? this))
+  (assert (comp/reagent-component? this))
   (deref (state-atom this)))
 
 (defn replace-state
   "Set state of a component.
 Equivalent to (reset! (state-atom this) new-state)"
   [this new-state]
-  (assert (util/reagent-component? this))
+  (assert (comp/reagent-component? this))
   (assert (or (nil? new-state) (map? new-state)))
   (reset! (state-atom this) new-state))
 
@@ -158,7 +157,7 @@ Equivalent to (reset! (state-atom this) new-state)"
   "Merge component state with new-state.
 Equivalent to (swap! (state-atom this) merge new-state)"
   [this new-state]
-  (assert (util/reagent-component? this))
+  (assert (comp/reagent-component? this))
   (assert (or (nil? new-state) (map? new-state)))
   (swap! (state-atom this) merge new-state))
 
@@ -170,31 +169,32 @@ Equivalent to (swap! (state-atom this) merge new-state)"
   ([this]
    (force-update this false))
   ([this deep]
+   (ratom/flush!)
    (util/force-update this deep)))
 
 
 (defn props
   "Returns the props passed to a component."
   [this]
-  (assert (util/reagent-component? this))
-  (util/get-props this))
+  (assert (comp/reagent-component? this))
+  (comp/get-props this))
 
 (defn children
   "Returns the children passed to a component."
   [this]
-  (assert (util/reagent-component? this))
-  (util/get-children this))
+  (assert (comp/reagent-component? this))
+  (comp/get-children this))
 
 (defn argv
   "Returns the entire Hiccup form passed to the component."
   [this]
-  (assert (util/reagent-component? this))
-  (util/get-argv this))
+  (assert (comp/reagent-component? this))
+  (comp/get-argv this))
 
 (defn dom-node
   "Returns the root DOM node of a mounted component."
   [this]
-  (.' this getDOMNode))
+  (dom/dom-node this))
 
 (defn merge-props
   "Utility function that merges two maps, handling :class and :style
@@ -221,6 +221,34 @@ re-rendered."
   ([x] (ratom/atom x))
   ([x & rest] (apply ratom/atom x rest)))
 
+(defn track
+  "Takes a function and optional arguments, and returns a derefable
+  containing the output of that function. If the function derefs
+  Reagent atoms (or track, etc), the value will be updated whenever
+  the atom changes.
+
+  In other words, @(track foo bar) will produce the same result
+  as (foo bar), but foo will only be called again when the atoms it
+  depends on changes, and will only trigger updates of components when
+  its result changes.
+
+  track is lazy, i.e the function is only evaluated on deref."
+  [f & args]
+  {:pre [(ifn? f)]}
+  (ratom/make-track f args))
+
+(defn track!
+  "An eager version of track. The function passed is called
+  immediately, and continues to be called when needed, until stopped
+  with dispose!."
+  [f & args]
+  {:pre [(ifn? f)]}
+  (ratom/make-track! f args))
+
+(defn dispose!
+  "Stop the result of track! from updating."
+  [x]
+  (ratom/dispose! x))
 
 (defn wrap
   "Provide a combination of value and callback, that looks like an atom.
@@ -277,10 +305,40 @@ another cursor) these cursors are equivalent:
 
 ;; Utilities
 
+(defn rswap!
+  "Swaps the value of a to be (apply f current-value-of-atom args).
+
+  rswap! works like swap!, except that recursive calls to rswap! on
+  the same atom are allowed – and it always returns nil."
+  [a f & args]
+  {:pre [(satisfies? IAtom a)
+         (ifn? f)]}
+  (if a.rswapping
+    (-> (or a.rswapfs (set! a.rswapfs (array)))
+        (.push #(apply f % args)))
+    (do (set! a.rswapping true)
+        (try (swap! a (fn [state]
+                        (loop [s (apply f state args)]
+                          (if-some [sf (some-> a.rswapfs .shift)]
+                            (recur (sf s))
+                            s))))
+             (finally
+               (set! a.rswapping false)))))
+  nil)
+
 (defn next-tick
-  "Run f using requestAnimationFrame or equivalent."
+  "Run f using requestAnimationFrame or equivalent.
+
+  f will be called just before components are rendered."
   [f]
-  (batch/next-tick f))
+  (batch/do-before-flush f))
+
+(defn after-render
+  "Run f using requestAnimationFrame or equivalent.
+
+  f will be called just after components are rendered."
+  [f]
+  (batch/do-after-render f))
 
 (defn partial
   "Works just like clojure.core/partial, except that it is an IFn, and

@@ -1,21 +1,25 @@
 (ns reagent-material-ui.core
   (:refer-clojure :exclude [List])
   (:require-macros [reagent-material-ui.macros :refer [export-material-ui-react-classes]])
-  (:require [mui]
+  (:require [cljsjs.material-ui]
             [reagent.core])
   )
 
 (export-material-ui-react-classes)
 
-(def Colors (-> js/MaterialUI
-                (aget "Styles")
-                (aget "Colors")))
+(def colors (-> js/MaterialUIStyles
+                (aget "colors")))
 
-(def LightRawTheme (-> js/MaterialUI
-                       (aget "Styles")
-                       (aget "LightRawTheme")))
+(def lightBaseTheme (-> js/MaterialUIStyles
+                        (aget "lightBaseTheme")))
 
-(def ThemeManager (-> js/MaterialUI
-                      (aget "Styles")
-                      (aget "ThemeManager")))
+(def darkBaseTheme (-> js/MaterialUIStyles
+                       (aget "darkBaseTheme")))
+
+(def getMuiTheme (-> js/MaterialUIStyles
+                     (aget "getMuiTheme")))
+
+(def MuiThemeProvider (-> js/MaterialUIStyles
+                          (aget "MuiThemeProvider")
+                          (reagent.core/adapt-react-class)))
 
