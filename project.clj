@@ -9,7 +9,7 @@
                  [reagent "0.6.0-alpha2"]
                  [cljs-ajax "0.3.14"]
                  [cljsjs/d3 "3.5.7-1"]
-                 [reagent-material-ui "0.2.2-SNAPSHOT"]
+                 [reagent-material-ui "0.2.2"]
                  [bidi "1.20.0"]
                  [kibu/pushy "0.3.6"]]
   :exclusions [cljsjs/react]
