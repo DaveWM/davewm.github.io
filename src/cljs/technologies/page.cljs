@@ -33,15 +33,15 @@
                          (.indexOf (.toLowerCase (:name %)))
                          (> 0)))))
 
-(defn type-checkbox [type]
-  [Checkbox {:key type
-             :label (get-in type-data [type :name])
-             :defaultChecked (get-in @filters-atom [:types type])
+(defn type-checkbox [[key type]]
+  [Checkbox {:key key
+             :label (:name type)
+             :defaultChecked (get-in @filters-atom [:types key])
              :style {:max-width 300
                      :display "inline-block"}
-             :iconStyle {:fill (get-in type-data [type :colour])}
-             :labelStyle {:color (get-in type-data [type :colour])}
-             :onCheck (fn [event] (swap! filters-atom #(assoc-in % [:types type] (-> event
+             :iconStyle {:fill (:colour type)}
+             :labelStyle {:color (:colour type)}
+             :onCheck (fn [event] (swap! filters-atom #(assoc-in % [:types key] (-> event
                                                                                      (.-target)
                                                                                      (.-checked)))))}])
 
@@ -57,7 +57,6 @@
       [CardText {:expandable true}
        [:p "Types"]
        (->> type-data
-            keys
             (map type-checkbox))
        [Divider {:style {:margin-top 20
                              :margin-bottom 20}}]
