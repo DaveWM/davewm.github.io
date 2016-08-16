@@ -21,9 +21,9 @@
                        (let [[tag & content] value-elem] [tag {:class "col-xs-10"} content])
                        )])]
     [Card 
-     [CardMedia {:overlay (r/as-element [CardTitle {:title "Contact Info"}])}
-      [:img {:src "assets/me.jpg"}]
-      ]
+     [CardHeader {:title "Contact Info"
+                  :subtitle "My contact info"
+                  :avatar (r/as-element [Avatar {:src "assets/me.jpg"}])}]
      [CardText
       (info-part "material-icons" "email" [:a {:href (str "mailto:" email)} email])
       (info-part "material-icons" "phone" [:span phone])
@@ -71,10 +71,10 @@
 
 (defn page [{:keys [personal summary education hobbies]}]
   [:div.row.middle-xs
-   [:div {:class "col-xs-12 col-md-2 card-container"}
+   [:div {:class "col-xs-12 col-lg-2 col-md-4 card-container"}
     [contact-info personal]     
     ]
-   [:div {:class "col-xs-12 col-md-10 card-container"}
+   [:div {:class "col-xs-12 col-lg-10 col-md-8 card-container"}
     [summary-card summary]
     ]
    [:div {:class "col-xs-12 col-md-6"}
