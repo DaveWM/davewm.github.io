@@ -72,7 +72,7 @@ dd{
     padding: 0;
 }
 
-.work-history-card li, .education-text > li{
+.work-history-card li {
     margin-top: 10px;
 }
 
@@ -165,4 +165,8 @@ dd{
 	    margin-top: 8px;
 	}
     }
+}
+
+.summary {
+    padding-top: 0 !important;
 }

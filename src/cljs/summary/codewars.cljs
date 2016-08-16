@@ -16,7 +16,7 @@
                                   (reset! codewars-user response)
                                   (reset! codewars-loading false)))}))
 
-(defn codewars-card-layout []
+(defn codewars-card-layout [{:keys [user]}]
   [Card
    [CardHeader {:title "Codewars"
                 :subtitle (str
@@ -44,10 +44,12 @@
                languages)
           )]])]
     [CardActions
-     [FlatButton {:linkButton true :href "http://www.codewars.com/users/DaveWM" :label "View Account"}]
+     [FlatButton {:linkButton true :href (str "http://www.codewars.com/users/" user) :label "View Account"}]
      ]
     ])
 
 (def card
   (with-meta codewars-card-layout
-    {:component-did-mount #(get-codewars-user "DaveWM")}))
+    {:component-did-mount (fn [this]
+                            (let [{:keys [user]} (r/props this)]
+                              (get-codewars-user user)))}))

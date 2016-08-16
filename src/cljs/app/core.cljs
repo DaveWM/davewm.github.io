@@ -6,6 +6,7 @@
             [summary.page :as summary]
             [work-history.page :as work-history]
             [technologies.page :as technologies]
+            [app.data :refer [data]]
             [reagent-material-ui.core :refer [RaisedButton Paper IconButton getMuiTheme colors MuiThemeProvider lightBaseTheme]]
             [bidi.bidi :as bidi]
             [pushy.core :as pushy])
@@ -69,7 +70,7 @@
               doall)
          ]]
        [:div {:class "content"}
-        [@page]]
+        (@page data)]
        [Paper {:zDepth 1 :class "footer center-xs"
                :style {:background-color (aget colors "indigo500")
                        :color "white"}}

@@ -11,7 +11,9 @@
                  [cljsjs/d3 "3.5.7-1"]
                  [reagent-material-ui "0.2.2"]
                  [bidi "1.20.0"]
-                 [kibu/pushy "0.3.6"]]
+                 [kibu/pushy "0.3.6"]
+                 [markdown-clj "0.9.89"]
+                 [com.andrewmcveigh/cljs-time "0.4.0"]]
   :exclusions [cljsjs/react]
   :clean-targets ^{:protect false} ["dist/js" "target" "dist/app.js"]
   :plugins [[cider/cider-nrepl "0.9.1"]
@@ -24,7 +26,8 @@
                 :id "dev"
                 :source-paths ["src/cljs/"]
                 :source-map true
-                :figwheel {:on-jsload "app.core/main"}
+                :figwheel {:on-jsload "app.core/main"
+                           :css-dirs "dist"}
                            
                 :compiler {;; CLS generated JS script filename
                            :output-to "dist/app.js"
