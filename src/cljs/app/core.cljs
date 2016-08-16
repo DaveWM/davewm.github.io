@@ -73,7 +73,7 @@
        [Paper {:zDepth 1 :class "footer center-xs"
                :style {:background-color (aget colors "indigo500")
                        :color "white"}}
-        [:p.col-xs-12 "I wrote this site with ClojureScript, Reagent, and Reagent-React-Router. It is hosted on github pages, all source code is on my github account"]
+        [:p.col-xs-12 "I wrote this site with ClojureScript, Reagent, and Bidi. It is hosted on github pages, all source code is on GitHub"]
         [:p.col-xs-12
          [:a {:href "https://github.com/DaveWM/davewm.github.io"}
           [IconButton {:iconClassName "fa fa-github"
