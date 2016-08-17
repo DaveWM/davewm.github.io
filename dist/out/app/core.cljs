@@ -6,14 +6,18 @@
             [summary.page :as summary]
             [work-history.page :as work-history]
             [technologies.page :as technologies]
-            [reagent-material-ui.core :refer [RaisedButton Paper IconButton getMuiTheme colors MuiThemeProvider lightBaseTheme]]
+            [reagent-material-ui.core :refer [CircularProgress RaisedButton Paper IconButton getMuiTheme colors MuiThemeProvider lightBaseTheme]]
             [bidi.bidi :as bidi]
-            [pushy.core :as pushy])
+            [pushy.core :as pushy]
+            [ajax.core :refer [GET]])
   (:require-macros [cljs.core :refer [this-as]]))
 
 (enable-console-print!)
 
+(def api-url "https://cv-api.herokuapp.com/api/cv")
+
 (def page (r/atom 1))
+(def data (r/atom nil))
 
 (defn not-found []
   [:h3 "Route not found :("]
@@ -69,18 +73,26 @@
               doall)
          ]]
        [:div {:class "content"}
-        [@page]]
+        (if @data
+          (@page @data)
+          [CircularProgress {:class "centred card-loading-icon" :mode "indeterminate"}])]
        [Paper {:zDepth 1 :class "footer center-xs"
                :style {:background-color (aget colors "indigo500")
                        :color "white"}}
-        [:p.col-xs-12 "I wrote this site with ClojureScript, Reagent, and Reagent-React-Router. It is hosted on github pages, all source code is on my github account"]
+        [:p.col-xs-12 "I wrote this site with ClojureScript, Reagent, and Bidi. It is hosted on github pages, all source code is on GitHub"]
         [:p.col-xs-12
          [:a {:href "https://github.com/DaveWM/davewm.github.io"}
           [IconButton {:iconClassName "fa fa-github"
                        :iconStyle {:color "white"}}]]]]]])
 
+(defn load-data []
+  (GET api-url {:handler #(reset! data nil)
+                :response-format :json
+                :keywords? true}))
+
 (defn ^:export main []
   (print "rendering")
   (r/render-component [app] (.getElementById js/document "react-container")))
 
-(main)
+(do (main)
+    (load-data))

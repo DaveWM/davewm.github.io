@@ -1,22 +1,12 @@
 (ns technologies.page
   (:require [reagent.core :as r]
-            [technologies.data :as data]
             [technologies.chart :refer [chart]]
             [reagent-material-ui.core :refer [Avatar Card CardHeader CardText Checkbox Divider FontIcon Paper Slider TextField]])
   (:require-macros [cljs.core :refer [this-as]]))
 (enable-console-print!)
 
 (def chart-size 100)
-(def types (->> data/data
-                (map :type)
-                (distinct)))
-(def filters-atom (r/atom (-> {}
-                              (assoc :types (->> types
-                                                 (map #(identity {% true}))
-                                                 (apply merge)
-                                                 ))
-                              (assoc :experience 0)
-                              (assoc :name nil))))
+
 (def type-data {:language {:colour "blueviolet" :name "Language"}
                 :FE {:colour "lightpink" :name "Front End"}
                 :BE {:colour "#ff7f0e" :name "Back End"}
@@ -26,29 +16,36 @@
                 :Cloud {:colour "lightslategray" :name "Cloud Platform"}
                 :Misc {:colour "lightblue" :name "Miscellaneous"}})
 
+(def filters-atom (r/atom (-> {}
+                              (assoc :types (->> type-data
+                                                 keys
+                                                 (map #(identity {% true}))
+                                                 (apply merge)))
+                              (assoc :experience 0)
+                              (assoc :name nil))))
+
 (defn filter-data [filters data]
-  (print filters)
   (->> data
-       (filter #((:type %) (:types filters)))
+       (filter #((keyword (:type %)) (:types filters)))
        (filter #(apply > (map :experience [% filters])))
        (remove #(some->> (:name filters)
                          (.toLowerCase)
                          (.indexOf (.toLowerCase (:name %)))
                          (> 0)))))
 
-(defn type-checkbox [type]
-  [Checkbox {:key type
-             :label (get-in type-data [type :name])
-             :defaultChecked (get-in @filters-atom [:types type])
+(defn type-checkbox [[key type]]
+  [Checkbox {:key key
+             :label (:name type)
+             :defaultChecked (get-in @filters-atom [:types key])
              :style {:max-width 300
                      :display "inline-block"}
-             :iconStyle {:fill (get-in type-data [type :colour])}
-             :labelStyle {:color (get-in type-data [type :colour])}
-             :onCheck (fn [event] (swap! filters-atom #(assoc-in % [:types type] (-> event
+             :iconStyle {:fill (:colour type)}
+             :labelStyle {:color (:colour type)}
+             :onCheck (fn [event] (swap! filters-atom #(assoc-in % [:types key] (-> event
                                                                                      (.-target)
                                                                                      (.-checked)))))}])
 
-(defn page []
+(defn page [{:keys [technologies]}]
   [:div.row.middle-xs
    [:div {:class "col-xs-12 card-container"}
     [:div {:class "col-xs-12"}
@@ -59,13 +56,14 @@
                    :showExpandableButton true}]
       [CardText {:expandable true}
        [:p "Types"]
-       (doall (map type-checkbox types))
+       (->> type-data
+            (map type-checkbox))
        [Divider {:style {:margin-top 20
                              :margin-bottom 20}}]
        [:p "Experience"]
        [Slider {:defaultValue (:experience @filters-atom)
                 :min 0
-                :max (apply max (map :experience data/data))
+                :max (apply max (map :experience technologies))
                 :onChange (fn [event value] (print value) (swap! filters-atom #(assoc % :experience value)))}]
        [Divider {:style {:margin-top 20
                              :margin-bottom 20}}]
@@ -80,7 +78,7 @@
     [:div {:class "col-xs-12"}
      [Paper {:class "tech-chart"}
       [:p "The size of each bubble represents the experience I have with that technology."]
-      (let [filtered-data (filter-data @filters-atom data/data)
+      (let [filtered-data (filter-data @filters-atom technologies)
             colours-map (reduce
                          (fn [result [type val]] (assoc result type (:colour val)))
                          {}

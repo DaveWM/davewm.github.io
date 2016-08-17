@@ -4,13 +4,15 @@
             [ajax.core :refer [GET POST]]
             [summary.github :as github]
             [summary.codewars :as codewars]
-            [reagent-material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]))
+            [reagent-material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]
+            [markdown.core :refer [md->html]]
+            [app.helpers :refer [format-date-month-year]]))
 (enable-console-print!)
 
 (defn open-in-new-tab [url]
   (.open js/window url))
 
-(defn contact-info []
+(defn contact-info [{:keys [email phone github-user linkedin-url]}]
   (let [info-part (fn [icon-type icon-name value-elem]
                     [:p {:class "row middle-xs around-xs"}
                      [FontIcon {:className (str "col-xs-2 " icon-type)} icon-name]
@@ -19,104 +21,74 @@
                        (let [[tag & content] value-elem] [tag {:class "col-xs-10"} content])
                        )])]
     [Card 
-     [CardMedia {:overlay (r/as-element [CardTitle {:title "Contact Info"}])}
-      [:img {:src "assets/me.jpg"}]
-      ]
+     [CardHeader {:title "Contact Info"
+                  :subtitle "My contact info"
+                  :avatar (r/as-element [Avatar {:src "assets/me.jpg"}])}]
      [CardText
-      (info-part "material-icons" "email" [:a {:href "mailto:dwmartin41@gmail.com"} "dwmartin41@gmail.com"])
-      (info-part "material-icons" "phone" [:span "07588361916"])
-      (info-part "fa fa-github" nil [:a {:href "https://github.com/DaveWM"} "@DaveWM"])
-      (info-part "fa fa-linkedin-square" nil [:a {:href "https://www.linkedin.com/in/davewm"} "David Martin"])
+      (info-part "material-icons" "email" [:a {:href (str "mailto:" email)} email])
+      (info-part "material-icons" "phone" [:span phone])
+      (info-part "fa fa-github" nil [:a {:href (str "https://github.com/" github-user)} (str "@" github-user)])
+      (info-part "fa fa-linkedin-square" nil [:a {:href linkedin-url} "LinkedIn"])
       ]]))
 
-(defn summary-card []
+(defn summary-card [summary]
   [Card 
    [CardHeader {:title "Summary" :subtitle "A bit about me" :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "material-icons"} "mode_edit"])}])}]
-   [CardText "I am a senior full stack web developer with a strong mathematical background, and 4 years' programming experience across a variety of industries, primarily using C# with ASP.NET on the back end and ES6/AngularJS on the front end. I also have experience with designing/architecting systems, setting up continuous integration, and performing deployments."
-    [:dl
-     [:dt "Front End"]
-     [:dd "My current preferred front end tools/frameworks are angularjs, angular material, browserify, npm, gulp, babel, karma and protractor. I am currently learning clojurescript and react."]
-     [:dt "Back End"]
-     [:dd "On the back end, I am most comfortable using ASP.NET Web API 2, with entity framework. I usually write tests in Nunit or specflow."]
-     [:dt "Scripting"]
-     [:dd "I have a small amount of experience writing scripts, in nodejs and F#."]
-     [:dt "Open Source"]
-     [:dd "I have created and contributed to a number of open source projects - see my github account for details."]
-     [:dt "Cloud"]
-     [:dd "I have used PAAS and IAAS services on various cloud platforms, such as AWS, azure, openstack and rackspace."]
-     [:dt "Older Technologies"]
-     [:dd "I have previous experience with microsoft technologies like winforms, WPF, and WCF."]
-     ]
-    ]])
+   [CardText {:className "summary"
+              :dangerouslySetInnerHTML {:__html (md->html summary)}}]])
 
-(defn education-card []
+(defn education-card [education]
   [Card
    [CardMedia {:overlay (r/as-element [CardTitle {:title "Education"}])}
     [:img {:src "assets/liv_uni_alt.jpg"}]]
    [CardText
-    [:ul {:class "education-text"}
-     [:li "First Class BSc in Physics from the University of Liverpool"
-      [:ul
-       [:li "81% average in exams, lab work and coursework"]
-       [:li "3rd year project involves data mining/signal analysis using C++ and linux"]
-       [:li "Awarded Physics Department Attainment Scholarship, and Wynn Evans Memorial Prize (awarded to top sudent in BSc physics program)"]
-       ]
-      ]
-     [:li "3 A's at A-Level in Physics, Chemistry and Maths"
-      [:ul
-       [:li "Awarded Wynn Williams Memorial Prize for Astrophysics"]
-       ]
-      ]
-     [:li "11 GCSEs"]
-     ]
-    ]
-   ])
+    (map (fn [{:keys [from to name highlights]}]
+           [:div
+            [:div [:b name]]
+            [:div [:i (str (format-date-month-year from) " - " (format-date-month-year to))]]
+            [:ul
+             (map (fn [highlight]
+                    [:li highlight])
+                  highlights)]
+            ])
+         education)]])
 
-(defn hobbies-card []
+(defn hobbies-card [hobbies]
   [Card
    [CardHeader {:title "My Hobbies" :padding 0
                 :avatar (r/as-element [Avatar {:icon (r/as-element [FontIcon {:className "fa fa-thumbs-o-up"}])}])}]
    [GridList {:cols 2 :cellHeight 180}
-    [GridTile {:cols 2 :title "Motorsport" :subtitle "I Race in the Track Attack MR2 Series"
-               :rootClass "tile"
-               :actionIcon (r/as-element
-                            [IconButton {:iconClassName "fa fa-youtube-play" :iconStyle {:color "#e62117"}
-                                         :onClick #(open-in-new-tab "https://www.youtube.com/user/dave12347589/videos")}])}
-     [:img {:src "assets/racing.jpg"}]
-     ]
-    [GridTile {:cols 1 :title "Reading" :subtitle "I'm a big fan of sci-fi books" :titlePosition "top"
-               :rootClass "tile"}
-     [:img {:src "assets/hyperion.jpg"}]
-     ]
-    [GridTile {:cols 1 :title "Snowboarding" :subtitle "I enjoy snowboarding during the winter" :rootClass "tile"}
-     [:img {:src "assets/snowboarding.jpg"}]
-     ]
-    ]
-   ]
-  )
+    (let [positions (cycle ["bottom" "top"])
+          col-spans (if (even? (count hobbies))
+                      (repeat 1)
+                      (cons 2 (repeat 1)))]
+      (map (fn [{:keys [title description img]} col-span position]
+             [GridTile {:cols col-span :title title :subtitle description :rootClass "tile" :titlePosition position}
+              [:img {:src img}]])
+           hobbies col-spans positions))]])
 
-(defn page []
+(defn page [{:keys [personal summary education hobbies]}]
   [:div.row.middle-xs
-   [:div {:class "col-xs-12 col-md-2 card-container"}
-    [contact-info {:style {:color "red"}}]     
+   [:div {:class "col-xs-12 col-lg-2 col-md-4 card-container"}
+    [contact-info personal]     
     ]
-   [:div {:class "col-xs-12 col-md-10 card-container"}
-    [summary-card]
-    ]
-   [:div {:class "col-xs-12 col-md-6"}
-    [:div.card-container
-     [github/card {:user "DaveWM"}]
-     ]
-    [:div.card-container
-     [hobbies-card]
-     ]
+   [:div {:class "col-xs-12 col-lg-10 col-md-8 card-container"}
+    [summary-card summary]
     ]
    [:div {:class "col-xs-12 col-md-6"}
     [:div.card-container
-     [education-card]
+     [github/card {:user (:github-user personal)}]
      ]
     [:div.card-container
-     [codewars/card]
+     [hobbies-card hobbies]
+     ]
+    ]
+   [:div {:class "col-xs-12 col-md-6"}
+    [:div.card-container
+     [education-card education]
+     ]
+    [:div.card-container
+     [codewars/card {:user (:codewars-user personal)}]
      ]
     ]
    ])
