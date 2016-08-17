@@ -6,6 +6,11 @@ $octicons-font-path: '/fonts';
 @import "../third-party/css/octicons";
 @import "../third-party/css/font-mfizz";
 
+html {
+    height: 100%;
+    background-color: rgb(63, 81, 181);
+}
+
 body{
     margin: 0;
     background-color: #F5F5F5;
@@ -21,7 +26,10 @@ body{
     background-color: #F5F5F5;
 }
 .content {
+    color: red !important;
+    flex: 1;
     padding: 12px;
+    min-height: 500px;
 }
 
 .spacer {

@@ -26,7 +26,7 @@
 
 (defn filter-data [filters data]
   (->> data
-       (filter #((:type %) (:types filters)))
+       (filter #((keyword (:type %)) (:types filters)))
        (filter #(apply > (map :experience [% filters])))
        (remove #(some->> (:name filters)
                          (.toLowerCase)

@@ -6,7 +6,7 @@
             [summary.codewars :as codewars]
             [reagent-material-ui.core :refer [FontIcon IconButton Card CardMedia CardTitle CardHeader CardText Avatar GridList GridTile FontIcon]]
             [markdown.core :refer [md->html]]
-            [cljs-time.format :as time]))
+            [app.helpers :refer [format-date-month-year]]))
 (enable-console-print!)
 
 (defn open-in-new-tab [url]
@@ -38,22 +38,20 @@
               :dangerouslySetInnerHTML {:__html (md->html summary)}}]])
 
 (defn education-card [education]
-  (let [format-date (fn [date]
-                      (time/unparse (time/formatter "MMMM YYYY") date))]
-    [Card
-     [CardMedia {:overlay (r/as-element [CardTitle {:title "Education"}])}
-      [:img {:src "assets/liv_uni_alt.jpg"}]]
-     [CardText
-      (map (fn [{:keys [from to name highlights]}]
-             [:div
-              [:div [:b name]]
-              [:div [:i (str (format-date from) " - " (format-date to))]]
-              [:ul
-               (map (fn [highlight]
-                      [:li highlight])
-                    highlights)]
-              ])
-           education)]]))
+  [Card
+   [CardMedia {:overlay (r/as-element [CardTitle {:title "Education"}])}
+    [:img {:src "assets/liv_uni_alt.jpg"}]]
+   [CardText
+    (map (fn [{:keys [from to name highlights]}]
+           [:div
+            [:div [:b name]]
+            [:div [:i (str (format-date-month-year from) " - " (format-date-month-year to))]]
+            [:ul
+             (map (fn [highlight]
+                    [:li highlight])
+                  highlights)]
+            ])
+         education)]])
 
 (defn hobbies-card [hobbies]
   [Card
