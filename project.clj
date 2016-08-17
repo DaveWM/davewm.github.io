@@ -20,14 +20,13 @@
             [lein-cljsbuild "1.1.0"]
             [lein-figwheel "0.4.1"]
             ]
-  :figwheel { :css-dirs ["dist/css"] }
+  :figwheel { :css-dirs ["dist"] }
   :cljsbuild {:builds
               [{
                 :id "dev"
                 :source-paths ["src/cljs/"]
                 :source-map true
-                :figwheel {:on-jsload "app.core/main"
-                           :css-dirs "dist"}
+                :figwheel {:on-jsload "app.core/main"}
                            
                 :compiler {;; CLS generated JS script filename
                            :output-to "dist/app.js"
