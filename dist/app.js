@@ -19054,8 +19054,8 @@ var WB = Es(1), XB = Es(null), YB = new m(null, 3, ["summary", DB, "work-history
   return new W(null, 2, 5, Y, [Qn, new W(null, 2, 5, Y, [Nm, V.h(Iu, pj.j(a))], null)], null);
 }, "technologies", function(a) {
   var b = null != a && (a.w & 64 || a.M) ? A.h(N, a) : a, c = H.h(b, yp);
-  return new W(null, 2, 5, Y, [Qn, new W(null, 3, 5, Y, [Nm, new m(null, 1, [xn, "col-xs-12 card-container"], null), new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-xs-12"], null), new W(null, 3, 5, Y, [Gs, new W(null, 2, 5, Y, [Is, new m(null, 4, [ym, "Filters", Dn, As(new W(null, 2, 5, Y, [Fs, new m(null, 1, [em, As(new W(null, 3, 5, Y, [Ps, new m(null, 1, [um, "material-icons"], null), "filter_list"], null))], null)], null)), Go, !0, pp, !0], null)], null), new W(null, 3, 5, Y, [Ks, new m(null, 
-  1, [Pn, !0], null), new W(null, 5, 5, Y, [Nm, new m(null, 1, [xn, "row"], null), new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-sm-6"], null), new W(null, 2, 5, Y, [Yo, "Types"], null), V.h(oB, lB)], null), new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-sm-3"], null), new W(null, 2, 5, Y, [Yo, "Experience"], null), new W(null, 2, 5, Y, [Xs, new m(null, 4, [yo, Fl.j(O.j ? O.j(mB) : O.call(null, mB)), wj, 0, tn, A.h(Ce, V.h(Fl, c)), Co, function(a, b, c) {
+  return new W(null, 2, 5, Y, [Qn, new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-xs-12 card-container"], null), new W(null, 3, 5, Y, [Nm, new m(null, 1, [xn, "col-xs-12"], null), new W(null, 3, 5, Y, [Gs, new W(null, 2, 5, Y, [Is, new m(null, 4, [ym, "Filters", Dn, As(new W(null, 2, 5, Y, [Fs, new m(null, 1, [em, As(new W(null, 3, 5, Y, [Ps, new m(null, 1, [um, "material-icons"], null), "filter_list"], null))], null)], null)), Go, !0, pp, !0], null)], null), new W(null, 3, 5, Y, [Ks, new m(null, 
+  1, [Pn, !0], null), new W(null, 5, 5, Y, [Nm, new m(null, 1, [xn, "row"], null), new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-sm-6 col-xs-12"], null), new W(null, 2, 5, Y, [Yo, "Types"], null), V.h(oB, lB)], null), new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-sm-3 col-xs-12"], null), new W(null, 2, 5, Y, [Yo, "Experience"], null), new W(null, 2, 5, Y, [Xs, new m(null, 4, [yo, Fl.j(O.j ? O.j(mB) : O.call(null, mB)), wj, 0, tn, A.h(Ce, V.h(Fl, c)), Co, function(a, b, c) {
     return function(g, l) {
       Li.o(I([l], 0));
       return Sf.h(mB, function() {
@@ -19064,7 +19064,7 @@ var WB = Es(1), XB = Es(null), YB = new m(null, 3, ["summary", DB, "work-history
         };
       }(a, b, c));
     };
-  }(a, b, c)], null)], null)], null), new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-sm-3"], null), new W(null, 2, 5, Y, [Yo, "Name"], null), new W(null, 2, 5, Y, [Ys, new m(null, 2, [yo, gl.j(O.j ? O.j(mB) : O.call(null, mB)), Co, function(a, b, c) {
+  }(a, b, c)], null)], null)], null), new W(null, 4, 5, Y, [Nm, new m(null, 1, [xn, "col-sm-3 col-xs-12"], null), new W(null, 2, 5, Y, [Yo, "Name"], null), new W(null, 2, 5, Y, [Ys, new m(null, 2, [yo, gl.j(O.j ? O.j(mB) : O.call(null, mB)), Co, function(a, b, c) {
     return function(g) {
       return Sf.h(mB, function() {
         return function(a) {
@@ -19072,7 +19072,7 @@ var WB = Es(1), XB = Es(null), YB = new m(null, 3, ["summary", DB, "work-history
         };
       }(a, b, c));
     };
-  }(a, b, c)], null)], null)], null)], null)], null)], null), new W(null, 3, 5, Y, [Nm, new m(null, 1, [xn, "col-xs-12 card-container"], null), new W(null, 3, 5, Y, [Vs, new m(null, 1, [xn, "tech-chart"], null), function() {
+  }(a, b, c)], null)], null)], null)], null)], null)], null)], null), new W(null, 3, 5, Y, [Nm, new m(null, 1, [xn, "col-xs-12 card-container"], null), new W(null, 3, 5, Y, [Vs, new m(null, 1, [xn, "tech-chart"], null), function() {
     var d = nB(O.j ? O.j(mB) : O.call(null, mB), c), e = B.l(function() {
       return function(a, b) {
         var c = T(b, 0), d = T(b, 1);
@@ -19087,7 +19087,7 @@ var WB = Es(1), XB = Es(null), YB = new m(null, 3, ["summary", DB, "work-history
     }(d, e, a, b, c), new W(null, 2, 5, Y, [Vs, new m(null, 1, [xn, "chart-keys"], null)], null), lB);
     return r(Gf.l(lb, Le, S).call(null, d)) ? new W(null, 5, 5, Y, [Nm, new m(null, 1, [Jm, new m(null, 1, [tk, "center"], null)], null), new W(null, 2, 5, Y, [kB, new m(null, 3, [hn, 100, yp, d, vl, e], null)], null), new W(null, 2, 5, Y, [Yo, "The size of each bubble represents the experience I have with that technology."], null), f], null) : new W(null, 3, 5, Y, [Nm, new m(null, 1, [Jm, new m(null, 1, [tk, "center"], null)], null), new W(null, 2, 5, Y, [Ho, "No Technologies match the filters :("], 
     null)], null);
-  }()], null)], null)], null)], null)], null);
+  }()], null)], null)], null)], null);
 }], null), ZB = new W(null, 2, 5, Y, ["/", di.o(I([YB, new m(null, 2, ["", DB, !0, function() {
   return new W(null, 2, 5, Y, [Ho, "Route not found :("], null);
 }], null)], 0))], null);

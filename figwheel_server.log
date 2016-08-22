@@ -6854,3 +6854,20 @@ notifying browser that file changed:  /technologies/page.js
 [32mSuccessfully compiled "dist/app.js" in 0.281 seconds.[0m
 notifying browser that file changed:  dist/out/cljs_deps.js
 notifying browser that file changed:  /technologies/page.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.223 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /app/helpers.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.322 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
