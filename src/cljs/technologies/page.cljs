@@ -1,7 +1,8 @@
 (ns technologies.page
   (:require [reagent.core :as r]
             [technologies.chart :refer [chart]]
-            [reagent-material-ui.core :refer [Avatar Card CardHeader CardText Checkbox Divider FontIcon Paper Slider TextField]])
+            [reagent-material-ui.core :refer [Avatar Card CardHeader CardText Checkbox Divider FontIcon Paper Slider TextField]]
+            [clojure.set :refer [union]])
   (:require-macros [cljs.core :refer [this-as]]))
 (enable-console-print!)
 
@@ -17,16 +18,14 @@
                 :Misc {:colour "lightblue" :name "Miscellaneous"}})
 
 (def filters-atom (r/atom (-> {}
-                              (assoc :types (->> type-data
-                                                 keys
-                                                 (map #(identity {% true}))
-                                                 (apply merge)))
+                              (assoc :types #{})
                               (assoc :experience 0)
                               (assoc :name nil))))
 
 (defn filter-data [filters data]
   (->> data
-       (filter #((keyword (:type %)) (:types filters)))
+       (filter #(or (empty? (:types filters))
+                    (contains? (:types filters) (keyword (:type %)))))
        (filter #(apply > (map :experience [% filters])))
        (remove #(some->> (:name filters)
                          (.toLowerCase)
@@ -36,14 +35,18 @@
 (defn type-checkbox [[key type]]
   [Checkbox {:key key
              :label (:name type)
-             :defaultChecked (get-in @filters-atom [:types key])
+             :defaultChecked (contains? (:types @filters-atom) key)
              :style {:max-width 200
                      :display "inline-block"}
              :iconStyle {:fill (:colour type)}
              :labelStyle {:color (:colour type)}
-             :onCheck (fn [event] (swap! filters-atom #(assoc-in % [:types key] (-> event
-                                                                                     (.-target)
-                                                                                     (.-checked)))))}])
+             :onCheck (fn [event] (swap! filters-atom #(let [checked (-> event
+                                                                         (.-target)
+                                                                         (.-checked))
+                                                             operation (if checked union remove)]
+                                                         (update % :types (fn [types]
+                                                                            (->> (operation #{key} types)
+                                                                                 (into #{})))))))}])
 
 (defn page [{:keys [technologies]}]
   [:div.row.middle-xs
