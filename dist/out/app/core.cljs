@@ -86,7 +86,7 @@
                        :iconStyle {:color "white"}}]]]]]])
 
 (defn load-data []
-  (GET api-url {:handler #(reset! data nil)
+  (GET api-url {:handler #(reset! data %)
                 :response-format :json
                 :keywords? true}))
 

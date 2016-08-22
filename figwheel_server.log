@@ -6695,3 +6695,162 @@ sending changed CSS file: dist/app.css
 sending changed CSS file: dist/app.css
 sending changed CSS file: dist/app.css
 sending changed CSS file: dist/app.css
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.196 seconds.[0m
+notifying browser that file changed:  dist/out/goog/deps.js
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /work_history/page.js
+notifying browser that file changed:  /technologies/chart.js
+notifying browser that file changed:  /summary/codewars.js
+notifying browser that file changed:  /app/helpers.js
+notifying browser that file changed:  /summary/github.js
+notifying browser that file changed:  /summary/page.js
+notifying browser that file changed:  /app/core.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.287 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.279 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.282 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.264 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.281 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.251 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.278 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.279 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.262 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.272 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.277 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.247 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.266 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.286 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.281 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.283 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.274 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.227 seconds.[0m
+notifying browser that file changed:  /technologies/chart.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.287 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.235 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/chart.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.259 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+WARNING: Wrong number of args (5) passed to cljs.core/some at line 31 src/cljs/technologies/page.cljs
+WARNING: Use of undeclared Var cljs.core/->> at line 31 src/cljs/technologies/page.cljs
+[31mCompiling "dist/app.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/cljs/technologies/page.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3144.invoke (compiler.cljc:1347)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1309)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1384)
+    cljs.closure$compile_dir.invoke (closure.clj:446)
+    cljs.closure$eval3588$fn__3589.invoke (closure.clj:486)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    cljs.closure$eval3601$fn__3602.invoke (closure.clj:500)
+    cljs.closure$eval3540$fn__3541$G__3531__3548.invoke (closure.clj:391)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1683)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15813.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15859.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15810.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15613.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15619.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15619.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15622.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15616.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15634.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15720$state_machine__9543__auto____15721$fn__15726.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15720$state_machine__9543__auto____15721.invoke (auto.clj:178)
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.277 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.273 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.275 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.29 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.286 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.263 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.282 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.288 seconds.[0m
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.267 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
+[0mCompiling "dist/app.js" from ["src/cljs/"]...
+[32mSuccessfully compiled "dist/app.js" in 0.281 seconds.[0m
+notifying browser that file changed:  dist/out/cljs_deps.js
+notifying browser that file changed:  /technologies/page.js
