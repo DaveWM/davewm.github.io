@@ -37,7 +37,7 @@
   [Checkbox {:key key
              :label (:name type)
              :defaultChecked (get-in @filters-atom [:types key])
-             :style {:max-width 300
+             :style {:max-width 200
                      :display "inline-block"}
              :iconStyle {:fill (:colour type)}
              :labelStyle {:color (:colour type)}
@@ -55,47 +55,44 @@
                    :actAsExpander true
                    :showExpandableButton true}]
       [CardText {:expandable true}
-       [:p "Types"]
-       (->> type-data
-            (map type-checkbox))
-       [Divider {:style {:margin-top 20
-                             :margin-bottom 20}}]
-       [:p "Experience"]
-       [Slider {:defaultValue (:experience @filters-atom)
-                :min 0
-                :max (apply max (map :experience technologies))
-                :onChange (fn [event value] (print value) (swap! filters-atom #(assoc % :experience value)))}]
-       [Divider {:style {:margin-top 20
-                             :margin-bottom 20}}]
-       [TextField {:floatingLabelText "Name"
-                   :defaultValue (:name @filters-atom)
-                   :onChange (fn [event] (swap! filters-atom #(assoc % :name (-> event
-                                                                                 (.-target)
-                                                                                 (.-value)))))}]
-       ]
-      ]]]
-   [:div {:class "col-xs-12 card-container"}
-    [:div {:class "col-xs-12"}
-     [Paper {:class "tech-chart"}
-      [:p "The size of each bubble represents the experience I have with that technology."]
-      (let [filtered-data (filter-data @filters-atom technologies)
-            colours-map (reduce
-                         (fn [result [type val]] (assoc result type (:colour val)))
-                         {}
-                         type-data)
-            chart-colour-key (reduce (fn [result [type props]]
-                                       (conj result [:span {:className "chart-key"
-                                                            :style {:color (:colour props)}}
-                                                     [:span (:name props)]
-                                                     [:span {:className "key-colour"
-                                                             :style {:background-color (:colour props)}}]
-                                                     ]))
-                                     [Paper {:class "chart-keys"}]
-                                     type-data)]
-        (if ((comp not zero? count) filtered-data)
-          [:div
-           chart-colour-key
-           [chart {:chart-size chart-size :technologies filtered-data :colours colours-map}]]
-          [:div {:style {:text-align "center"}}
-           [:h3 "No Technologies match the filters :("]
-           ]))]]]])
+       [:div {:class "row"}
+        [:div {:class "col-sm-6"}
+         [:p "Types"]
+         (->> type-data
+              (map type-checkbox))]
+        [:div {:class "col-sm-3"}
+         [:p "Experience"]
+         [Slider {:defaultValue (:experience @filters-atom)
+                  :min 0
+                  :max (apply max (map :experience technologies))
+                  :onChange (fn [event value] (print value) (swap! filters-atom #(assoc % :experience value)))}]]
+        [:div {:class "col-sm-3"}
+         [:p "Name"]
+         [TextField {:defaultValue (:name @filters-atom)
+                     :onChange (fn [event] (swap! filters-atom #(assoc % :name (-> event
+                                                                                   (.-target)
+                                                                                   (.-value)))))}]]]]]
+     [:div {:class "col-xs-12 card-container"}
+      [Paper {:class "tech-chart"}
+       (let [filtered-data (filter-data @filters-atom technologies)
+             colours-map (reduce
+                          (fn [result [type val]] (assoc result type (:colour val)))
+                          {}
+                          type-data)
+             chart-colour-key (reduce (fn [result [type props]]
+                                        (conj result [:span {:className "chart-key"
+                                                             :style {:color (:colour props)}}
+                                                      [:span (:name props)]
+                                                      [:span {:className "key-colour"
+                                                              :style {:background-color (:colour props)}}]
+                                                      ]))
+                                      [Paper {:class "chart-keys"}]
+                                      type-data)]
+         (if ((comp not zero? count) filtered-data)
+           [:div {:style {:text-align "center"}}
+            [chart {:chart-size chart-size :technologies filtered-data :colours colours-map}]
+            [:p "The size of each bubble represents the experience I have with that technology."]
+            chart-colour-key]
+           [:div {:style {:text-align "center"}}
+            [:h3 "No Technologies match the filters :("]
+            ]))]]]]])

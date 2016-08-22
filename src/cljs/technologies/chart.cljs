@@ -57,7 +57,7 @@
 
 
 (defn page-layout [props]
-  [:svg])
+  [:svg {:style {:max-width 1000}}])
 
 (def component-update-func
   #(let [chart-size (-> % r/props :chart-size)
