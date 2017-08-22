@@ -7,7 +7,7 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.145"]
                  [reagent "0.6.0-alpha2"]
-                 [cljs-ajax "0.3.14"]
+                 [cljs-ajax "0.6.0"]
                  [cljsjs/d3 "3.5.7-1"]
                  [reagent-material-ui "0.2.2"]
                  [bidi "1.20.0"]
@@ -35,6 +35,7 @@
 
                            :pretty-print true
                            }
+                
                 }
                {
                 :id "release"

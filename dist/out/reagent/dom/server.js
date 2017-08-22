@@ -37,11 +37,11 @@ throw (new Error("js/ReactDOMServer is missing"));
 reagent.dom.server.render_to_string = (function reagent$dom$server$render_to_string(component){
 reagent.ratom.flush_BANG_.call(null);
 
-var _STAR_non_reactive_STAR_24529 = reagent.impl.util._STAR_non_reactive_STAR_;
+var _STAR_non_reactive_STAR_22311 = reagent.impl.util._STAR_non_reactive_STAR_;
 reagent.impl.util._STAR_non_reactive_STAR_ = true;
 
 try{return (reagent.dom.server.module.call(null)["renderToString"])(reagent.impl.template.as_element.call(null,component));
-}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR_24529;
+}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR_22311;
 }});
 /**
  * Turns a component into an HTML string, without data-react-id attributes, etc.
@@ -49,11 +49,11 @@ try{return (reagent.dom.server.module.call(null)["renderToString"])(reagent.impl
 reagent.dom.server.render_to_static_markup = (function reagent$dom$server$render_to_static_markup(component){
 reagent.ratom.flush_BANG_.call(null);
 
-var _STAR_non_reactive_STAR_24531 = reagent.impl.util._STAR_non_reactive_STAR_;
+var _STAR_non_reactive_STAR_22313 = reagent.impl.util._STAR_non_reactive_STAR_;
 reagent.impl.util._STAR_non_reactive_STAR_ = true;
 
 try{return (reagent.dom.server.module.call(null)["renderToStaticMarkup"])(reagent.impl.template.as_element.call(null,component));
-}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR_24531;
+}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR_22313;
 }});
 
 //# sourceMappingURL=server.js.map

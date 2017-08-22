@@ -13,7 +13,7 @@
 ;; limitations under the License.
 
 (ns cognitect.transit
-  (:refer-clojure :exclude [integer? uuid])
+  (:refer-clojure :exclude [integer? uuid uuid?])
   (:require [com.cognitect.transit :as t]
             [com.cognitect.transit.types :as ty]
             [com.cognitect.transit.eq :as eq])
@@ -69,7 +69,7 @@
 
   ty/UUID
   (-hash [this]
-    (eq/hashCode this))
+    (hash (.toString this)))
 
   ty/TaggedValue
   (-hash [this]
@@ -342,7 +342,7 @@
 (defn uuid?
   "Returns true if x is a transit UUID value, false otherwise."
   [x]
-  (ty/isUUID x))
+  (or (ty/isUUID x) (instance? UUID x)))
 
 (defn binary
   "Construct a transit binary value. s should be base64 encoded

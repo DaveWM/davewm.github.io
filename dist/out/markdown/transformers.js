@@ -58,16 +58,16 @@ if(cljs.core.empty_QMARK_.call(null,remaining)){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [clojure.string.join.call(null,buf),state], null);
 } else {
 if(cljs.core._EQ_.call(null,cljs.core.first.call(null,remaining),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["^"], null))){
-var G__21940 = cljs.core.into.call(null,buf,cljs.core.concat.call(null,cljs.core.seq.call(null,"<sup>"),cljs.core.second.call(null,remaining),cljs.core.seq.call(null,"</sup>")));
-var G__21941 = cljs.core.drop.call(null,(2),remaining);
-buf = G__21940;
-remaining = G__21941;
+var G__23616 = cljs.core.into.call(null,buf,cljs.core.concat.call(null,cljs.core.seq.call(null,"<sup>"),cljs.core.second.call(null,remaining),cljs.core.seq.call(null,"</sup>")));
+var G__23617 = cljs.core.drop.call(null,(2),remaining);
+buf = G__23616;
+remaining = G__23617;
 continue;
 } else {
-var G__21942 = cljs.core.into.call(null,buf,cljs.core.first.call(null,remaining));
-var G__21943 = cljs.core.rest.call(null,remaining);
-buf = G__21942;
-remaining = G__21943;
+var G__23618 = cljs.core.into.call(null,buf,cljs.core.first.call(null,remaining));
+var G__23619 = cljs.core.rest.call(null,remaining);
+buf = G__23618;
+remaining = G__23619;
 continue;
 
 }
@@ -104,12 +104,12 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 }
 }
 });
-markdown.transformers.br = (function markdown$transformers$br(text,p__21944){
-var map__21947 = p__21944;
-var map__21947__$1 = ((((!((map__21947 == null)))?((((map__21947.cljs$lang$protocol_mask$partition0$ & (64))) || (map__21947.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21947):map__21947);
-var state = map__21947__$1;
-var code = cljs.core.get.call(null,map__21947__$1,new cljs.core.Keyword(null,"code","code",1586293142));
-var lists = cljs.core.get.call(null,map__21947__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
+markdown.transformers.br = (function markdown$transformers$br(text,p__23620){
+var map__23623 = p__23620;
+var map__23623__$1 = ((((!((map__23623 == null)))?((((map__23623.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23623.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23623):map__23623);
+var state = map__23623__$1;
+var code = cljs.core.get.call(null,map__23623__$1,new cljs.core.Keyword(null,"code","code",1586293142));
+var lists = cljs.core.get.call(null,map__23623__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(((cljs.core._EQ_.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [" "," "], null),cljs.core.take_last.call(null,(2),text))) && (cljs.core.not.call(null,(function (){var or__16358__auto__ = code;
 if(cljs.core.truth_(or__16358__auto__)){
 return or__16358__auto__;
@@ -119,8 +119,8 @@ return lists;
 })())))?[cljs.core.str(cljs.core.apply.call(null,cljs.core.str,cljs.core.drop_last.call(null,(2),text))),cljs.core.str("<br />")].join(''):text),state], null);
 });
 markdown.transformers.autourl_transformer = (function markdown$transformers$autourl_transformer(text,state){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(cljs.core.truth_(new cljs.core.Keyword(null,"code","code",1586293142).cljs$core$IFn$_invoke$arity$1(state))?text:clojure.string.replace.call(null,text,/<https?:\/\/[-A-Za-z0-9+&@#\/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#\/%=~_()|]>/,(function (p1__21949_SHARP_){
-var url = cljs.core.subs.call(null,p1__21949_SHARP_,(1),(cljs.core.count.call(null,p1__21949_SHARP_) - (1)));
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(cljs.core.truth_(new cljs.core.Keyword(null,"code","code",1586293142).cljs$core$IFn$_invoke$arity$1(state))?text:clojure.string.replace.call(null,text,/<https?:\/\/[-A-Za-z0-9+&@#\/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#\/%=~_()|]>/,(function (p1__23625_SHARP_){
+var url = cljs.core.subs.call(null,p1__23625_SHARP_,(1),(cljs.core.count.call(null,p1__23625_SHARP_) - (1)));
 return [cljs.core.str("<a href=\""),cljs.core.str(url),cljs.core.str("\">"),cljs.core.str(url),cljs.core.str("</a>")].join('');
 }))),state], null);
 });
@@ -131,22 +131,22 @@ return or__16358__auto__;
 } else {
 return new cljs.core.Keyword(null,"codeblock","codeblock",-851153855).cljs$core$IFn$_invoke$arity$1(state);
 }
-})())?text:clojure.string.replace.call(null,text,/<[\w._%+-]+@[\w.-]+\.[\w]{2,4}>/,(function (p1__21950_SHARP_){
-var encoded = (cljs.core.truth_(new cljs.core.Keyword(null,"clojurescript","clojurescript",-299769403).cljs$core$IFn$_invoke$arity$1(state))?cljs.core.subs.call(null,p1__21950_SHARP_,(1),(cljs.core.count.call(null,p1__21950_SHARP_) - (1))):cljs.core.apply.call(null,cljs.core.str,cljs.core.map.call(null,(function (c){
+})())?text:clojure.string.replace.call(null,text,/<[\w._%+-]+@[\w.-]+\.[\w]{2,4}>/,(function (p1__23626_SHARP_){
+var encoded = (cljs.core.truth_(new cljs.core.Keyword(null,"clojurescript","clojurescript",-299769403).cljs$core$IFn$_invoke$arity$1(state))?cljs.core.subs.call(null,p1__23626_SHARP_,(1),(cljs.core.count.call(null,p1__23626_SHARP_) - (1))):cljs.core.apply.call(null,cljs.core.str,cljs.core.map.call(null,(function (c){
 if((cljs.core.rand.call(null) > 0.5)){
 return markdown.transformers.formatter.call(null,"&#x%02x;",(c | (0)));
 } else {
 return c;
 }
-}),cljs.core.subs.call(null,p1__21950_SHARP_,(1),(cljs.core.count.call(null,p1__21950_SHARP_) - (1))))));
+}),cljs.core.subs.call(null,p1__23626_SHARP_,(1),(cljs.core.count.call(null,p1__23626_SHARP_) - (1))))));
 return [cljs.core.str("<a href=\"mailto:"),cljs.core.str(encoded),cljs.core.str("\">"),cljs.core.str(encoded),cljs.core.str("</a>")].join('');
 }))),state], null);
 });
-markdown.transformers.set_line_state = (function markdown$transformers$set_line_state(text,p__21951){
-var map__21954 = p__21951;
-var map__21954__$1 = ((((!((map__21954 == null)))?((((map__21954.cljs$lang$protocol_mask$partition0$ & (64))) || (map__21954.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21954):map__21954);
-var state = map__21954__$1;
-var inline_heading = cljs.core.get.call(null,map__21954__$1,new cljs.core.Keyword(null,"inline-heading","inline-heading",-158773818));
+markdown.transformers.set_line_state = (function markdown$transformers$set_line_state(text,p__23627){
+var map__23630 = p__23627;
+var map__23630__$1 = ((((!((map__23630 == null)))?((((map__23630.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23630.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23630):map__23630);
+var state = map__23630__$1;
+var inline_heading = cljs.core.get.call(null,map__23630__$1,new cljs.core.Keyword(null,"inline-heading","inline-heading",-158773818));
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [text,cljs.core.assoc_in.call(null,cljs.core.dissoc.call(null,state,new cljs.core.Keyword(null,"inline-heading","inline-heading",-158773818)),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"temp","temp",1791541284),new cljs.core.Keyword(null,"inline-heading","inline-heading",-158773818)], null),inline_heading)], null);
 });
 markdown.transformers.clear_line_state = (function markdown$transformers$clear_line_state(text,state){
@@ -165,20 +165,20 @@ return [cljs.core.str(" "),cljs.core.str(text)].join('');
 return text;
 }
 });
-markdown.transformers.paragraph = (function markdown$transformers$paragraph(text,p__21956){
-var map__21959 = p__21956;
-var map__21959__$1 = ((((!((map__21959 == null)))?((((map__21959.cljs$lang$protocol_mask$partition0$ & (64))) || (map__21959.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21959):map__21959);
-var state = map__21959__$1;
-var eof = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"eof","eof",-489063237));
-var paragraph__$1 = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"paragraph","paragraph",296707709));
-var blockquote = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"blockquote","blockquote",372264190));
-var heading = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"heading","heading",-1312171873));
-var hr = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"hr","hr",1377740067));
-var temp = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"temp","temp",1791541284));
-var lists = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
-var inline_heading = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"inline-heading","inline-heading",-158773818));
-var last_line_empty_QMARK_ = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"last-line-empty?","last-line-empty?",1279111527));
-var code = cljs.core.get.call(null,map__21959__$1,new cljs.core.Keyword(null,"code","code",1586293142));
+markdown.transformers.paragraph = (function markdown$transformers$paragraph(text,p__23632){
+var map__23635 = p__23632;
+var map__23635__$1 = ((((!((map__23635 == null)))?((((map__23635.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23635.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23635):map__23635);
+var state = map__23635__$1;
+var eof = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"eof","eof",-489063237));
+var paragraph__$1 = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"paragraph","paragraph",296707709));
+var blockquote = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"blockquote","blockquote",372264190));
+var heading = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"heading","heading",-1312171873));
+var hr = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"hr","hr",1377740067));
+var temp = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"temp","temp",1791541284));
+var lists = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
+var inline_heading = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"inline-heading","inline-heading",-158773818));
+var last_line_empty_QMARK_ = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"last-line-empty?","last-line-empty?",1279111527));
+var code = cljs.core.get.call(null,map__23635__$1,new cljs.core.Keyword(null,"code","code",1586293142));
 if(cljs.core.truth_((function (){var and__16346__auto__ = paragraph__$1;
 if(cljs.core.truth_(and__16346__auto__)){
 return lists;
@@ -256,14 +256,14 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 }
 }
 });
-markdown.transformers.code = (function markdown$transformers$code(text,p__21961){
-var map__21964 = p__21961;
-var map__21964__$1 = ((((!((map__21964 == null)))?((((map__21964.cljs$lang$protocol_mask$partition0$ & (64))) || (map__21964.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21964):map__21964);
-var state = map__21964__$1;
-var eof = cljs.core.get.call(null,map__21964__$1,new cljs.core.Keyword(null,"eof","eof",-489063237));
-var lists = cljs.core.get.call(null,map__21964__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
-var code__$1 = cljs.core.get.call(null,map__21964__$1,new cljs.core.Keyword(null,"code","code",1586293142));
-var codeblock = cljs.core.get.call(null,map__21964__$1,new cljs.core.Keyword(null,"codeblock","codeblock",-851153855));
+markdown.transformers.code = (function markdown$transformers$code(text,p__23637){
+var map__23640 = p__23637;
+var map__23640__$1 = ((((!((map__23640 == null)))?((((map__23640.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23640.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23640):map__23640);
+var state = map__23640__$1;
+var eof = cljs.core.get.call(null,map__23640__$1,new cljs.core.Keyword(null,"eof","eof",-489063237));
+var lists = cljs.core.get.call(null,map__23640__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
+var code__$1 = cljs.core.get.call(null,map__23640__$1,new cljs.core.Keyword(null,"code","code",1586293142));
+var codeblock = cljs.core.get.call(null,map__23640__$1,new cljs.core.Keyword(null,"codeblock","codeblock",-851153855));
 if(cljs.core.truth_((function (){var or__16358__auto__ = lists;
 if(cljs.core.truth_(or__16358__auto__)){
 return or__16358__auto__;
@@ -321,9 +321,9 @@ return and__16346__auto__;
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [[cljs.core.str("</code></pre>"),cljs.core.str(clojure.string.join.call(null,cljs.core.drop_last.call(null,(3),trimmed)))].join(''),cljs.core.assoc.call(null,state,new cljs.core.Keyword(null,"code","code",1586293142),false,new cljs.core.Keyword(null,"codeblock","codeblock",-851153855),false,new cljs.core.Keyword(null,"last-line-empty?","last-line-empty?",1279111527),false)], null);
 } else {
 if(cljs.core._EQ_.call(null,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["`","`","`"], null),cljs.core.take.call(null,(3),trimmed))){
-var vec__21967 = cljs.core.split_with.call(null,cljs.core.partial.call(null,cljs.core.not_EQ_," "),cljs.core.drop.call(null,(3),trimmed));
-var lang = cljs.core.nth.call(null,vec__21967,(0),null);
-var code = cljs.core.nth.call(null,vec__21967,(1),null);
+var vec__23643 = cljs.core.split_with.call(null,cljs.core.partial.call(null,cljs.core.not_EQ_," "),cljs.core.drop.call(null,(3),trimmed));
+var lang = cljs.core.nth.call(null,vec__23643,(0),null);
+var code = cljs.core.nth.call(null,vec__23643,(1),null);
 var s = cljs.core.apply.call(null,cljs.core.str,cljs.core.rest.call(null,code));
 var formatter = new cljs.core.Keyword(null,"code-style","code-style",-2144009586).cljs$core$IFn$_invoke$arity$1(state);
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [[cljs.core.str("<pre><code"),cljs.core.str((cljs.core.truth_(cljs.core.not_empty.call(null,lang))?[cljs.core.str(" "),cljs.core.str((cljs.core.truth_(formatter)?formatter.call(null,clojure.string.join.call(null,lang)):[cljs.core.str("class=\""),cljs.core.str(clojure.string.join.call(null,lang)),cljs.core.str("\"")].join('')))].join(''):null)),cljs.core.str(">"),cljs.core.str(markdown.common.escape_code.call(null,((cljs.core.empty_QMARK_.call(null,s))?s:[cljs.core.str(s),cljs.core.str("\n")].join(''))))].join(''),cljs.core.assoc.call(null,state,new cljs.core.Keyword(null,"code","code",1586293142),true,new cljs.core.Keyword(null,"codeblock","codeblock",-851153855),true)], null);
@@ -349,14 +349,14 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 }
 }
 });
-markdown.transformers.blockquote = (function markdown$transformers$blockquote(text,p__21968){
-var map__21971 = p__21968;
-var map__21971__$1 = ((((!((map__21971 == null)))?((((map__21971.cljs$lang$protocol_mask$partition0$ & (64))) || (map__21971.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21971):map__21971);
-var state = map__21971__$1;
-var eof = cljs.core.get.call(null,map__21971__$1,new cljs.core.Keyword(null,"eof","eof",-489063237));
-var code = cljs.core.get.call(null,map__21971__$1,new cljs.core.Keyword(null,"code","code",1586293142));
-var codeblock = cljs.core.get.call(null,map__21971__$1,new cljs.core.Keyword(null,"codeblock","codeblock",-851153855));
-var lists = cljs.core.get.call(null,map__21971__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
+markdown.transformers.blockquote = (function markdown$transformers$blockquote(text,p__23644){
+var map__23647 = p__23644;
+var map__23647__$1 = ((((!((map__23647 == null)))?((((map__23647.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23647.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23647):map__23647);
+var state = map__23647__$1;
+var eof = cljs.core.get.call(null,map__23647__$1,new cljs.core.Keyword(null,"eof","eof",-489063237));
+var code = cljs.core.get.call(null,map__23647__$1,new cljs.core.Keyword(null,"code","code",1586293142));
+var codeblock = cljs.core.get.call(null,map__23647__$1,new cljs.core.Keyword(null,"codeblock","codeblock",-851153855));
+var lists = cljs.core.get.call(null,map__23647__$1,new cljs.core.Keyword(null,"lists","lists",-884730684));
 var trimmed = clojure.string.trim.call(null,text);
 if(cljs.core.truth_((function (){var or__16358__auto__ = code;
 if(cljs.core.truth_(or__16358__auto__)){
@@ -411,12 +411,12 @@ markdown.transformers.footer = (function markdown$transformers$footer(footnotes)
 if(cljs.core.empty_QMARK_.call(null,new cljs.core.Keyword(null,"processed","processed",800622264).cljs$core$IFn$_invoke$arity$1(footnotes))){
 return "";
 } else {
-return (function (p1__21973_SHARP_){
-return [cljs.core.str("<ol class='footnotes'>"),cljs.core.str(p1__21973_SHARP_),cljs.core.str("</ol>")].join('');
-}).call(null,cljs.core.reduce.call(null,(function (footnotes__$1,p__21976){
-var vec__21977 = p__21976;
-var id = cljs.core.nth.call(null,vec__21977,(0),null);
-var label = cljs.core.nth.call(null,vec__21977,(1),null);
+return (function (p1__23649_SHARP_){
+return [cljs.core.str("<ol class='footnotes'>"),cljs.core.str(p1__23649_SHARP_),cljs.core.str("</ol>")].join('');
+}).call(null,cljs.core.reduce.call(null,(function (footnotes__$1,p__23652){
+var vec__23653 = p__23652;
+var id = cljs.core.nth.call(null,vec__23653,(0),null);
+var label = cljs.core.nth.call(null,vec__23653,(1),null);
 return [cljs.core.str(footnotes__$1),cljs.core.str("<li id='fn-"),cljs.core.str(id),cljs.core.str("'>"),cljs.core.str(cljs.core.apply.call(null,cljs.core.str,cljs.core.interpose.call(null," ",label))),cljs.core.str("<a href='#fnref"),cljs.core.str(id),cljs.core.str("'>&#8617;</a></li>")].join('');
 }),"",cljs.core.into.call(null,cljs.core.sorted_map.call(null),new cljs.core.Keyword(null,"processed","processed",800622264).cljs$core$IFn$_invoke$arity$1(footnotes))));
 }
@@ -429,13 +429,13 @@ return [cljs.core.str(footnotes__$1),cljs.core.str("<li id='fn-"),cljs.core.str(
  */
 markdown.transformers.parse_metadata_line = (function markdown$transformers$parse_metadata_line(line){
 if(cljs.core.truth_(line)){
-var vec__21980 = cljs.core.re_matches.call(null,/^([0-9A-Za-z_-]*):(.*)$/,line);
-var _ = cljs.core.nth.call(null,vec__21980,(0),null);
-var key = cljs.core.nth.call(null,vec__21980,(1),null);
-var val = cljs.core.nth.call(null,vec__21980,(2),null);
-var vec__21981 = cljs.core.re_matches.call(null,/^    (.*)$/,line);
-var ___$1 = cljs.core.nth.call(null,vec__21981,(0),null);
-var next_val = cljs.core.nth.call(null,vec__21981,(1),null);
+var vec__23656 = cljs.core.re_matches.call(null,/^([0-9A-Za-z_-]*):(.*)$/,line);
+var _ = cljs.core.nth.call(null,vec__23656,(0),null);
+var key = cljs.core.nth.call(null,vec__23656,(1),null);
+var val = cljs.core.nth.call(null,vec__23656,(2),null);
+var vec__23657 = cljs.core.re_matches.call(null,/^    (.*)$/,line);
+var ___$1 = cljs.core.nth.call(null,vec__23657,(0),null);
+var next_val = cljs.core.nth.call(null,vec__23657,(1),null);
 if(cljs.core.not_EQ_.call(null,clojure.string.trim.call(null,line),"")){
 if(cljs.core.truth_(key)){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,clojure.string.lower_case.call(null,key)),val], null);
@@ -466,19 +466,19 @@ var prev_key = null;
 while(true){
 if(!(cljs.core.empty_QMARK_.call(null,remain))){
 var data = cljs.core.first.call(null,remain);
-var vec__21983 = ((cljs.core.sequential_QMARK_.call(null,data))?data:new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [prev_key,data], null));
-var key = cljs.core.nth.call(null,vec__21983,(0),null);
-var val = cljs.core.nth.call(null,vec__21983,(1),null);
+var vec__23659 = ((cljs.core.sequential_QMARK_.call(null,data))?data:new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [prev_key,data], null));
+var key = cljs.core.nth.call(null,vec__23659,(0),null);
+var val = cljs.core.nth.call(null,vec__23659,(1),null);
 var prev_val = cljs.core.get.call(null,acc,key,cljs.core.PersistentVector.EMPTY);
 var postfix = ((cljs.core._EQ_.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [" "," "], null),cljs.core.take_last.call(null,(2),val)))?"\n":"");
 var norm_val = [cljs.core.str(clojure.string.trim.call(null,val)),cljs.core.str(postfix)].join('');
 var new_val = ((!(cljs.core.empty_QMARK_.call(null,norm_val)))?cljs.core.conj.call(null,prev_val,norm_val):prev_val);
-var G__21984 = cljs.core.merge.call(null,acc,cljs.core.PersistentArrayMap.fromArray([key,new_val], true, false));
-var G__21985 = cljs.core.rest.call(null,remain);
-var G__21986 = key;
-acc = G__21984;
-remain = G__21985;
-prev_key = G__21986;
+var G__23660 = cljs.core.merge.call(null,acc,cljs.core.PersistentArrayMap.fromArray([key,new_val], true, false));
+var G__23661 = cljs.core.rest.call(null,remain);
+var G__23662 = key;
+acc = G__23660;
+remain = G__23661;
+prev_key = G__23662;
 continue;
 } else {
 return acc;

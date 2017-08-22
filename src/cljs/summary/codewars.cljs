@@ -11,7 +11,7 @@
 (def codewars-user (r/atom {}))
 (defn get-codewars-user [user]
   "Gets the codewars user info. Have to go through a proxy because their api doesn't support CORS"
-  (GET (str "http://cors-proxy.htmldriven.com/?url=https://www.codewars.com/api/v1/users/" user)
+  (GET (str "https://cors-anywhere.herokuapp.com/https://www.codewars.com/api/v1/users/" user)
        {:handler (fn [response] (do
                                   (reset! codewars-user response)
                                   (reset! codewars-loading false)))}))
@@ -31,16 +31,15 @@
       [List
        [:div
         (let [languages (sort-by #(get-in % [1 "score"]) > (get-in @codewars-user ["ranks" "languages"]))]
-          (map (fn [lang]
-                 (let [[name info] lang]
-                   (identity
-                    [ListItem {
-                               :key name
-                               :primaryText name
-                               :secondaryText (str "Score " (get info "score"))
-                               :leftIcon (r/as-element [FontIcon {:className (str "icon-" name)}])
-                               }]
-                    )))
+          (map (fn [[name info]]
+                 (identity
+                  [ListItem {
+                             :key name
+                             :primaryText name
+                             :secondaryText (str "Score " (get info "score"))
+                             :leftIcon (r/as-element [FontIcon {:className (str "icon-" name)}])
+                             }]
+                  ))
                languages)
           )]])]
     [CardActions
