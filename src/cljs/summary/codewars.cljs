@@ -11,7 +11,7 @@
 (def codewars-user (r/atom {}))
 (defn get-codewars-user [user]
   "Gets the codewars user info. Have to go through a proxy because their api doesn't support CORS"
-  (GET (str "https://crossorigin.me/https://www.codewars.com/api/v1/users/" user)
+  (GET (str "http://cors-proxy.htmldriven.com/?url=https://www.codewars.com/api/v1/users/" user)
        {:handler (fn [response] (do
                                   (reset! codewars-user response)
                                   (reset! codewars-loading false)))}))
