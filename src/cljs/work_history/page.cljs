@@ -12,16 +12,16 @@
     [CardMedia
      {:overlay (r/as-element
                 [CardHeader {:title title :subtitle (str (format-date-month-year from) " - " (if to
-                                                                                    (format-date-month-year to)
-                                                                                    "Present"))
+                                                                                               (format-date-month-year to)
+                                                                                               "Present"))
                              :avatar (r/as-element [Avatar (first title)])}]
                 )}
      [:img {:src img}]
      ]
     [CardText
      [:ul
-      (map-indexed #(identity [:li {:key %1}
-                               [:span {:dangerouslySetInnerHTML {:__html (md->html %2)}}]])
+      (map-indexed #(identity [:li {:key %1
+                                    :dangerouslySetInnerHTML {:__html (md->html %2)}}])
                    bullet-points)
       ]
      ]
@@ -29,7 +29,7 @@
      [FlatButton {:label "Go to Website" :linkButton true :href url}]
      ]
     ]])
-   
+
 (defn page [data]
   [:div.row.middle-xs
    [:div
