@@ -1,26 +1,26 @@
-// Compiled by ClojureScript 1.7.145 {}
+// Compiled by ClojureScript 1.10.439 {:static-fns true, :optimize-constants true}
 goog.provide('reagent.dom.server');
 goog.require('cljs.core');
-goog.require('cljsjs.react.dom.server');
+goog.require('cljs.core.constants');
 goog.require('reagent.impl.util');
 goog.require('reagent.impl.template');
 goog.require('reagent.ratom');
 goog.require('reagent.interop');
-if(typeof reagent.dom.server.imported !== 'undefined'){
+if((typeof reagent !== 'undefined') && (typeof reagent.dom !== 'undefined') && (typeof reagent.dom.server !== 'undefined') && (typeof reagent.dom.server.imported !== 'undefined')){
 } else {
 reagent.dom.server.imported = null;
 }
 reagent.dom.server.module = (function reagent$dom$server$module(){
-if(cljs.core.some_QMARK_.call(null,reagent.dom.server.imported)){
+if((!((reagent.dom.server.imported == null)))){
 return reagent.dom.server.imported;
 } else {
-if(typeof ReactDOMServer !== 'undefined'){
+if((typeof ReactDOMServer !== 'undefined')){
 return reagent.dom.server.imported = ReactDOMServer;
 } else {
-if(typeof require !== 'undefined'){
-var or__16358__auto__ = reagent.dom.server.imported = require("react-dom/server");
-if(cljs.core.truth_(or__16358__auto__)){
-return or__16358__auto__;
+if((typeof require !== 'undefined')){
+var or__4047__auto__ = reagent.dom.server.imported = require("react-dom/server");
+if(cljs.core.truth_(or__4047__auto__)){
+return or__4047__auto__;
 } else {
 throw (new Error("require('react-dom/server') failed"));
 }
@@ -35,25 +35,25 @@ throw (new Error("js/ReactDOMServer is missing"));
  * Turns a component into an HTML string.
  */
 reagent.dom.server.render_to_string = (function reagent$dom$server$render_to_string(component){
-reagent.ratom.flush_BANG_.call(null);
+reagent.ratom.flush_BANG_();
 
-var _STAR_non_reactive_STAR_27702 = reagent.impl.util._STAR_non_reactive_STAR_;
-reagent.impl.util._STAR_non_reactive_STAR_ = true;
+var _STAR_non_reactive_STAR__orig_val__10129 = reagent.impl.util._STAR_non_reactive_STAR_;
+var _STAR_non_reactive_STAR__temp_val__10130 = true;
+reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR__temp_val__10130;
 
-try{return (reagent.dom.server.module.call(null)["renderToString"])(reagent.impl.template.as_element.call(null,component));
-}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR_27702;
+try{return (reagent.dom.server.module()["renderToString"])(reagent.impl.template.as_element(component));
+}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR__orig_val__10129;
 }});
 /**
  * Turns a component into an HTML string, without data-react-id attributes, etc.
  */
 reagent.dom.server.render_to_static_markup = (function reagent$dom$server$render_to_static_markup(component){
-reagent.ratom.flush_BANG_.call(null);
+reagent.ratom.flush_BANG_();
 
-var _STAR_non_reactive_STAR_27704 = reagent.impl.util._STAR_non_reactive_STAR_;
-reagent.impl.util._STAR_non_reactive_STAR_ = true;
+var _STAR_non_reactive_STAR__orig_val__10131 = reagent.impl.util._STAR_non_reactive_STAR_;
+var _STAR_non_reactive_STAR__temp_val__10132 = true;
+reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR__temp_val__10132;
 
-try{return (reagent.dom.server.module.call(null)["renderToStaticMarkup"])(reagent.impl.template.as_element.call(null,component));
-}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR_27704;
+try{return (reagent.dom.server.module()["renderToStaticMarkup"])(reagent.impl.template.as_element(component));
+}finally {reagent.impl.util._STAR_non_reactive_STAR_ = _STAR_non_reactive_STAR__orig_val__10131;
 }});
-
-//# sourceMappingURL=server.js.map

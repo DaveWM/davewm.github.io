@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 1.7.145 {}
+// Compiled by ClojureScript 1.10.439 {}
 goog.provide('pathetic.core');
 goog.require('cljs.core');
 goog.require('clojure.string');
@@ -11,10 +11,10 @@ pathetic.core.separator_pattern = cljs.core.re_pattern.call(null,pathetic.core.s
  * share. Example: (common-prefix [\a \b] [\a \b \c \d]) -> (\a \b)
  */
 pathetic.core.common_prefix = (function pathetic$core$common_prefix(coll1,coll2){
-return cljs.core.map.call(null,cljs.core.first,cljs.core.take_while.call(null,(function (p1__27877_SHARP_){
-return cljs.core._EQ_.call(null,cljs.core.first.call(null,p1__27877_SHARP_),cljs.core.second.call(null,p1__27877_SHARP_));
-}),cljs.core.map.call(null,(function (p1__27878_SHARP_,p2__27879_SHARP_){
-return (new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[p1__27878_SHARP_,p2__27879_SHARP_],null));
+return cljs.core.map.call(null,cljs.core.first,cljs.core.take_while.call(null,(function (p1__26393_SHARP_){
+return cljs.core._EQ_.call(null,cljs.core.first.call(null,p1__26393_SHARP_),cljs.core.second.call(null,p1__26393_SHARP_));
+}),cljs.core.map.call(null,(function (p1__26394_SHARP_,p2__26395_SHARP_){
+return (new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[p1__26394_SHARP_,p2__26395_SHARP_],null));
 }),coll1,coll2)));
 });
 /**
@@ -29,7 +29,7 @@ pathetic.core.split = (function pathetic$core$split(path){
 if(cljs.core._EQ_.call(null,path,pathetic.core.separator)){
 return cljs.core.PersistentVector.EMPTY;
 } else {
-return clojure.string.split.call(null,[cljs.core.str(path)].join(''),pathetic.core.separator_pattern);
+return clojure.string.split.call(null,cljs.core.str.cljs$core$IFn$_invoke$arity$1(path),pathetic.core.separator_pattern);
 }
 });
 /**
@@ -42,15 +42,15 @@ return clojure.string.split.call(null,[cljs.core.str(path)].join(''),pathetic.co
  * might happen anyways, such as if the path starts with a (redundant) ".".
  */
 pathetic.core.parse_path = (function pathetic$core$parse_path(path){
-if(cljs.core.empty_QMARK_.call(null,[cljs.core.str(path)].join(''))){
+if(cljs.core.empty_QMARK_.call(null,cljs.core.str.cljs$core$IFn$_invoke$arity$1(path))){
 return null;
 } else {
 var path_pieces = pathetic.core.split.call(null,path);
 if(cljs.core._EQ_.call(null,(0),cljs.core.count.call(null,path_pieces))){
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"root","root",-448657453)], null);
 } else {
-var G__27881 = cljs.core.first.call(null,path_pieces);
-switch (G__27881) {
+var G__26396 = cljs.core.first.call(null,path_pieces);
+switch (G__26396) {
 case "":
 return cljs.core.apply.call(null,cljs.core.vector,new cljs.core.Keyword(null,"root","root",-448657453),cljs.core.rest.call(null,path_pieces));
 
@@ -79,10 +79,11 @@ return cljs.core.apply.call(null,cljs.core.vector,new cljs.core.Keyword(null,"cw
  * not have exactly one way to write every path.
  */
 pathetic.core.render_path = (function pathetic$core$render_path(path_pieces){
-var G__27884 = (((cljs.core.first.call(null,path_pieces) instanceof cljs.core.Keyword))?cljs.core.first.call(null,path_pieces).fqn:null);
-switch (G__27884) {
+var G__26398 = cljs.core.first.call(null,path_pieces);
+var G__26398__$1 = (((G__26398 instanceof cljs.core.Keyword))?G__26398.fqn:null);
+switch (G__26398__$1) {
 case "root":
-return [cljs.core.str(pathetic.core.separator),cljs.core.str(clojure.string.join.call(null,pathetic.core.separator,cljs.core.rest.call(null,path_pieces)))].join('');
+return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(pathetic.core.separator),cljs.core.str.cljs$core$IFn$_invoke$arity$1(clojure.string.join.call(null,pathetic.core.separator,cljs.core.rest.call(null,path_pieces)))].join('');
 
 break;
 case "cwd":
@@ -99,7 +100,7 @@ return clojure.string.join.call(null,pathetic.core.separator,path_pieces);
 }
 });
 pathetic.core.starts_with = (function pathetic$core$starts_with(s,prefix){
-return goog.string.startsWith(s,prefix);
+return goog.string.startsWith.call(null,s,prefix);
 });
 /**
  * Returns true if the given argument is an absolute path.
@@ -113,14 +114,14 @@ return pathetic.core.starts_with.call(null,path,pathetic.core.separator);
  * applies a ".." component to the path.
  */
 pathetic.core.up_dir = (function pathetic$core$up_dir(path_pieces){
-var G__27887 = cljs.core.last.call(null,path_pieces);
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"cwd","cwd",14056523),G__27887)){
+var G__26400 = cljs.core.last.call(null,path_pieces);
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"cwd","cwd",14056523),G__26400)){
 return cljs.core.conj.call(null,path_pieces,"..");
 } else {
-if(cljs.core._EQ_.call(null,"..",G__27887)){
+if(cljs.core._EQ_.call(null,"..",G__26400)){
 return cljs.core.conj.call(null,path_pieces,"..");
 } else {
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"root","root",-448657453),G__27887)){
+if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"root","root",-448657453),G__26400)){
 return path_pieces;
 } else {
 return cljs.core.pop.call(null,path_pieces);
@@ -139,39 +140,42 @@ pathetic.core.normalize_STAR_ = (function pathetic$core$normalize_STAR_(path_pie
 var result = new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.first.call(null,path_pieces)], null);
 var remaining_path = cljs.core.rest.call(null,path_pieces);
 while(true){
-var vec__27892 = remaining_path;
-var curr = cljs.core.nth.call(null,vec__27892,(0),null);
-var remainder = cljs.core.nthnext.call(null,vec__27892,(1));
-var pred__27893 = cljs.core._EQ_;
-var expr__27894 = curr;
-if(cljs.core.truth_(pred__27893.call(null,null,expr__27894))){
+var vec__26401 = remaining_path;
+var seq__26402 = cljs.core.seq.call(null,vec__26401);
+var first__26403 = cljs.core.first.call(null,seq__26402);
+var seq__26402__$1 = cljs.core.next.call(null,seq__26402);
+var curr = first__26403;
+var remainder = seq__26402__$1;
+var pred__26404 = cljs.core._EQ_;
+var expr__26405 = curr;
+if(cljs.core.truth_(pred__26404.call(null,null,expr__26405))){
 return result;
 } else {
-if(cljs.core.truth_(pred__27893.call(null,"",expr__27894))){
-var G__27896 = result;
-var G__27897 = remainder;
-result = G__27896;
-remaining_path = G__27897;
+if(cljs.core.truth_(pred__26404.call(null,"",expr__26405))){
+var G__26407 = result;
+var G__26408 = remainder;
+result = G__26407;
+remaining_path = G__26408;
 continue;
 } else {
-if(cljs.core.truth_(pred__27893.call(null,".",expr__27894))){
-var G__27898 = result;
-var G__27899 = remainder;
-result = G__27898;
-remaining_path = G__27899;
+if(cljs.core.truth_(pred__26404.call(null,".",expr__26405))){
+var G__26409 = result;
+var G__26410 = remainder;
+result = G__26409;
+remaining_path = G__26410;
 continue;
 } else {
-if(cljs.core.truth_(pred__27893.call(null,"..",expr__27894))){
-var G__27900 = pathetic.core.up_dir.call(null,result);
-var G__27901 = remainder;
-result = G__27900;
-remaining_path = G__27901;
+if(cljs.core.truth_(pred__26404.call(null,"..",expr__26405))){
+var G__26411 = pathetic.core.up_dir.call(null,result);
+var G__26412 = remainder;
+result = G__26411;
+remaining_path = G__26412;
 continue;
 } else {
-var G__27902 = cljs.core.conj.call(null,result,curr);
-var G__27903 = remainder;
-result = G__27902;
-remaining_path = G__27903;
+var G__26413 = cljs.core.conj.call(null,result,curr);
+var G__26414 = remainder;
+result = G__26413;
+remaining_path = G__26414;
 continue;
 }
 }
@@ -207,36 +211,36 @@ return cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 1, 5, clj
 var remainder = dest_suffix;
 while(true){
 var curr = cljs.core.first.call(null,remainder);
-var pred__27907 = cljs.core._EQ_;
-var expr__27908 = curr;
-if(cljs.core.truth_(pred__27907.call(null,null,expr__27908))){
+var pred__26415 = cljs.core._EQ_;
+var expr__26416 = curr;
+if(cljs.core.truth_(pred__26415.call(null,null,expr__26416))){
 return suffix;
 } else {
-if(cljs.core.truth_(pred__27907.call(null,"",expr__27908))){
-var G__27910 = suffix;
-var G__27911 = cljs.core.rest.call(null,remainder);
-suffix = G__27910;
-remainder = G__27911;
+if(cljs.core.truth_(pred__26415.call(null,"",expr__26416))){
+var G__26418 = suffix;
+var G__26419 = cljs.core.rest.call(null,remainder);
+suffix = G__26418;
+remainder = G__26419;
 continue;
 } else {
-if(cljs.core.truth_(pred__27907.call(null,".",expr__27908))){
-var G__27912 = suffix;
-var G__27913 = cljs.core.rest.call(null,remainder);
-suffix = G__27912;
-remainder = G__27913;
+if(cljs.core.truth_(pred__26415.call(null,".",expr__26416))){
+var G__26420 = suffix;
+var G__26421 = cljs.core.rest.call(null,remainder);
+suffix = G__26420;
+remainder = G__26421;
 continue;
 } else {
-if(cljs.core.truth_(pred__27907.call(null,"..",expr__27908))){
-var G__27914 = cljs.core.conj.call(null,suffix,"..");
-var G__27915 = cljs.core.rest.call(null,remainder);
-suffix = G__27914;
-remainder = G__27915;
+if(cljs.core.truth_(pred__26415.call(null,"..",expr__26416))){
+var G__26422 = cljs.core.conj.call(null,suffix,"..");
+var G__26423 = cljs.core.rest.call(null,remainder);
+suffix = G__26422;
+remainder = G__26423;
 continue;
 } else {
-var G__27916 = cljs.core.conj.call(null,suffix,curr);
-var G__27917 = cljs.core.rest.call(null,remainder);
-suffix = G__27916;
-remainder = G__27917;
+var G__26424 = cljs.core.conj.call(null,suffix,curr);
+var G__26425 = cljs.core.rest.call(null,remainder);
+suffix = G__26424;
+remainder = G__26425;
 continue;
 }
 }
@@ -287,7 +291,7 @@ pathetic.core.resolve = (function pathetic$core$resolve(base_path,other_path){
 return pathetic.core.render_path.call(null,pathetic.core.resolve_STAR_.call(null,pathetic.core.parse_path.call(null,base_path),pathetic.core.parse_path.call(null,other_path)));
 });
 pathetic.core.ends_with = (function pathetic$core$ends_with(s,suffix){
-return goog.string.endsWith(s,suffix);
+return goog.string.endsWith.call(null,s,suffix);
 });
 /**
  * If the path given does not have a trailing separator, returns a new path
@@ -297,7 +301,7 @@ pathetic.core.ensure_trailing_separator = (function pathetic$core$ensure_trailin
 if(cljs.core.truth_(pathetic.core.ends_with.call(null,path,pathetic.core.separator))){
 return path;
 } else {
-return [cljs.core.str(path),cljs.core.str(pathetic.core.separator)].join('');
+return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(path),cljs.core.str.cljs$core$IFn$_invoke$arity$1(pathetic.core.separator)].join('');
 }
 });
 pathetic.core.as_url = (function pathetic$core$as_url(url_or_string){
@@ -314,7 +318,7 @@ return (new goog.Uri(url_or_string));
  */
 pathetic.core.split_url_on_path = (function pathetic$core$split_url_on_path(url_or_string){
 var url = pathetic.core.as_url.call(null,url_or_string);
-var url_string = [cljs.core.str(url)].join('');
+var url_string = cljs.core.str.cljs$core$IFn$_invoke$arity$1(url);
 var path = url.getPath();
 var path_idx = url_string.lastIndexOf(path);
 var pre_path = url_string.substring((0),path_idx);
@@ -328,11 +332,11 @@ return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMP
  * (query, anchor, protocol, etc).
  */
 pathetic.core.url_normalize = (function pathetic$core$url_normalize(url_or_string){
-var vec__27919 = pathetic.core.split_url_on_path.call(null,url_or_string);
-var pre_path = cljs.core.nth.call(null,vec__27919,(0),null);
-var path = cljs.core.nth.call(null,vec__27919,(1),null);
-var post_path = cljs.core.nth.call(null,vec__27919,(2),null);
-return [cljs.core.str(pre_path),cljs.core.str(pathetic.core.normalize.call(null,path)),cljs.core.str(post_path)].join('');
+var vec__26426 = pathetic.core.split_url_on_path.call(null,url_or_string);
+var pre_path = cljs.core.nth.call(null,vec__26426,(0),null);
+var path = cljs.core.nth.call(null,vec__26426,(1),null);
+var post_path = cljs.core.nth.call(null,vec__26426,(2),null);
+return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(pre_path),cljs.core.str.cljs$core$IFn$_invoke$arity$1(pathetic.core.normalize.call(null,path)),cljs.core.str.cljs$core$IFn$_invoke$arity$1(post_path)].join('');
 });
 /**
  * Behaves like ensure-trailing-separator on the path part of a URL, but takes
@@ -341,11 +345,11 @@ return [cljs.core.str(pre_path),cljs.core.str(pathetic.core.normalize.call(null,
  * unchanged (query, anchor, protocol, etc).
  */
 pathetic.core.url_ensure_trailing_separator = (function pathetic$core$url_ensure_trailing_separator(url_or_string){
-var vec__27921 = pathetic.core.split_url_on_path.call(null,url_or_string);
-var pre_path = cljs.core.nth.call(null,vec__27921,(0),null);
-var path = cljs.core.nth.call(null,vec__27921,(1),null);
-var post_path = cljs.core.nth.call(null,vec__27921,(2),null);
-return [cljs.core.str(pre_path),cljs.core.str(pathetic.core.ensure_trailing_separator.call(null,path)),cljs.core.str(post_path)].join('');
+var vec__26429 = pathetic.core.split_url_on_path.call(null,url_or_string);
+var pre_path = cljs.core.nth.call(null,vec__26429,(0),null);
+var path = cljs.core.nth.call(null,vec__26429,(1),null);
+var post_path = cljs.core.nth.call(null,vec__26429,(2),null);
+return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(pre_path),cljs.core.str.cljs$core$IFn$_invoke$arity$1(pathetic.core.ensure_trailing_separator.call(null,path)),cljs.core.str.cljs$core$IFn$_invoke$arity$1(post_path)].join('');
 });
 
-//# sourceMappingURL=core.js.map
+//# sourceMappingURL=core.js.map?rel=1545933890222
